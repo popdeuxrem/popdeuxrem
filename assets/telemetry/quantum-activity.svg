@@ -1,0 +1,11 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ef" />
+      <stop offset="100%" stop-color="#a0f" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="200" rx="16" ry="16" fill="#050505" stroke="url(#pulse)" stroke-width="2" />
+  <text x="50%" y="45%" fill="#20F7E6" font-family="'Ubuntu Mono', monospace" font-size="20" text-anchor="middle">Quantum Telemetry Placeholder</text>
+  <text x="50%" y="65%" fill="#7C4DFF" font-family="'Ubuntu Mono', monospace" font-size="16" text-anchor="middle">Swap with generated SVG via CI</text>
+</svg>
