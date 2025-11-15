@@ -41,7 +41,7 @@ drwxr-xr-x  5 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  160 May 07 02:51 Scripts
 </pre>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Ubuntu+Mono&duration=2600&pause=900&color=20F7E6&center=true&vCenter=true&width=600&lines=Terminal+pilot+%F0%9F%9A%80;Infra+cartographer;Quantum-inspired+ops" alt="Terminal typing banner" />
+  <img src="assets/terminal/quantum-shell-animated.gif" alt="Animated quantum shell showing infra operations in the popdeuxrem workspace" />
 </p>
 <!-- zone:terminal:end -->
 
@@ -143,3 +143,11 @@ drwxr-xr-x  5 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  160 May 07 02:51 Scripts
   <sub>Last Updated: 2025-05-07 02:51:55 UTC · Integrity checksum: SHA256(README.md)</sub>
 </div>
 <!-- zone:footer:end -->
+<!--
+Quantum Basilica animated shell snippet (for future repo):
+
+<p align="center">
+  <img src="assets/terminal/quantum-basilica-shell-animated.gif"
+       alt="Quantum Basilica animated shell · digital systems garden" />
+</p>
+-->
