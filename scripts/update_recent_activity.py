@@ -13,6 +13,7 @@ from urllib import error, request
 USER = os.getenv("RECENT_ACTIVITY_USER", "thugger069")
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 README_PATH = os.path.join(REPO_ROOT, "README.md")
+FALLBACK_PATH = os.path.join(REPO_ROOT, "scripts", "sample_recent_activity.json")
 START = "<!-- dynamic:recent-activity:start -->"
 END = "<!-- dynamic:recent-activity:end -->"
 HEADING = "### 🛰️ Recent Signal Telemetry"
@@ -31,7 +32,7 @@ _pattern = re.compile(rf"{re.escape(START)}.*?{re.escape(END)}", re.DOTALL)
 Event = dict[str, object]
 
 
-def fetch_events() -> List[Event]:
+def fetch_events_from_api() -> List[Event]:
     url = f"https://api.github.com/users/{USER}/events/public"
     req = request.Request(url, headers=HEADERS)
     with request.urlopen(req, timeout=20) as resp:
@@ -39,6 +40,32 @@ def fetch_events() -> List[Event]:
             raise error.HTTPError(url, resp.status, resp.reason, resp.headers, None)
         payload = resp.read().decode("utf-8")
     return json.loads(payload)
+
+
+def load_fallback_events() -> List[Event]:
+    if not os.path.exists(FALLBACK_PATH):
+        return []
+    with open(FALLBACK_PATH, "r", encoding="utf-8") as handle:
+        try:
+            payload = json.load(handle)
+        except json.JSONDecodeError:
+            return []
+    events = payload if isinstance(payload, list) else []
+    return events
+
+
+def fetch_events() -> List[Event]:
+    try:
+        return fetch_events_from_api()
+    except error.HTTPError as exc:  # pragma: no cover
+        print(f"[recent-activity] HTTP error: {exc}", file=sys.stderr)
+    except error.URLError as exc:  # pragma: no cover
+        print(f"[recent-activity] Network error: {exc}", file=sys.stderr)
+
+    fallback = load_fallback_events()
+    if fallback:
+        print("[recent-activity] Using fallback telemetry cache", file=sys.stderr)
+    return fallback
 
 
 def humanize_timestamp(value: str) -> str:
@@ -178,15 +205,7 @@ def build_block(body: str, stamp: str) -> str:
 
 
 def update_readme(content: str) -> str:
-    try:
-        events = fetch_events()
-    except error.HTTPError as exc:  # pragma: no cover
-        print(f"[recent-activity] HTTP error: {exc}", file=sys.stderr)
-        return content
-    except error.URLError as exc:  # pragma: no cover
-        print(f"[recent-activity] Network error: {exc}", file=sys.stderr)
-        return content
-
+    events = fetch_events()
     body = render_activity(events)
     stamp = dt.datetime.utcnow().strftime("Last sync: %Y-%m-%d %H:%M UTC")
     block = build_block(body, stamp)
