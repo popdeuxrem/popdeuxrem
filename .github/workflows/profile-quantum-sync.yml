@@ -1,0 +1,48 @@
+name: Quantum Sync
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight
+  workflow_dispatch:      # Allows manual trigger
+  push:
+    branches:
+      - main
+    paths:
+      - 'portfolio.json'
+      - 'skills.json'
+      - 'timeline.json'
+      - 'scripts/**'
+
+jobs:
+  telemetry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - name: Install Dependencies
+        run: |
+          pip install matplotlib numpy
+          
+      - name: Generate Visuals
+        run: |
+          python3 scripts/generate_skills_radar.py
+          python3 scripts/generate_technology_timeline.py
+          python3 scripts/generate_network_graph.py
+          
+      - name: Update README Surface
+        run: python3 scripts/update_readme.py
+        
+      - name: Commit Changes
+        run: |
+          git config user.name "Quantum Bot"
+          git config user.email "bot@noreply.github.com"
+          git add dist/ README.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: sync system telemetry [skip ci]"
+            git push
+          fi

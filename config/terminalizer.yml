@@ -1,0 +1,10 @@
+cols: 80
+rows: 15
+frameDelay: 120
+repeat: 0
+quality: 100
+theme:
+  background: "#0D1117"
+  foreground: "#C9D1D9"
+  cursor: "#00FF9D"
+cursorStyle: block

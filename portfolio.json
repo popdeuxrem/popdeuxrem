@@ -1,0 +1,26 @@
+[
+  {
+    "name": "shadow-scripts",
+    "description": "Proxy meshes, DNS overlays, and stealth routing rehearsals.",
+    "stars": 128,
+    "link": "https://github.com/Thugger069/shadow-scripts",
+    "status": "SHIP",
+    "domain": "SecOps"
+  },
+  {
+    "name": "smooth-operator",
+    "description": "Siri-driven reply engine with JSON state & compliance receipts.",
+    "stars": 245,
+    "link": "https://github.com/Thugger069/smooth-operator",
+    "status": "BETA",
+    "domain": "Automation"
+  },
+  {
+    "name": "brand-terminal",
+    "description": "CLI-style UI skins wired to real-time telemetry surfaces.",
+    "stars": 89,
+    "link": "https://github.com/Thugger069/brand-terminal",
+    "status": "SHIP",
+    "domain": "Surface"
+  }
+]

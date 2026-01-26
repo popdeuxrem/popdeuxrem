@@ -1,0 +1,10 @@
+{
+  "skills": [
+    {"name": "Rust", "score": 70},
+    {"name": "TypeScript", "score": 95},
+    {"name": "Python", "score": 85},
+    {"name": "Go", "score": 80},
+    {"name": "Terraform", "score": 90},
+    {"name": "Solidity", "score": 60}
+  ]
+}

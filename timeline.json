@@ -1,0 +1,8 @@
+[
+  {"technology": "Bash/Linux", "year": 2016},
+  {"technology": "Node.js", "year": 2017},
+  {"technology": "Docker/K8s", "year": 2019},
+  {"technology": "Rust/WASM", "year": 2021},
+  {"technology": "AI Agents", "year": 2023},
+  {"technology": "Quantum/Sim", "year": 2025}
+]
