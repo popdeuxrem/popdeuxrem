@@ -1,10 +1,27 @@
-cols: 80
-rows: 15
-frameDelay: 120
-repeat: 0
-quality: 100
-theme:
-  background: "#0D1117"
-  foreground: "#C9D1D9"
-  cursor: "#00FF9D"
-cursorStyle: block
+config:
+  command: bash
+  terminal:
+    shell: bash
+    cursorStyle: block
+    fontFamily: "JetBrains Mono, Fira Code, monospace"
+    fontSize: 14
+    lineHeight: 1.2
+  theme:
+    background: "#0d1117"
+    foreground: "#c9d1d9"
+    black: "#484f58"
+    red: "#ff7b72"
+    green: "#3fb950"
+    yellow: "#d29922"
+    blue: "#58a6ff"
+    magenta: "#bc8cff"
+    cyan: "#39c5cf"
+    white: "#b1bac4"
+  watermark:
+    imagePath: "assets/header-plate.svg"
+    style:
+      position: absolute
+      right: 10px
+      bottom: 10px
+      width: 100px
+      opacity: 0.5

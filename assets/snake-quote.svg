@@ -1,0 +1,40 @@
+<svg fill="none" viewBox="0 0 1200 80" width="1200" height="80" xmlns="http://www.w3.org/2000/svg">
+  <title>Rotating system philosophy quote</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap');
+      
+      .quote-container {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+      }
+
+      @keyframes snake-scroll {
+        from { transform: translateX(1200px); }
+        to { transform: translateX(-812px); }
+      }
+
+      #snake-quote {
+        animation: snake-scroll 40s linear infinite;
+        will-change: transform;
+      }
+
+      .accent { fill: #58A6FF; }
+      .quote { fill: #E6EDF3; }
+
+      @media (prefers-color-scheme: light) {
+        .accent { fill: #0969DA; }
+        .quote { fill: #24292F; }
+      }
+    </style>
+  </defs>
+
+  <g id="snake-quote" class="quote-container">
+    <text y="40" dominant-baseline="middle">
+      <tspan class="accent">▸ </tspan>
+      <tspan class="quote">Latency is the enemy of architecture. — Systems</tspan>
+    </text>
+  </g>
+</svg>

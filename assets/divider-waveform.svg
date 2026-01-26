@@ -1,0 +1,5 @@
+<svg width="800" height="40" viewBox="0 0 800 40" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 20 Q 200 0, 400 20 T 800 20" stroke="#30363d" fill="transparent" stroke-width="1">
+    <animate attributeName="d" values="M0 20 Q 200 0, 400 20 T 800 20; M0 20 Q 200 40, 400 20 T 800 20; M0 20 Q 200 0, 400 20 T 800 20" dur="5s" repeatCount="indefinite" />
+  </path>
+</svg>
