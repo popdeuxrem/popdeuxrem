@@ -40,7 +40,7 @@ def run_build():
     build_security()
     
     # 3. Collect Dynamic Data
-    vessels = fetch_quantum_vessels("popdeuxrem")
+    vessels = discovery.fetch_github_metrics("popdeuxrem")
     
     # 4. Prepare Metadata
     now = datetime.datetime.now(datetime.timezone.utc)
@@ -49,7 +49,7 @@ def run_build():
         "UPTIME": get_system_uptime(),
         "LAST_SYNC": now.strftime("%Y-%m-%d %H:%M:%S UTC"),
         "STATUS": "NOMINAL",
-        "VESSEL_MANIFEST": format_vessel_table(vessels),
+        "VESSEL_MANIFEST": discovery.render_vessel_table(vessels),
         "GIT_SHA": get_git_sha(),
         "ASCII_DIVIDER": "\n```text\n[ ◈ " + ("-" * 50) + " ◈ ]\n```\n",
         "GEN_VERSION": "QuantumProfileSurface/v3.0",

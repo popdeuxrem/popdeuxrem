@@ -1,14 +1,14 @@
 # 𖢧ꛅ · 🜂 QUANTUM SURFACE · v3.0
 
 <div align="center">
-  <img src="assets/header-plate.svg" width="800" alt="Quantum Header" />
+  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/header-plate.svg" width="800" alt="Quantum Header" />
 
-  <img src="assets/snake-quote.svg" width="100%" alt="System Philosophy Stream" />
+  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/snake-quote.svg" width="100%" alt="System Philosophy Stream" />
 
   [Thesis](#-engineering-thesis) | [Stack](#-operational-stack) | [Deployments](#-architecture--deployments) | [Telemetry](#-telemetry)
 </div>
 
-<img src="assets/divider-waveform.svg" width="800" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/divider-waveform.svg" width="800" />
 
 ## ◈ ENGINEERING THESIS
 
@@ -27,7 +27,7 @@ As a **Principal Engineer & Product Architect**, I specialize in high-integrity 
 | **Security** | HashiCorp Vault, eBPF, Trivy, OPA | `HARDENED` |
 | **Frontend/DX** | React, TypeScript, D3.js, Tailwind | `STABLE` |
 
-<img src="assets/quantum-divider.svg" width="800" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/quantum-divider.svg" width="800" />
 
 ## ⚠ ARCHITECTURE & DEPLOYMENTS
 
@@ -39,19 +39,19 @@ As a **Principal Engineer & Product Architect**, I specialize in high-integrity 
 
 ## ▣ TELEMETRY
 
-<img src="assets/telemetry-panel.svg" width="800" alt="System Telemetry" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/telemetry-panel.svg" width="800" alt="System Telemetry" />
 
-<img src="assets/activity-heatline.svg" width="800" alt="Activity Heatline" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/activity-heatline.svg" width="800" alt="Activity Heatline" />
 
 ### Capability Matrix
 
 ### Security Telemetry
-<img src="assets/security-status.svg" width="800" alt="Security Status" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/security-status.svg" width="800" alt="Security Status" />
 
 `{{SECURITY_SUMMARY}}`
 {{SKILL_MATRIX}}
 
-<img src="assets/divider-waveform.svg" width="800" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/divider-waveform.svg" width="800" />
 
 ## ⚡ UPLINK
 
