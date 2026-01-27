@@ -1,0 +1,47 @@
+<svg width="800" height="350" viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="350" fill="#0d1117"/><g transform="translate(100,50)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">RUST</text>
+        </g><g transform="translate(300,50)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">GO</text>
+        </g><g transform="translate(500,50)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">PYTHON</text>
+        </g><g transform="translate(100,150)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">DOCKER</text>
+        </g><g transform="translate(300,150)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">WASM</text>
+        </g><g transform="translate(500,150)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">TERRAFORM</text>
+        </g><g transform="translate(100,250)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">SOLIDITY</text>
+        </g><g transform="translate(300,250)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">CI/CD</text>
+        </g><g transform="translate(500,250)">
+            <path d="M0 20 L80 0 L160 20 L80 40 Z" fill="#161b22" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M0 20 V60 L80 80 V40 L0 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <path d="M160 20 V60 L80 80 V40 L160 20 Z" fill="#0d1117" stroke="#bc8cff" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff" font-weight="bold">LINUX</text>
+        </g></svg>

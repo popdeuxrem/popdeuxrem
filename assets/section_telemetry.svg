@@ -1,0 +1,18 @@
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="300" fill="#0d1117"/>
+    <g transform="translate(400, 150)" opacity="0.6">
+        <circle r="100" stroke="#30363d" stroke-width="1" fill="none"/>
+        <circle r="70" stroke="#30363d" stroke-width="1" fill="none"/>
+        <circle r="40" stroke="#30363d" stroke-width="1" fill="none"/>
+        <line x1="-100" y1="0" x2="100" y2="0" stroke="#30363d"/>
+        <line x1="0" y1="-100" x2="0" y2="100" stroke="#30363d"/>
+        <line x1="0" y1="0" x2="0" y2="-100" stroke="url(#scanGrad)" stroke-width="2">
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+        </line>
+        <circle cx="30" cy="-50" r="3" fill="#ff7b72"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="-40" cy="20" r="2" fill="#ff7b72"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="5.5s" repeatCount="indefinite"/></circle>
+    </g>
+    <defs><linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff7b72"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+    <text x="30" y="280" font-family="monospace" font-size="12" fill="#ff7b72" opacity="0.8">LIVE_TELEMETRY // MONITORING</text>
+    <text x="650" y="280" font-family="monospace" font-size="12" fill="#ff7b72" opacity="0.8">SIGNAL: NOMINAL</text>
+    </svg>

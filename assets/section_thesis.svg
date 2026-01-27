@@ -1,0 +1,16 @@
+<svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="250" fill="#050505"/>
+    <style>
+        .term { font-family: monospace; font-size: 14px; fill: #238636; opacity: 0.9; }
+        .keyword { font-weight: bold; fill: #3fb950; }
+        .comment { fill: #8b949e; font-style: italic; }
+    </style>
+    <text x="30" y="40" class="term">> cat /etc/philosophy.conf</text>
+    <text x="30" y="80" class="term"><tspan class="keyword">def</tspan> ENGINEERING_THESIS():</text>
+    <text x="50" y="110" class="term">    <tspan class="comment"># Complexity is a liability</tspan></text>
+    <text x="50" y="130" class="term">    assert <tspan class="keyword">SIMPLICITY</tspan> > ABSTRACTION</text>
+    <text x="50" y="160" class="term">    <tspan class="comment"># If you can't measure it, you don't control it</tspan></text>
+    <text x="50" y="180" class="term">    require(<tspan class="keyword">OBSERVABILITY</tspan>)</text>
+    <text x="50" y="210" class="term">    return <tspan class="keyword">IMMUTABLE_STATE</tspan></text>
+    <rect x="0" y="0" width="800" height="250" fill="none" stroke="#30363d" stroke-width="2"/>
+    </svg>

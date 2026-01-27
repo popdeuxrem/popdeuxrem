@@ -1,0 +1,19 @@
+<svg width="1000" height="140" viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1000" height="140" fill="#0d1117"/>
+    <defs>
+        <mask id="m"><rect width="1000" height="140" fill="white"/></mask>
+        <filter id="glow"><feGaussianBlur stdDeviation="1.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <style>
+        .k-text { font-family: sans-serif; font-weight: 900; font-size: 80px; text-transform: uppercase; letter-spacing: -4px; }
+        .ambient-drift { animation: drift 45s linear infinite; }
+        @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    </style>
+    <g mask="url(#m)">
+        <text x="0" y="100" class="k-text ambient-drift" fill="#00f3ff" filter="url(#glow)">
+            SYSTEMS ARCHITECT ◈ AUTOMATION ◈ PROTOCOLS ◈ SYSTEMS ARCHITECT ◈ AUTOMATION ◈ PROTOCOLS ◈
+        </text>
+    </g>
+    <rect x="0" y="135" width="1000" height="2" fill="#30363d"/>
+    <rect x="0" y="135" width="200" height="2" fill="#00f3ff"/>
+    </svg>

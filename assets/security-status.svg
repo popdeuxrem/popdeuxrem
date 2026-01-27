@@ -1,6 +1,0 @@
-<svg width="1000" height="50" viewBox="0 0 1000 50" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1000" height="50" fill="#0d1117" stroke="#238636" stroke-width="2"/>
-    <text x="25" y="32" font-family="monospace" font-size="18" fill="#238636" font-weight="bold">
-      [ PASS ] SECURITY_AUDIT_V4 // VULNERABILITIES: 0 // INTEGRITY: 100%
-    </text>
-    </svg>

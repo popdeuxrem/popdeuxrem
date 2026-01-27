@@ -1,0 +1,25 @@
+<svg width="600" height="500" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+    <rect width="600" height="500" fill="#0d1117"/>
+    <defs><filter id="glow"><feGaussianBlur stdDeviation="2.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <style>
+        .trace { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: flow 3s ease-out forwards; }
+        @keyframes flow { to { stroke-dashoffset: 0; } }
+        .node-text { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #d29922; }
+    </style>
+    <path d="M50 50 V150 H100" stroke="#30363d" stroke-width="2" fill="none"/>
+    <path d="M50 150 V300 H100" stroke="#30363d" stroke-width="2" fill="none"/>
+    <path d="M50 300 V450 H100" stroke="#30363d" stroke-width="2" fill="none"/>
+    <path class="trace" d="M50 50 V150 H100" stroke="#d29922" stroke-width="2" fill="none" filter="url(#glow)"/>
+    <path class="trace" d="M50 150 V300 H100" stroke="#d29922" stroke-width="2" fill="none" filter="url(#glow)" style="animation-delay: 0.5s"/>
+    <path class="trace" d="M50 300 V450 H100" stroke="#d29922" stroke-width="2" fill="none" filter="url(#glow)" style="animation-delay: 1.0s"/>
+    <circle cx="50" cy="50" r="5" fill="#d29922"/>
+    
+    <rect x="100" y="130" width="400" height="40" rx="4" fill="#161b22" stroke="#d29922"/>
+    <text x="120" y="155" class="node-text">SHADOW_SCRIPTS // SECOPS_MESH</text>
+    
+    <rect x="100" y="280" width="400" height="40" rx="4" fill="#161b22" stroke="#d29922"/>
+    <text x="120" y="305" class="node-text">SMOOTH_OPERATOR // AUTO_AGENT</text>
+    
+    <rect x="100" y="430" width="400" height="40" rx="4" fill="#161b22" stroke="#d29922"/>
+    <text x="120" y="455" class="node-text">BRAND_TERMINAL // UI_SURFACE</text>
+    </svg>
