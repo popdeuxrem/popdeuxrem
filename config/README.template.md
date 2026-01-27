@@ -14,25 +14,46 @@
 ---
 
 ## ✨ Introduction
-The Glitch is an experimental **systems engineering meta-surface** combining real-time telemetry, reversible automation, and signal integrity visualization.
+<p align="center">
+  <img src="assets/bg-quantum-grid.svg" width="100%" />
+</p>
+
+> ***The Glitch is an experimental systems engineering meta-surface combining real-time telemetry, reversible automation, and signal integrity visualization—engineered for resilience, observability, and introspection.***
 
 ---
 
-## 🚀 Operational Access
-<details>
-<summary><b>◈ QUICK START / CLI ACCESS</b></summary>
+## 🚀 Quick Start
+<details open>
+<summary><b>◈ DEPLOYMENT PROTOCOL</b></summary>
 
 ```bash
-# Clone and Hydrate
+# Clone the surface
 git clone [https://github.com/popdeuxrem/popdeuxrem.git](https://github.com/popdeuxrem/popdeuxrem.git)
 cd popdeuxrem
+
+# Hydrate the environment
 pip install -r requirements.txt
+
+# Trigger manual surface regeneration
 python3 scripts/update_readme.py
 
 </details>
+💡 Features & Capabilities
+<details>
+<summary><b>◈ CORE INSTRUMENTATION</b></summary>
+
+
+<img src="assets/snake-quote.svg" width="400" align="right" />
+ * ⚡ Real-time Telemetry: Dynamic SVG rendering.
+ * 🛠 Observable Operator: Full state versioning.
+ * 🛡 Security Hardening: Live pip-audit integration.
+ * 𖢧 Kinetic UI: Chromatic aberration glitch effects.
+ * 🚢 Vessel Management: Automated health checks.
+<br clear="right"/>
+</details>
 🧬 Architecture & Deployments
 <details>
-<summary><b>◈ TOPOLOGY & VESSEL MANIFEST</b></summary>
+<summary><b>◈ TOPOLOGY & MANIFEST</b></summary>
 System Topology
 <p align="center">
 <img src="assets/system-topology.svg" width="800" alt="System Topology" />
@@ -40,28 +61,48 @@ System Topology
 Deployed Vessels
 {{VESSEL_MANIFEST}}
 </details>
-📊 Telemetry & Logic
+📊 Telemetry & Skills
 <details>
-<summary><b>◈ SYSTEM PERFORMANCE & SKILLS</b></summary>
+<summary><b>◈ METRICS & CAPABILITIES</b></summary>
 <p align="center">
 {{TELEMETRY_PANEL}}
 <img src="assets/activity-heatline.svg" width="800" alt="Activity Heatline" />
 </p>
 Capability Matrix
+<p align="center">
+<img src="assets/skills-radar.png" width="400" />
+</p>
 {{SKILL_MATRIX}}
 </details>
-🛡 Security & Integrity
+🛡 Security Audit
 <details>
-<summary><b>◈ AUDIT LOGS & VULNERABILITY REPORT</b></summary>
+<summary><b>◈ INTEGRITY REPORT</b></summary>
 <p align="center">
 <img src="assets/security-status.svg" width="800" alt="Security Status" />
 </p>
-> AUDIT_SUMMARY: {{SECURITY_SUMMARY}}
+> [!CAUTION]
+> {{SECURITY_SUMMARY}}
 > 
 </details>
-⚡ UPLINK
+🗺 Roadmap & Timeline
 <details>
-<summary><b>◈ CONTACT & SIGNATURE</b></summary>
+<summary><b>◈ STRATEGIC EVOLUTION</b></summary>
+<p align="center">
+<img src="dist/technology-timeline.png" width="800" alt="Technology Timeline" />
+</p>
+ * 🔹 v4.2: K8s automation and eBPF observability.
+ * 🔹 v5.0: Distributed Glitch Mesh and multi-region state synchronization.
+</details>
+🤝 Contributing
+<details>
+<summary><b>◈ SUBMISSION GUIDELINES</b></summary>
+ * Review CONTRIBUTING.md
+ * Maintain strict typing and unit test coverage.
+ * Respect the Glitch aesthetic guidelines.
+</details>
+⚡ UPLINK & Contact
+<details>
+<summary><b>◈ CONNECTION PARAMETERS</b></summary>
 contact:
   email: popdeuxrem@gateway.net
   github: "@popdeuxrem"

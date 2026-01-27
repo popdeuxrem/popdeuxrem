@@ -14,6 +14,7 @@ from generate_heatline import generate_heatline_svg as build_heatline
 from generate_security_svg import generate_security_svg as build_security
 from generate_waveform import generate_waveform as build_waveform
 from generate_visuals import generate_visuals as build_visuals
+from generate_vessel_reports import generate_vessel_reports as build_reports
 from discovery import fetch_github_metrics, render_vessel_table, render_skill_bars
 
 def get_git_sha():
@@ -24,7 +25,9 @@ def get_git_sha():
 
 def get_security_data():
     try:
-        with open('dist/security-report.json', 'r') as f:
+        report_path = 'dist/security-report.json'
+        if not os.path.exists(report_path): return {"hygiene": "PENDING", "vulnerabilities": {"critical": 0, "high": 0}}
+        with open(report_path, 'r') as f:
             return json.load(f)
     except:
         return {"hygiene": "UNKNOWN", "vulnerabilities": {"critical": 0, "high": 0}}
@@ -32,33 +35,33 @@ def get_security_data():
 def run_build():
     print("◈ INITIALIZING SPECTRE v4.1 HYDRATION [ALERT_AWARE]...")
     
-    # 0. Execute Scan
+    # 0. Infrastructure Audit
     subprocess.run(["bash", "scripts/vuln_scan.sh"], check=False)
     sec_data = get_security_data()
     v = sec_data['vulnerabilities']
     
-    # 1. Determine System State (Alert Logic)
-    # If CRIT > 0 or HIGH > 0, system enters ALERT status
-    is_alert = v['critical'] > 0 or v['high'] > 0
+    # 1. State Intelligence (Alert Logic)
+    is_alert = v.get('critical', 0) > 0 or v.get('high', 0) > 0
     glyph_color = "#ff0000" if is_alert else "#00f3ff"
     status_label = "BREACH_RISK" if is_alert else "NOMINAL"
     
-    # 2. Regenerate Visual Assets
+    # 2. Visual Layer Regeneration
     build_header()
-    build_glitch() # We can pass glyph_color here if script is updated to accept it
+    build_glitch()  # Now state-aware via dist/security-report.json
     build_matrix()
     build_telemetry()
     build_heatline()
     build_security()
     build_waveform(0.8)
     build_visuals()
+    build_reports() # Generate docs/deployments/*.md
     
     # 3. Context & Payload Mapping
     vessels = fetch_github_metrics("popdeuxrem")
     repo_url = "https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main"
     ts = int(time.time())
     
-    sec_summary = f"🛡️ SEC_AUDIT: {sec_data['hygiene']} | CRIT:{v['critical']} HIGH:{v['high']} | STATUS: {status_label}"
+    sec_summary = f"🛡️ SEC_AUDIT: {sec_data['hygiene']} | CRIT:{v.get('critical', 0)} HIGH:{v.get('high', 0)} | STATUS: {status_label}"
 
     data = {
         "GLITCH_GLYPH": f'<span style="color:{glyph_color}">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</span>',
@@ -72,8 +75,13 @@ def run_build():
         "GEN_VERSION": "QuantumProfileSurface/v4.1-AlertAware"
     }
 
-    # 4. Hydration
-    with open('config/README.template.md', 'r') as f:
+    # 4. Atomic Hydration
+    template_path = 'config/README.template.md'
+    if not os.path.exists(template_path):
+        print(f"!! CRITICAL FAILURE: {template_path} not found.")
+        return
+
+    with open(template_path, 'r') as f:
         content = f.read()
 
     for key, value in data.items():

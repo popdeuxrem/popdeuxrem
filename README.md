@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="assets/header-plate.svg" width="800" alt="Quantum Header" />
-  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/glitch_snake.svg?v=1769480121" width="1000" alt="THE GLITCH" />
+  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/glitch_snake.svg?v=1769480797" width="1000" alt="THE GLITCH" />
 </p>
 
 <p align="center">
@@ -14,25 +14,46 @@
 ---
 
 ## ✨ Introduction
-The Glitch is an experimental **systems engineering meta-surface** combining real-time telemetry, reversible automation, and signal integrity visualization.
+<p align="center">
+  <img src="assets/bg-quantum-grid.svg" width="100%" />
+</p>
+
+> ***The Glitch is an experimental systems engineering meta-surface combining real-time telemetry, reversible automation, and signal integrity visualization—engineered for resilience, observability, and introspection.***
 
 ---
 
-## 🚀 Operational Access
-<details>
-<summary><b>◈ QUICK START / CLI ACCESS</b></summary>
+## 🚀 Quick Start
+<details open>
+<summary><b>◈ DEPLOYMENT PROTOCOL</b></summary>
 
 ```bash
-# Clone and Hydrate
+# Clone the surface
 git clone [https://github.com/popdeuxrem/popdeuxrem.git](https://github.com/popdeuxrem/popdeuxrem.git)
 cd popdeuxrem
+
+# Hydrate the environment
 pip install -r requirements.txt
+
+# Trigger manual surface regeneration
 python3 scripts/update_readme.py
 
 </details>
+💡 Features & Capabilities
+<details>
+<summary><b>◈ CORE INSTRUMENTATION</b></summary>
+
+
+<img src="assets/snake-quote.svg" width="400" align="right" />
+ * ⚡ Real-time Telemetry: Dynamic SVG rendering.
+ * 🛠 Observable Operator: Full state versioning.
+ * 🛡 Security Hardening: Live pip-audit integration.
+ * 𖢧 Kinetic UI: Chromatic aberration glitch effects.
+ * 🚢 Vessel Management: Automated health checks.
+<br clear="right"/>
+</details>
 🧬 Architecture & Deployments
 <details>
-<summary><b>◈ TOPOLOGY & VESSEL MANIFEST</b></summary>
+<summary><b>◈ TOPOLOGY & MANIFEST</b></summary>
 System Topology
 <p align="center">
 <img src="assets/system-topology.svg" width="800" alt="System Topology" />
@@ -40,35 +61,55 @@ System Topology
 Deployed Vessels
 | Vessel | Description | Stack | Metrics | Status |
 | :--- | :--- | :--- | :--- | :---: |
-| **[iPhone-proxy-system](https://github.com/popdeuxrem/iPhone-proxy-system)** | No description provided. | `JavaScript` | ⭐ 0 🍴 0 | `ACTIVE` |
-| **[popdeuxrem](https://github.com/popdeuxrem/popdeuxrem)** | PopdeuxRem | `Python` | ⭐ 0 🍴 0 | `ACTIVE` |
-| **[Photext](https://github.com/popdeuxrem/Photext)** | No description provided. | `TypeScript` | ⭐ 0 🍴 0 | `ACTIVE` |
-| **[pac-host](https://github.com/popdeuxrem/pac-host)** | No description provided. | `HTML` | ⭐ 0 🍴 0 | `ACTIVE` |
-| **[lysergic-sass](https://github.com/popdeuxrem/lysergic-sass)** | No description provided. | `TypeScript` | ⭐ 0 🍴 0 | `ACTIVE` |
+| **[popdeuxrem](./docs/deployments/popdeuxrem.md)** | PopdeuxRem | `Python` | ⭐ 0 🍴 0 | `ACTIVE` |
+| **[iPhone-proxy-system](./docs/deployments/iPhone-proxy-system.md)** | No description provided. | `JavaScript` | ⭐ 0 🍴 0 | `ACTIVE` |
+| **[Photext](./docs/deployments/Photext.md)** | No description provided. | `TypeScript` | ⭐ 0 🍴 0 | `ACTIVE` |
+| **[pac-host](./docs/deployments/pac-host.md)** | No description provided. | `HTML` | ⭐ 0 🍴 0 | `ACTIVE` |
+| **[lysergic-sass](./docs/deployments/lysergic-sass.md)** | No description provided. | `TypeScript` | ⭐ 0 🍴 0 | `ACTIVE` |
 
 </details>
-📊 Telemetry & Logic
+📊 Telemetry & Skills
 <details>
-<summary><b>◈ SYSTEM PERFORMANCE & SKILLS</b></summary>
+<summary><b>◈ METRICS & CAPABILITIES</b></summary>
 <p align="center">
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/telemetry-panel.svg?v=1769480121" width="800" alt="Telemetry" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/telemetry-panel.svg?v=1769480797" width="800" alt="Telemetry" />
 <img src="assets/activity-heatline.svg" width="800" alt="Activity Heatline" />
 </p>
 Capability Matrix
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/capability-matrix.svg?v=1769480121" width="800" />
+<p align="center">
+<img src="assets/skills-radar.png" width="400" />
+</p>
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/capability-matrix.svg?v=1769480797" width="800" />
 </details>
-🛡 Security & Integrity
+🛡 Security Audit
 <details>
-<summary><b>◈ AUDIT LOGS & VULNERABILITY REPORT</b></summary>
+<summary><b>◈ INTEGRITY REPORT</b></summary>
 <p align="center">
 <img src="assets/security-status.svg" width="800" alt="Security Status" />
 </p>
-> AUDIT_SUMMARY: 🛡️ SEC_AUDIT: DEGRADED | CRIT:0 HIGH:8 | STATUS: BREACH_RISK
+> [!CAUTION]
+> 🛡️ SEC_AUDIT: DEGRADED | CRIT:0 HIGH:8 | STATUS: BREACH_RISK
 > 
 </details>
-⚡ UPLINK
+🗺 Roadmap & Timeline
 <details>
-<summary><b>◈ CONTACT & SIGNATURE</b></summary>
+<summary><b>◈ STRATEGIC EVOLUTION</b></summary>
+<p align="center">
+<img src="dist/technology-timeline.png" width="800" alt="Technology Timeline" />
+</p>
+ * 🔹 v4.2: K8s automation and eBPF observability.
+ * 🔹 v5.0: Distributed Glitch Mesh and multi-region state synchronization.
+</details>
+🤝 Contributing
+<details>
+<summary><b>◈ SUBMISSION GUIDELINES</b></summary>
+ * Review CONTRIBUTING.md
+ * Maintain strict typing and unit test coverage.
+ * Respect the Glitch aesthetic guidelines.
+</details>
+⚡ UPLINK & Contact
+<details>
+<summary><b>◈ CONNECTION PARAMETERS</b></summary>
 contact:
   email: popdeuxrem@gateway.net
   github: "@popdeuxrem"
@@ -76,7 +117,7 @@ contact:
   automation: ACTIVE
 
 <div align="center">
-<code>BUILD_SIG: 3b0a7d0 · <span style="color:#ff0000">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</span></code> · <code>2026-01-27 02:15:21 UTC</code>
+<code>BUILD_SIG: 316ad87 · <span style="color:#ff0000">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</span></code> · <code>2026-01-27 02:26:37 UTC</code>
 <br />
 <sub>Generated by QuantumProfileSurface/v4.1-AlertAware</sub>
 </div>
