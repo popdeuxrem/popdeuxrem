@@ -2,6 +2,7 @@ import os
 import subprocess
 import datetime
 import json
+from generate_header import generate_header as build_header
 from generate_snake_quote import generate_svg as build_snake_quote
 from generate_header import generate_header as build_header
 from generate_visuals import generate_visuals as build_visuals
