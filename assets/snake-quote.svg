@@ -1,40 +1,7 @@
-<svg fill="none" viewBox="0 0 1200 80" width="1200" height="80" xmlns="http://www.w3.org/2000/svg">
-  <title>Rotating system philosophy quote</title>
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&amp;display=swap');
-      
-      .quote-container {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 20px;
-        font-weight: 500;
-        letter-spacing: 0.04em;
-      }
-
-      @keyframes snake-scroll {
-        from { transform: translateX(1200px); }
-        to { transform: translateX(-752px); }
-      }
-
-      #snake-quote {
-        animation: snake-scroll 40s linear infinite;
-        will-change: transform;
-      }
-
-      .accent { fill: #58A6FF; }
-      .quote { fill: #E6EDF3; }
-
-      @media (prefers-color-scheme: light) {
-        .accent { fill: #0969DA; }
-        .quote { fill: #24292F; }
-      }
-    </style>
-  </defs>
-
-  <g id="snake-quote" class="quote-container">
-    <text y="40" dominant-baseline="middle">
-      <tspan class="accent">▸ </tspan>
-      <tspan class="quote">Observability over complacency. — Operator</tspan>
-    </text>
-  </g>
+<svg width="1000" height="120" viewBox="0 0 1000 120" xmlns="http://www.w3.org/2000/svg">
+<rect width="1000" height="120" fill="#0d1117"/>
+<text x="0" y="75" font-family="sans-serif" font-size="42" fill="#58a6ff" font-weight="900" style="letter-spacing:2px">
+  𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ ◈ SYSTEMS DESIGNER ◈ PRODUCT ARCHITECT ◈ AUTOMATION ENGINEER
+  <animate attributeName="x" from="1000" to="-2200" dur="18s" repeatCount="indefinite" />
+</text>
 </svg>

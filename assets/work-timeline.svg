@@ -1,0 +1,13 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+<rect width="600" height="600" fill="#0d1117"/>
+<path d="M120 50v500" stroke="#30363d" stroke-dasharray="4 4"/>
+<circle cx="120" cy="100" r="6" fill="#f0883e"/>
+<text x="145" y="105" font-family="sans-serif" fill="#ffffff" font-size="20" font-weight="bold">SPECTRE SURFACE v4.1</text>
+<text x="145" y="130" font-family="sans-serif" fill="#8b949e" font-size="14">Core Infrastructure Engine</text>
+<circle cx="120" cy="280" r="6" fill="#f0883e"/>
+<text x="145" y="285" font-family="sans-serif" fill="#ffffff" font-size="20" font-weight="bold">STEALTH PROXY SYSTEM</text>
+<text x="145" y="310" font-family="sans-serif" fill="#8b949e" font-size="14">Network Obfuscation Layer</text>
+<circle cx="120" cy="460" r="6" fill="#f0883e"/>
+<text x="145" y="465" font-family="sans-serif" fill="#ffffff" font-size="20" font-weight="bold">PHOTEXT PLATFORM</text>
+<text x="145" y="490" font-family="sans-serif" fill="#8b949e" font-size="14">Digital Content API</text>
+</svg>

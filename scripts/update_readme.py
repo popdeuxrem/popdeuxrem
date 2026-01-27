@@ -26,7 +26,8 @@ def get_git_sha():
 def get_security_data():
     try:
         report_path = 'dist/security-report.json'
-        if not os.path.exists(report_path): return {"hygiene": "PENDING", "vulnerabilities": {"critical": 0, "high": 0}}
+        if not os.path.exists(report_path): 
+            return {"hygiene": "PENDING", "vulnerabilities": {"critical": 0, "high": 0}}
         with open(report_path, 'r') as f:
             return json.load(f)
     except:
@@ -38,7 +39,7 @@ def run_build():
     # 0. Infrastructure Audit
     subprocess.run(["bash", "scripts/vuln_scan.sh"], check=False)
     sec_data = get_security_data()
-    v = sec_data['vulnerabilities']
+    v = sec_data.get('vulnerabilities', {"critical": 0, "high": 0})
     
     # 1. State Intelligence (Alert Logic)
     is_alert = v.get('critical', 0) > 0 or v.get('high', 0) > 0
@@ -46,28 +47,29 @@ def run_build():
     status_label = "BREACH_RISK" if is_alert else "NOMINAL"
     
     # 2. Visual Layer Regeneration
+    # Note: build_visuals() generates the unique sections for the v4.1 design
     build_header()
-    build_glitch()  # Now state-aware via dist/security-report.json
+    build_glitch()  
     build_matrix()
     build_telemetry()
     build_heatline()
     build_security()
     build_waveform(0.8)
     build_visuals()
-    build_reports() # Generate docs/deployments/*.md
+    build_reports() 
     
     # 3. Context & Payload Mapping
     vessels = fetch_github_metrics("popdeuxrem")
     repo_url = "https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main"
     ts = int(time.time())
     
-    sec_summary = f"🛡️ SEC_AUDIT: {sec_data['hygiene']} | CRIT:{v.get('critical', 0)} HIGH:{v.get('high', 0)} | STATUS: {status_label}"
+    sec_summary = f"🛡️ SEC_AUDIT: {sec_data.get('hygiene', 'UNKNOWN')} | CRIT:{v.get('critical', 0)} HIGH:{v.get('high', 0)} | STATUS: {status_label}"
 
     data = {
         "GLITCH_GLYPH": f'<span style="color:{glyph_color}">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</span>',
-        "GLITCH_SNAKE": f'<img src="{repo_url}/assets/glitch_snake.svg?v={ts}" width="1000" alt="THE GLITCH" />',
-        "TELEMETRY_PANEL": f'<img src="{repo_url}/assets/telemetry-panel.svg?v={ts}" width="800" alt="Telemetry" />',
-        "SKILL_MATRIX": f'<img src="{repo_url}/assets/capability-matrix.svg?v={ts}" width="800" />',
+        "GLITCH_SNAKE": f'<img src="{repo_url}/assets/snake-quote.svg?v={ts}" width="1000" alt="THE GLITCH" />',
+        "TELEMETRY_PANEL": f'<img src="{repo_url}/assets/telemetry-dashboard.svg?v={ts}" width="900" alt="Telemetry" />',
+        "SKILL_MATRIX": f'<img src="{repo_url}/assets/stack-grid.svg?v={ts}" width="800" />',
         "VESSEL_MANIFEST": render_vessel_table(vessels),
         "SECURITY_SUMMARY": sec_summary,
         "GIT_SHA": get_git_sha(),

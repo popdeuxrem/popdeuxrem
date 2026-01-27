@@ -1,0 +1,12 @@
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+<rect width="800" height="300" rx="8" fill="#161b22" stroke="#30363d"/>
+<circle cx="20" cy="20" r="5" fill="#ff5f56"/><circle cx="40" cy="20" r="5" fill="#ffbd2e"/><circle cx="60" cy="20" r="5" fill="#27c93f"/>
+<text x="25" y="65" font-family="monospace" font-size="15" fill="#39d353">
+  <tspan x="25" dy="1.2em">root@quantum:~# cat philosophy.core</tspan>
+  <tspan x="25" dy="2.0em" fill="#8b949e">01. Eliminate unnecessary abstractions.</tspan>
+  <tspan x="25" dy="1.4em" fill="#8b949e">02. Observability is the prerequisite for control.</tspan>
+  <tspan x="25" dy="1.4em" fill="#8b949e">03. Code is a liability; systems are the asset.</tspan>
+  <tspan x="25" dy="2.0em" fill="#ffffff">INTENT: HIGH_AVAILABILITY_SURFACE</tspan>
+  <tspan x="25" dy="1.4em" fill="#58a6ff">█</tspan>
+</text>
+</svg>
