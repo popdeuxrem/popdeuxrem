@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-01-27T00:37:22Z",
+  "timestamp": "2026-01-27T00:37:47Z",
   "vulnerabilities": {
     "critical": 0,
-    "high": 0,
+    "high": 1,
     "medium": 0
   },
   "hygiene": "PASS",
