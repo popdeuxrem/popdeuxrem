@@ -1,10 +1,1 @@
-{
-  "timestamp": "2026-01-27T01:11:31Z",
-  "vulnerabilities": {
-    "critical": 0,
-    "high": 0,
-    "medium": 0
-  },
-  "hygiene": "PASS",
-  "engine_version": "QuantumSec/v1.0.9"
-}
+{"hygiene": "PASS", "vulnerabilities": {"critical": 0, "high": 0, "medium": 0}, "engine_version": "QuantumSec/v1.0.9"}

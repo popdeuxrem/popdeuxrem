@@ -41,6 +41,7 @@
 │   ├── discovery.py
 │   ├── fetch_telemetry.py
 │   ├── generate_axiom.py
+│   ├── generate_capability_matrix.py
 │   ├── generate_header.py
 │   ├── generate_heatline.py
 │   ├── generate_metrics.py
