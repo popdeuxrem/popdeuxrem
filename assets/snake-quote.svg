@@ -13,7 +13,7 @@
 
       @keyframes snake-scroll {
         from { transform: translateX(1200px); }
-        to { transform: translateX(-812px); }
+        to { transform: translateX(-752px); }
       }
 
       #snake-quote {
@@ -34,7 +34,7 @@
   <g id="snake-quote" class="quote-container">
     <text y="40" dominant-baseline="middle">
       <tspan class="accent">▸ </tspan>
-      <tspan class="quote">Latency is the enemy of architecture. — Systems</tspan>
+      <tspan class="quote">Observability over complacency. — Operator</tspan>
     </text>
   </g>
 </svg>

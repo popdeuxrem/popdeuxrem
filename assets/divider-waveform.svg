@@ -1,5 +1,11 @@
-<svg width="800" height="40" viewBox="0 0 800 40" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0 20 Q 200 0, 400 20 T 800 20" stroke="#30363d" fill="transparent" stroke-width="1">
-    <animate attributeName="d" values="M0 20 Q 200 0, 400 20 T 800 20; M0 20 Q 200 40, 400 20 T 800 20; M0 20 Q 200 0, 400 20 T 800 20" dur="5s" repeatCount="indefinite" />
+<svg width="800" height="60" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 30H300L310 10L325 50L340 30H360L370 20L385 40L400 30H800" stroke="#00FF9D" stroke-width="2" stroke-opacity="0.3" />
+  <path d="M0 30H300L310 10L325 50L340 30H360L370 20L385 40L400 30H800" stroke="#00FF9D" stroke-width="2">
+    <animate attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="1.0s" repeatCount="indefinite" />
   </path>
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
 </svg>

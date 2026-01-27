@@ -1,40 +1,39 @@
 #!/bin/bash
 
-# terminal-shot.sh v1.0.0
-# Purpose: Automate CLI animation capture using centralized config.
-# Dependencies: terminalizer (npm install -g terminalizer)
+# Configuration
+OUTPUT="assets/quantum-terminal.svg"
+TITLE="popdeuxrem@system:~/surface"
 
-set -e
+# Generate tree structure (excluding noisy dirs)
+TREE_DATA=$(tree -L 2 -I "__pycache__|dist|node_modules|.git" --noreport)
 
-CONFIG_PATH="config/terminalizer.yml"
-OUTPUT_DIR="assets/deployments"
-mkdir -p "$OUTPUT_DIR"
+cat << SVG > $OUTPUT
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  
+  <rect width="100%" height="30" rx="10" fill="#161b22"/>
+  <circle cx="20" cy="15" r="4" fill="#ff5f56"/>
+  <circle cx="35" cy="15" r="4" fill="#ffbd2e"/>
+  <circle cx="50" cy="15" r="4" fill="#27c93f"/>
+  <text x="300" y="20" font-family="monospace" font-size="12" fill="#8b949e" text-anchor="middle">$TITLE</text>
 
-if ! command -v terminalizer &> /dev/null; then
-    echo "◈ ERROR: terminalizer not found. Install via: npm install -g terminalizer"
-    exit 1
-fi
+  <foreignObject x="20" y="50" width="560" height="330">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .tree { color: #58a6ff; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.4; white-space: pre; }
+        .dir { color: #d29922; font-weight: bold; }
+      </style>
+      <div class="tree">$TREE_DATA</div>
+    </div>
+  </foreignObject>
+  
+  <rect width="100%" height="100%" fill="url(#scanlines)" opacity="0.05" pointer-events="none"/>
+  <defs>
+    <pattern id="scanlines" width="100%" height="4" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="2" fill="#fff"/>
+    </pattern>
+  </defs>
+</svg>
+SVG
 
-record_session() {
-    local project_name=$1
-    echo "◈ INITIALIZING RECORDING FOR: $project_name"
-    echo "◈ Press CTRL+D to stop recording when finished."
-    
-    terminalizer record "$project_name" --config "$CONFIG_PATH"
-}
-
-render_gif() {
-    local project_name=$1
-    echo "◈ RENDERING GIF..."
-    terminalizer render "$project_name" -o "$OUTPUT_DIR/$project_name.gif"
-    echo "◈ SUCCESS: $OUTPUT_DIR/$project_name.gif generated."
-}
-
-# Main Execution
-if [ -z "$1" ]; then
-    echo "Usage: bash scripts/terminal_shot.sh <project_name>"
-    exit 1
-fi
-
-record_session "$1"
-render_gif "$1"
+echo "◈ Blueprint generated: $OUTPUT"

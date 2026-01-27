@@ -1,4 +1,8 @@
-<svg fill="none" viewBox="0 0 800 200" width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+#!/usr/bin/env python3
+import os
+
+def generate_header():
+    svg_content = """<svg fill="none" viewBox="0 0 800 200" width="800" height="200" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
@@ -56,4 +60,11 @@
       </div>
     </div>
   </foreignObject>
-</svg>
+</svg>"""
+    os.makedirs('assets', exist_ok=True)
+    with open('assets/header-plate.svg', 'w') as f:
+        f.write(svg_content)
+    print("◈ Header evolved and regenerated.")
+
+if __name__ == "__main__":
+    generate_header()
