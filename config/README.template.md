@@ -1,9 +1,9 @@
-# {{GLITCH_GLYPH}} · 🜂 QUANTUM SURFACE · v3.1
+# {{GLITCH_GLYPH}} · 🜂 QUANTUM SURFACE · v3.2.1
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/header-plate.svg" width="800" alt="Quantum Header" />
 
-  {{SNAKE_QUOTE}}
+  {{GLITCH_SNAKE}}
 
   [Thesis](#-engineering-thesis) · [Stack](#-operational-stack) · [Deployments](#-architecture--deployments) · [Telemetry](#-telemetry)
 </div>
@@ -11,6 +11,7 @@
 <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/divider-waveform.svg" width="800" />
 
 ## ◈ ENGINEERING THESIS
+
 > **"Systems are living organisms. Architect for evolution, or prepare for extinction."**
 
 As a **Principal Engineer & Product Architect**, I design high-integrity automation and reversible infrastructure.  
@@ -19,20 +20,34 @@ The operating model is the **Observable Operator** pattern: every action logged,
 {{ASCII_DIVIDER}}
 
 ## ⬡ OPERATIONAL STACK
+
 {{SKILL_MATRIX}}
+
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/quantum-divider.svg" width="800" />
+
+## ⚠ ARCHITECTURE & DEPLOYMENTS
+
+### Deployed Vessels (Ops Manifest)
+{{VESSEL_MANIFEST}}
 
 ---
 
 ## ▣ TELEMETRY
+
 <div align="center">
-  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/telemetry-panel.svg" width="800" />
-  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/activity-heatline.svg" width="800" />
+  {{TELEMETRY_PANEL}}
+  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/activity-heatline.svg" width="800" alt="Activity Heatline" />
 </div>
 
 ### Security Telemetry
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/security-status.svg" width="800" />
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/security-status.svg" width="800" alt="Security Status" />
+
+`{{SECURITY_SUMMARY}}`
+
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/divider-waveform.svg" width="800" />
 
 ## ⚡ UPLINK
+
 ```yaml
 contact:
   email: popdeuxrem@gateway.net
