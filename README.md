@@ -1,65 +1,74 @@
-# 𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ · 🜂 QUANTUM SURFACE · v3.2.1
+# <span style="color:#ff0000">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</span> · 🜂 QUANTUM SURFACE · v4.1
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/header-plate.svg" width="800" alt="Quantum Header" />
+<p align="center">
+  <img src="assets/header-plate.svg" width="800" alt="Quantum Header" />
+  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/glitch_snake.svg?v=1769480121" width="1000" alt="THE GLITCH" />
+</p>
 
-  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/glitch_snake.svg?v=1769478621" width="1000" alt="THE GLITCH" />
+<p align="center">
+  <img src="https://img.shields.io/badge/build-passing-brightgreen?style=flat-square" alt="Build Status" />
+  <img src="https://img.shields.io/badge/version-4.1-blue?style=flat-square" alt="Version" />
+  <img src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square" alt="License" />
+</p>
 
-  [Thesis](#-engineering-thesis) · [Stack](#-operational-stack) · [Deployments](#-architecture--deployments) · [Telemetry](#-telemetry)
-</div>
+---
 
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/divider-waveform.svg" width="800" />
+## ✨ Introduction
+The Glitch is an experimental **systems engineering meta-surface** combining real-time telemetry, reversible automation, and signal integrity visualization.
 
-## ◈ ENGINEERING THESIS
+---
 
-> **"Systems are living organisms. Architect for evolution, or prepare for extinction."**
+## 🚀 Operational Access
+<details>
+<summary><b>◈ QUICK START / CLI ACCESS</b></summary>
 
-As a **Principal Engineer & Product Architect**, I design high-integrity automation and reversible infrastructure.  
-The operating model is the **Observable Operator** pattern: every action logged, every state versioned, every failure interrogable.
+```bash
+# Clone and Hydrate
+git clone [https://github.com/popdeuxrem/popdeuxrem.git](https://github.com/popdeuxrem/popdeuxrem.git)
+cd popdeuxrem
+pip install -r requirements.txt
+python3 scripts/update_readme.py
 
-
-```text
-[ ◈ -------------------------------------------------- ◈ ]
-```
-
-
-## ⬡ OPERATIONAL STACK
-
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/capability-matrix.svg?v=1769478621" width="800" alt="Skill Matrix" />
-
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/quantum-divider.svg" width="800" />
-
-## ⚠ ARCHITECTURE & DEPLOYMENTS
-
-### Deployed Vessels (Ops Manifest)
+</details>
+🧬 Architecture & Deployments
+<details>
+<summary><b>◈ TOPOLOGY & VESSEL MANIFEST</b></summary>
+System Topology
+<p align="center">
+<img src="assets/system-topology.svg" width="800" alt="System Topology" />
+</p>
+Deployed Vessels
 | Vessel | Description | Stack | Metrics | Status |
 | :--- | :--- | :--- | :--- | :---: |
-| **[popdeuxrem](https://github.com/popdeuxrem/popdeuxrem)** | PopdeuxRem | `Python` | ⭐ 0 🍴 0 | `ACTIVE` |
 | **[iPhone-proxy-system](https://github.com/popdeuxrem/iPhone-proxy-system)** | No description provided. | `JavaScript` | ⭐ 0 🍴 0 | `ACTIVE` |
+| **[popdeuxrem](https://github.com/popdeuxrem/popdeuxrem)** | PopdeuxRem | `Python` | ⭐ 0 🍴 0 | `ACTIVE` |
 | **[Photext](https://github.com/popdeuxrem/Photext)** | No description provided. | `TypeScript` | ⭐ 0 🍴 0 | `ACTIVE` |
 | **[pac-host](https://github.com/popdeuxrem/pac-host)** | No description provided. | `HTML` | ⭐ 0 🍴 0 | `ACTIVE` |
 | **[lysergic-sass](https://github.com/popdeuxrem/lysergic-sass)** | No description provided. | `TypeScript` | ⭐ 0 🍴 0 | `ACTIVE` |
 
-
----
-
-## ▣ TELEMETRY
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/telemetry-panel.svg?v=1769478621" width="800" alt="Telemetry" />
-  <img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/activity-heatline.svg" width="800" alt="Activity Heatline" />
-</div>
-
-### Security Telemetry
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/security-status.svg" width="800" alt="Security Status" />
-
-`🛡️ SEC_AUDIT: DEGRADED | CRIT:0 HIGH:8 MED:0 | QuantumSec/v1.0.9-audit`
-
-<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/divider-waveform.svg" width="800" />
-
-## ⚡ UPLINK
-
-```yaml
+</details>
+📊 Telemetry & Logic
+<details>
+<summary><b>◈ SYSTEM PERFORMANCE & SKILLS</b></summary>
+<p align="center">
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/telemetry-panel.svg?v=1769480121" width="800" alt="Telemetry" />
+<img src="assets/activity-heatline.svg" width="800" alt="Activity Heatline" />
+</p>
+Capability Matrix
+<img src="https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main/assets/capability-matrix.svg?v=1769480121" width="800" />
+</details>
+🛡 Security & Integrity
+<details>
+<summary><b>◈ AUDIT LOGS & VULNERABILITY REPORT</b></summary>
+<p align="center">
+<img src="assets/security-status.svg" width="800" alt="Security Status" />
+</p>
+> AUDIT_SUMMARY: 🛡️ SEC_AUDIT: DEGRADED | CRIT:0 HIGH:8 | STATUS: BREACH_RISK
+> 
+</details>
+⚡ UPLINK
+<details>
+<summary><b>◈ CONTACT & SIGNATURE</b></summary>
 contact:
   email: popdeuxrem@gateway.net
   github: "@popdeuxrem"
@@ -67,7 +76,8 @@ contact:
   automation: ACTIVE
 
 <div align="center">
-<code>BUILD_SIG: 6a8b0de · 𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</code> · <code>2026-01-27 01:50:21 UTC</code>
+<code>BUILD_SIG: 3b0a7d0 · <span style="color:#ff0000">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</span></code> · <code>2026-01-27 02:15:21 UTC</code>
 <br />
-<sub>Generated by QuantumProfileSurface/v3.2.1</sub>
+<sub>Generated by QuantumProfileSurface/v4.1-AlertAware</sub>
 </div>
+</details>

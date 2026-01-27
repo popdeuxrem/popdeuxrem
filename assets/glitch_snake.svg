@@ -2,23 +2,25 @@
   <rect width="1000" height="200" fill="#0d1117"/>
   <defs>
     <filter id="f1">
-      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.4" numOctaves="1" result="warp">
-        <animate attributeName="baseFrequency" values="0.01 0.4;0.05 0.2;0.01 0.4" dur="0.1s" repeatCount="indefinite" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.4" numOctaves="2" result="warp">
+        <animate attributeName="baseFrequency" values="0.01 0.4;0.1 0.3;0.01 0.4" dur="0.05s" repeatCount="indefinite" />
       </feTurbulence>
-      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="60" in="SourceGraphic" in2="warp" />
     </filter>
   </defs>
 
   <g opacity="0.4">
-    <text x="0" y="180" font-family="monospace" font-size="14" fill="#4ade80">
+    <text x="0" y="180" font-family="monospace" font-size="14" fill="#8b0000">
       <tspan>🜂 ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─ ─ ◈ ─</tspan>
-      <animateTransform attributeName="transform" type="translate" from="0 0" to="-200 0" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-200 0" dur="2s" repeatCount="indefinite" />
     </text>
   </g>
 
   <g font-family="monospace" font-size="64" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
-    <text x="502" y="100" fill="#ff0000" opacity="0.6" filter="url(#f1)">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</text>
-    <text x="498" y="100" fill="#00f3ff" opacity="0.6" filter="url(#f1)">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</text>
-    <text x="500" y="100" fill="#ffffff">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</text>
+    <text x="502" y="100" fill="#ff0000" opacity="0.8" filter="url(#f1)">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</text>
+    <text x="498" y="100" fill="#8b0000" opacity="0.8" filter="url(#f1)">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</text>
+    <text x="500" y="100" fill="#ff0000">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</text>
   </g>
+  
+  <rect width='1000' height='200' fill='red' opacity='0.05' filter='url(#f1)'/>
 </svg>

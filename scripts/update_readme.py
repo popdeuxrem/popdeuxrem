@@ -3,6 +3,7 @@ import os
 import subprocess
 import datetime
 import json
+import time
 
 # Component Generators
 from generate_header import generate_header as build_header
@@ -21,25 +22,30 @@ def get_git_sha():
     except:
         return "DEV-UNCOMMITTED"
 
-def get_security_summary():
+def get_security_data():
     try:
         with open('dist/security-report.json', 'r') as f:
-            data = json.load(f)
-            v = data['vulnerabilities']
-            return f"🛡️ SEC_AUDIT: {data['hygiene']} | CRIT:{v['critical']} HIGH:{v['high']} MED:{v['medium']} | {data['engine_version']}"
+            return json.load(f)
     except:
-        return "🛡️ SEC_AUDIT: PENDING"
+        return {"hygiene": "UNKNOWN", "vulnerabilities": {"critical": 0, "high": 0}}
 
 def run_build():
-    print("◈ INITIALIZING SPECTRE HYDRATION...")
+    print("◈ INITIALIZING SPECTRE v4.1 HYDRATION [ALERT_AWARE]...")
     
-    # 0. Pre-build logic
+    # 0. Execute Scan
     subprocess.run(["bash", "scripts/vuln_scan.sh"], check=False)
-    subprocess.run(["bash", "scripts/terminal_shot.sh"], check=False)
+    sec_data = get_security_data()
+    v = sec_data['vulnerabilities']
     
-    # 1. Regenerate Visual Assets
+    # 1. Determine System State (Alert Logic)
+    # If CRIT > 0 or HIGH > 0, system enters ALERT status
+    is_alert = v['critical'] > 0 or v['high'] > 0
+    glyph_color = "#ff0000" if is_alert else "#00f3ff"
+    status_label = "BREACH_RISK" if is_alert else "NOMINAL"
+    
+    # 2. Regenerate Visual Assets
     build_header()
-    build_glitch()
+    build_glitch() # We can pass glyph_color here if script is updated to accept it
     build_matrix()
     build_telemetry()
     build_heatline()
@@ -47,34 +53,36 @@ def run_build():
     build_waveform(0.8)
     build_visuals()
     
-    # 2. Setup Context
+    # 3. Context & Payload Mapping
     vessels = fetch_github_metrics("popdeuxrem")
     repo_url = "https://raw.githubusercontent.com/popdeuxrem/popdeuxrem/main"
-    ts = int(datetime.datetime.now().timestamp())
+    ts = int(time.time())
     
-    # 3. Payload mapping
+    sec_summary = f"🛡️ SEC_AUDIT: {sec_data['hygiene']} | CRIT:{v['critical']} HIGH:{v['high']} | STATUS: {status_label}"
+
     data = {
-        "GLITCH_GLYPH": "𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ",
-        "SKILL_MATRIX": f'<img src="{repo_url}/assets/capability-matrix.svg?v={ts}" width="800" alt="Skill Matrix" />',
-        "LAST_SYNC": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
-        "VESSEL_MANIFEST": render_vessel_table(vessels),
-        "GIT_SHA": get_git_sha(),
-        "SECURITY_SUMMARY": get_security_summary(),
-        "GEN_VERSION": "QuantumProfileSurface/v3.2.1",
+        "GLITCH_GLYPH": f'<span style="color:{glyph_color}">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</span>',
         "GLITCH_SNAKE": f'<img src="{repo_url}/assets/glitch_snake.svg?v={ts}" width="1000" alt="THE GLITCH" />',
         "TELEMETRY_PANEL": f'<img src="{repo_url}/assets/telemetry-panel.svg?v={ts}" width="800" alt="Telemetry" />',
-        "ASCII_DIVIDER": "\n```text\n[ ◈ " + ("-" * 50) + " ◈ ]\n```\n"
+        "SKILL_MATRIX": f'<img src="{repo_url}/assets/capability-matrix.svg?v={ts}" width="800" />',
+        "VESSEL_MANIFEST": render_vessel_table(vessels),
+        "SECURITY_SUMMARY": sec_summary,
+        "GIT_SHA": get_git_sha(),
+        "LAST_SYNC": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+        "GEN_VERSION": "QuantumProfileSurface/v4.1-AlertAware"
     }
 
-    # 4. Inject into Template
+    # 4. Hydration
     with open('config/README.template.md', 'r') as f:
         content = f.read()
+
     for key, value in data.items():
         content = content.replace("{{" + key + "}}", str(value))
-    
+
     with open('README.md', 'w') as f:
         f.write(content)
-    print(f"◈ DEPLOYED v3.2.1 | SHA: {data['GIT_SHA']}")
+        
+    print(f"◈ DEPLOYMENT SUCCESSFUL | STATE: {status_label} | SHA: {data['GIT_SHA']}")
 
 if __name__ == "__main__":
     run_build()
