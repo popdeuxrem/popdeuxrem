@@ -100,6 +100,8 @@ def build_readme():
 </p>
 
 </div>
+
+<!-- LAST_UPDATED: {ts} -->
 """
 
     with open('README.md', 'w') as f:
