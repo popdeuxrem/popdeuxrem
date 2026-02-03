@@ -47,10 +47,10 @@ Purpose: Give a coding agent immediate, concrete context so it can make safe, de
 ## Copilot CLI & local tooling ⚙️
 - Copilot CLI quick-start: `gh extension install github/gh-copilot` and `gh auth login --web -p read:user,repo,workflow`.
 - Local quick-build (safe): `export PYTHONPATH=$PWD/scripts && bash scripts/update_readme.sh --dry-run` to verify changes, then run without `--dry-run` to commit.
-- To inline external assets safely: use `scripts/fetch_external_images.py` which downloads external images into `assets/` and updates `README.md` (creates `README.md.bak`). Use as a one-off; prefer adding images to `assets/` and referencing them in generators.
+- To inline external assets safely: use `scripts/fetch_external_images.py` which downloads external images into `assets/` and updates `README.md` (creates `README.md.bak`). Use as a one-off; prefer adding images to `assets/` and referencing them in generators. The script supports `--max-size-kb` (limits download size) and `--dry-run`. Avoid running this script in CI unless you explicitly whitelist sources.
 - New helper scripts added:
   - `scripts/update_readme.sh` — safe wrapper that regenerates README and commits only when diffs exist (supports `--dry-run`).
-  - `scripts/fetch_external_images.py` — utility to fetch external images into `assets/` and update README references.
+  - `scripts/fetch_external_images.py` — utility to fetch external images into `assets/` and update README references. Use `--dry-run` to preview changes and `--max-size-kb` to cap downloads.
 
 ---
 If any of the above is unclear or if you want a different level of detail (e.g., examples for making a new generator), tell me which area to expand. ✨

@@ -31,10 +31,15 @@ def fetch_github_metrics(username):
             vessels.append({
                 "name": repo['name'],
                 "desc": repo['description'] or "No description provided.",
+                "description": repo['description'] or "No description provided.",
                 "stars": repo['stargazers_count'],
+                "stargazers_count": repo['stargazers_count'],
                 "forks": repo['forks_count'],
+                "forks_count": repo['forks_count'],
                 "lang": repo['language'] or "Misc",
+                "language": repo['language'] or "Misc",
                 "url": repo['html_url'],
+                "html_url": repo['html_url'],
                 "status": status,
                 "updated_at": repo['updated_at']
             })
