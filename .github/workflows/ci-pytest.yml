@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    name: Test (pytest)
+    name: "Test (pytest)"
     runs-on: ubuntu-latest
     steps:
       - name: 🛰 Checkout
@@ -36,7 +36,7 @@ jobs:
           pytest -q
 
   smoke:
-    name: Smoke: README regen
+    name: "Smoke: README regen"
     runs-on: ubuntu-latest
     needs: test
     steps:
