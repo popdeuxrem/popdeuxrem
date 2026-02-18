@@ -1,0 +1,104 @@
+<svg width="1200" height="120" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #0d1117; }
+    .contrib { fill: #0d1117; }
+    .contrib-1 { fill: #0e4429; }
+    .contrib-2 { fill: #006d32; }
+    .contrib-3 { fill: #26a641; }
+    .contrib-4 { fill: #39d353; }
+    .snake-head { fill: #00f3ff; }
+    .snake-body { fill: #00f3ff; opacity: 0.7; }
+    .snake-path { stroke: #00f3ff; stroke-width: 3; fill: none; stroke-linecap: round; stroke-dasharray: 1200; animation: drawSnake 8s linear infinite; }
+    @keyframes drawSnake { 0% { stroke-dashoffset: 1200; } 100% { stroke-dashoffset: 0; } }
+    
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f8fa; }
+      .contrib { fill: #eaeef2; }
+      .contrib-1 { fill: #9be9a8; }
+      .contrib-2 { fill: #40c463; }
+      .contrib-3 { fill: #30a14e; }
+      .contrib-4 { fill: #216e39; }
+      .snake-head, .snake-body { fill: #0969da; }
+      .snake-path { stroke: #0969da; }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .snake-path { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+  
+  <rect class="bg" width="1200" height="120"/>
+  
+  <g transform="translate(50, 10)">
+    <g>
+      <rect class="contrib" width="10" height="10" x="0" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="11" y="0"/>
+      <rect class="contrib" width="10" height="10" x="22" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="33" y="0"/>
+      <rect class="contrib contrib-3" width="10" height="10" x="44" y="0"/>
+      <rect class="contrib" width="10" height="10" x="55" y="0"/>
+      <rect class="contrib contrib-4" width="10" height="10" x="66" y="0"/>
+    </g>
+    <g transform="translate(0, 11)">
+      <rect class="contrib contrib-1" width="10" height="10" x="0" y="0"/>
+      <rect class="contrib" width="10" height="10" x="11" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="22" y="0"/>
+      <rect class="contrib" width="10" height="10" x="33" y="0"/>
+      <rect class="contrib contrib-3" width="10" height="10" x="44" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="55" y="0"/>
+      <rect class="contrib" width="10" height="10" x="66" y="0"/>
+    </g>
+    <g transform="translate(0, 22)">
+      <rect class="contrib contrib-3" width="10" height="10" x="0" y="0"/>
+      <rect class="contrib contrib-4" width="10" height="10" x="11" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="22" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="33" y="0"/>
+      <rect class="contrib" width="10" height="10" x="44" y="0"/>
+      <rect class="contrib contrib-3" width="10" height="10" x="55" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="66" y="0"/>
+    </g>
+    <g transform="translate(0, 33)">
+      <rect class="contrib" width="10" height="10" x="0" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="11" y="0"/>
+      <rect class="contrib contrib-3" width="10" height="10" x="22" y="0"/>
+      <rect class="contrib contrib-4" width="10" height="10" x="33" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="44" y="0"/>
+      <rect class="contrib" width="10" height="10" x="55" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="66" y="0"/>
+    </g>
+    <g transform="translate(0, 44)">
+      <rect class="contrib contrib-2" width="10" height="10" x="0" y="0"/>
+      <rect class="contrib" width="10" height="10" x="11" y="0"/>
+      <rect class="contrib contrib-4" width="10" height="10" x="22" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="33" y="0"/>
+      <rect class="contrib" width="10" height="10" x="44" y="0"/>
+      <rect class="contrib contrib-3" width="10" height="10" x="55" y="0"/>
+      <rect class="contrib contrib-4" width="10" height="10" x="66" y="0"/>
+    </g>
+    <g transform="translate(0, 55)">
+      <rect class="contrib contrib-1" width="10" height="10" x="0" y="0"/>
+      <rect class="contrib contrib-3" width="10" height="10" x="11" y="0"/>
+      <rect class="contrib" width="10" height="10" x="22" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="33" y="0"/>
+      <rect class="contrib contrib-4" width="10" height="10" x="44" y="0"/>
+      <rect class="contrib" width="10" height="10" x="55" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="66" y="0"/>
+    </g>
+    <g transform="translate(0, 66)">
+      <rect class="contrib contrib-4" width="10" height="10" x="0" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="11" y="0"/>
+      <rect class="contrib contrib-2" width="10" height="10" x="22" y="0"/>
+      <rect class="contrib" width="10" height="10" x="33" y="0"/>
+      <rect class="contrib contrib-3" width="10" height="10" x="44" y="0"/>
+      <rect class="contrib contrib-1" width="10" height="10" x="55" y="0"/>
+      <rect class="contrib" width="10" height="10" x="66" y="0"/>
+    </g>
+  </g>
+  
+  <path class="snake-path" d="M 60,50 Q 200,30 300,60 T 500,40 T 700,70 T 900,50 T 1100,60"/>
+  
+  <circle class="snake-head" cx="1100" cy="60" r="5">
+    <animate attributeName="cx" values="60;200;400;600;800;1000;1100;60" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="50;30;70;40;60;50;60;50" dur="8s" repeatCount="indefinite"/>
+  </circle>
+</svg>

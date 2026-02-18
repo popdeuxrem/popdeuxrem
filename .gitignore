@@ -1,14 +1,61 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# POPDEUXREM .gitignore v7.0
+# ═══════════════════════════════════════════════════════════════════════════
+
 # System
 .DS_Store
 Thumbs.db
+*.swp
+*.swo
+*~
 
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
 venv/
+.venv/
 .env
+.env.*
+*.egg-info/
+.eggs/
+dist/*.json
 
 # Node
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Keep dist/ for GitHub Profile!
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+.project
+.pydevproject
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Build artifacts
+*.log
+*.tmp
+*.bak
+*_backup.svg
+
+# Secrets (never commit)
+secrets/
+*.pem
+*.key
+credentials.json
+service-account.json
+
+# Keep these directories
+!dist/*.svg
+!assets/*.svg

@@ -1,0 +1,22 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #0d1117; }
+    .quote-text { font-family: 'SF Pro Display', -apple-system, sans-serif; font-size: 16px; fill: #e6edf3; font-style: italic; }
+    .glow { fill: #00f3ff; }
+    .accent { fill: #bc8cff; font-size: 10px; font-family: 'SF Mono', monospace; }
+    
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f8fa; }
+      .quote-text { fill: #24292f; }
+      .glow { fill: #0969da; }
+      .accent { fill: #8250df; }
+    }
+  </style>
+  
+  <rect class="bg" width="400" height="100"/>
+  
+  <text class="quote-text glow" x="200" y="40" text-anchor="middle">"Observability is currency"</text>
+  <text class="accent" x="200" y="65" text-anchor="middle">— PopDeuxRem</text>
+  
+  <line x1="50" y1="80" x2="350" y2="80" stroke="#30363d" stroke-width="0.5"/>
+</svg>
