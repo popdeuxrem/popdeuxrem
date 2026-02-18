@@ -63,7 +63,7 @@
 <!-- 9. FOOTER SIGNATURE (Cryptographic Finality) -->
 ---
 <p align="right">
-    <code>BUILD: Surface/v5 · 2026-02-17 12:57 UTC · SHA256:8ad10b2f · invariant</code>
+    <code>BUILD: Surface/v5 · 2026-02-18 01:57 UTC · SHA256:61df2d0b · invariant</code>
 </p>
 
 </div>
