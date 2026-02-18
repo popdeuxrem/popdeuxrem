@@ -156,8 +156,8 @@
   </g>
   <line class="accent-line" x1="200" y1="50" x2="600" y2="50" stroke-dasharray="100"/>
   <g class="quote-reveal">
-    <text class="quote-text" x="400" y="80" text-anchor="middle">"Velocity is a vector, not a scalar."</text>
-    <text class="author-text" x="400" y="108" text-anchor="middle" filter="url(#quote-glow)">— Systems</text>
+    <text class="quote-text" x="400" y="80" text-anchor="middle">"Silent failure is the ultimate threat."</text>
+    <text class="author-text" x="400" y="108" text-anchor="middle" filter="url(#quote-glow)">— Architect</text>
   </g>
   <line class="accent-line" x1="250" y1="120" x2="550" y2="120" stroke-dasharray="100"/>
   <g opacity="0.08">
