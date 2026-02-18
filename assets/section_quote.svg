@@ -1,167 +1,111 @@
 <svg width="800" height="150" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="quote-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0d1117"/>
-      <stop offset="50%" stop-color="#161b22"/>
-      <stop offset="100%" stop-color="#0d1117"/>
-    </linearGradient>
-    <linearGradient id="particle-rise" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#f0883e" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#f0883e" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="particle-blur">
-      <feGaussianBlur stdDeviation="0.8"/>
-    </filter>
-    <filter id="quote-glow">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="quote-blur">
+      <feGaussianBlur stdDeviation="0.5"/>
     </filter>
   </defs>
+  
   <style>
-    .bg-dark { fill: #0d1117; }
-    .quote-text { 
-      font-family: Georgia, 'Times New Roman', serif; 
-      font-size: 18px; 
-      font-style: italic;
-      fill: #e6edf3;
-    }
-    .author-text {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      fill: #f0883e;
-    }
-    .quote-mark {
-      fill: #30363d;
-      opacity: 0.25;
-    }
-    .edge-particle {
-      fill: #f0883e;
-      opacity: 0;
-    }
-    .particle-up-1 { animation: rise-1 4s ease-out infinite; }
-    .particle-up-2 { animation: rise-2 5s ease-out infinite; }
-    .particle-up-3 { animation: rise-3 6s ease-out infinite; }
-    .particle-up-4 { animation: rise-4 4.5s ease-out infinite; }
-    .particle-up-5 { animation: rise-5 5.5s ease-out infinite; }
-    .particle-up-6 { animation: rise-6 3.8s ease-out infinite; }
-    .particle-up-7 { animation: rise-7 5.2s ease-out infinite; }
-    .particle-up-8 { animation: rise-8 4.2s ease-out infinite; }
-    .particle-up-9 { animation: rise-9 6.2s ease-out infinite; }
-    .particle-up-10 { animation: rise-10 5s ease-out infinite; }
-    @keyframes rise-1 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      20% { opacity: 0.7; }
-      100% { opacity: 0; transform: translate(-15px, -80px) scale(0.3); }
-    }
-    @keyframes rise-2 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      15% { opacity: 0.6; }
-      100% { opacity: 0; transform: translate(10px, -90px) scale(0.2); }
-    }
-    @keyframes rise-3 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      25% { opacity: 0.8; }
-      100% { opacity: 0; transform: translate(-8px, -75px) scale(0.4); }
-    }
-    @keyframes rise-4 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      30% { opacity: 0.5; }
-      100% { opacity: 0; transform: translate(20px, -85px) scale(0.25); }
-    }
-    @keyframes rise-5 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      20% { opacity: 0.65; }
-      100% { opacity: 0; transform: translate(-12px, -95px) scale(0.35); }
-    }
-    @keyframes rise-6 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      15% { opacity: 0.55; }
-      100% { opacity: 0; transform: translate(5px, -70px) scale(0.45); }
-    }
-    @keyframes rise-7 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      25% { opacity: 0.75; }
-      100% { opacity: 0; transform: translate(-18px, -88px) scale(0.28); }
-    }
-    @keyframes rise-8 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      20% { opacity: 0.6; }
-      100% { opacity: 0; transform: translate(12px, -78px) scale(0.38); }
-    }
-    @keyframes rise-9 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      30% { opacity: 0.5; }
-      100% { opacity: 0; transform: translate(-6px, -92px) scale(0.22); }
-    }
-    @keyframes rise-10 {
-      0% { opacity: 0; transform: translate(0, 0) scale(1); }
-      15% { opacity: 0.7; }
-      100% { opacity: 0; transform: translate(16px, -82px) scale(0.32); }
-    }
-    .quote-reveal {
-      opacity: 0;
-      animation: quote-fade 1.2s ease-out 0.3s forwards;
-    }
-    @keyframes quote-fade {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .accent-line {
-      stroke: #f0883e;
-      stroke-width: 1;
-      opacity: 0;
-      animation: line-reveal 1s ease-out 0.8s forwards;
-    }
-    @keyframes line-reveal {
-      0% { opacity: 0; stroke-dashoffset: 100; }
-      100% { opacity: 0.4; stroke-dashoffset: 0; }
-    }
-    @media (prefers-color-scheme: light) {
-      .bg-dark { fill: #f6f8fa; }
-      .quote-text { fill: #1f2328; }
-      .author-text { fill: #bd561d; }
-      .quote-mark { fill: #d0d7de; }
-      .edge-particle { fill: #bd561d; }
-      .accent-line { stroke: #bd561d; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .particle-up-1, .particle-up-2, .particle-up-3, .particle-up-4,
-      .particle-up-5, .particle-up-6, .particle-up-7, .particle-up-8,
-      .particle-up-9, .particle-up-10 { animation: none; opacity: 0.3; }
-      .quote-reveal, .accent-line { animation: none; opacity: 1; }
-    }
+    .bg { fill: #0d1117; }
+    .quote { font-family: Georgia, serif; font-size: 18px; font-style: italic; fill: #e6edf3; }
+    .author { font-family: monospace; font-size: 11px; fill: #f0883e; }
   </style>
-  <rect class="bg-dark" width="800" height="150"/>
-  <g filter="url(#particle-blur)">
-    <circle class="edge-particle particle-up-1" cx="50" cy="130" r="3"/>
-    <circle class="edge-particle particle-up-2" cx="75" cy="140" r="2"/>
-    <circle class="edge-particle particle-up-3" cx="100" cy="125" r="2.5"/>
-    <circle class="edge-particle particle-up-4" cx="700" cy="135" r="2"/>
-    <circle class="edge-particle particle-up-5" cx="725" cy="128" r="3"/>
-    <circle class="edge-particle particle-up-6" cx="750" cy="140" r="2"/>
-    <circle class="edge-particle particle-up-7" cx="45" cy="145" r="1.5"/>
-    <circle class="edge-particle particle-up-8" cx="755" cy="142" r="1.5"/>
-    <circle class="edge-particle particle-up-9" cx="125" cy="138" r="2"/>
-    <circle class="edge-particle particle-up-10" cx="680" cy="132" r="2.5"/>
+  
+  <rect class="bg" width="800" height="150"/>
+  
+  <g>
+    
+    <circle cx="283" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="6.0515232379296044s" repeatCount="indefinite" begin="0.405880330665237s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="6.0515232379296044s" repeatCount="indefinite" begin="0.405880330665237s"/>
+    </circle>
+    <circle cx="492" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.512962228333068s" repeatCount="indefinite" begin="1.995103085457071s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.512962228333068s" repeatCount="indefinite" begin="1.995103085457071s"/>
+    </circle>
+    <circle cx="522" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="7.082842064713438s" repeatCount="indefinite" begin="1.465353900124807s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.082842064713438s" repeatCount="indefinite" begin="1.465353900124807s"/>
+    </circle>
+    <circle cx="330" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.167229925511983s" repeatCount="indefinite" begin="1.853187157852732s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.167229925511983s" repeatCount="indefinite" begin="1.853187157852732s"/>
+    </circle>
+    <circle cx="484" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.488473652325993s" repeatCount="indefinite" begin="2.2281518599921126s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.488473652325993s" repeatCount="indefinite" begin="2.2281518599921126s"/>
+    </circle>
+    <circle cx="643" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.865805634503166s" repeatCount="indefinite" begin="1.883207557354471s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.865805634503166s" repeatCount="indefinite" begin="1.883207557354471s"/>
+    </circle>
+    <circle cx="106" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="4.112195550865174s" repeatCount="indefinite" begin="0.4942167653807419s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="4.112195550865174s" repeatCount="indefinite" begin="0.4942167653807419s"/>
+    </circle>
+    <circle cx="298" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="6.4252192697134465s" repeatCount="indefinite" begin="0.4653666847631738s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="6.4252192697134465s" repeatCount="indefinite" begin="0.4653666847631738s"/>
+    </circle>
+    <circle cx="313" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.917053194596901s" repeatCount="indefinite" begin="0.5075422092495743s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.917053194596901s" repeatCount="indefinite" begin="0.5075422092495743s"/>
+    </circle>
+    <circle cx="722" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="4.774692137204206s" repeatCount="indefinite" begin="1.5103529599223464s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="4.774692137204206s" repeatCount="indefinite" begin="1.5103529599223464s"/>
+    </circle>
+    <circle cx="666" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="7.756130711940747s" repeatCount="indefinite" begin="2.28031448264371s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.756130711940747s" repeatCount="indefinite" begin="2.28031448264371s"/>
+    </circle>
+    <circle cx="624" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="7.621907487091974s" repeatCount="indefinite" begin="1.2589553347065872s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.621907487091974s" repeatCount="indefinite" begin="1.2589553347065872s"/>
+    </circle>
+    <circle cx="416" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="7.463468638942725s" repeatCount="indefinite" begin="0.28301821918254877s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.463468638942725s" repeatCount="indefinite" begin="0.28301821918254877s"/>
+    </circle>
+    <circle cx="148" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.875349968608814s" repeatCount="indefinite" begin="1.7433747387415144s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.875349968608814s" repeatCount="indefinite" begin="1.7433747387415144s"/>
+    </circle>
+    <circle cx="668" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="7.227754933005801s" repeatCount="indefinite" begin="2.205792954395022s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.227754933005801s" repeatCount="indefinite" begin="2.205792954395022s"/>
+    </circle>
+    <circle cx="657" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.668148378224576s" repeatCount="indefinite" begin="1.5465676206693084s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.668148378224576s" repeatCount="indefinite" begin="1.5465676206693084s"/>
+    </circle>
+    <circle cx="61" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.728680447498514s" repeatCount="indefinite" begin="0.6436660520317322s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.728680447498514s" repeatCount="indefinite" begin="0.6436660520317322s"/>
+    </circle>
+    <circle cx="292" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="7.483293982348082s" repeatCount="indefinite" begin="0.4178398764350676s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.483293982348082s" repeatCount="indefinite" begin="0.4178398764350676s"/>
+    </circle>
+    <circle cx="517" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="7.2824934230010605s" repeatCount="indefinite" begin="1.7484866142770998s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="7.2824934230010605s" repeatCount="indefinite" begin="1.7484866142770998s"/>
+    </circle>
+    <circle cx="276" cy="140" r="2" fill="#f0883e" opacity="0">
+      <animate attributeName="cy" values="140;20" dur="5.304661694868947s" repeatCount="indefinite" begin="2.156159472757337s"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="5.304661694868947s" repeatCount="indefinite" begin="2.156159472757337s"/>
+    </circle>
   </g>
-  <g opacity="0.15">
-    <text class="quote-mark" x="140" y="95" font-family="Georgia, serif" font-size="120">"</text>
-    <text class="quote-mark" x="620" y="95" font-family="Georgia, serif" font-size="120">"</text>
-  </g>
-  <line class="accent-line" x1="200" y1="50" x2="600" y2="50" stroke-dasharray="100"/>
-  <g class="quote-reveal">
-    <text class="quote-text" x="400" y="80" text-anchor="middle">"Reversible state is the only truth."</text>
-    <text class="author-text" x="400" y="108" text-anchor="middle" filter="url(#quote-glow)">— Operator</text>
-  </g>
-  <line class="accent-line" x1="250" y1="120" x2="550" y2="120" stroke-dasharray="100"/>
-  <g opacity="0.08">
-    <rect x="0" y="0" width="800" height="1" fill="#f0883e"/>
-    <rect x="0" y="149" width="800" height="1" fill="#f0883e"/>
-  </g>
+  
+  <line x1="80" y1="60" x2="80" y2="110" stroke="#f0883e" stroke-width="3"/>
+  
+  <text class="quote" x="100" y="85">
+    <tspan>"Velocity is a vector, not a scalar."</tspan>
+  </text>
+  
+  <text class="author" x="700" y="120" text-anchor="end">— Systems</text>
+  
+  <text x="400" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#30363d">
+    ◈ QUANTUM_AXIOM // PARTICLE_EMANATION
+  </text>
 </svg>

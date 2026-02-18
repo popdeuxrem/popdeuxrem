@@ -1,3 +1,24 @@
-requests==2.31.0
-python-dateutil==2.8.2
-pyyaml==6.0.1
+# PopDeuxRem Quantum Surface v6.0
+# Core dependencies for README auto-generation
+
+# HTTP requests
+requests>=2.31.0
+
+# Date/time handling
+python-dateutil>=2.8.2
+
+# YAML parsing
+pyyaml>=6.0.1
+
+# Templating (optional - falls back gracefully)
+Jinja2>=3.1.0
+
+# Testing
+pytest>=8.0.0
+pytest-cov>=4.1.0
+
+# Security scanning
+pip-audit>=2.6.0
+
+# Code quality
+ruff>=0.1.0

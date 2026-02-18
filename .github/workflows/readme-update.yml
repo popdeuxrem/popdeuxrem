@@ -1,0 +1,77 @@
+name: README Auto-Update
+
+on:
+  schedule:
+    - cron: '0 6,18 * * *'
+  push:
+    branches: [ main ]
+    paths:
+      - 'portfolio.json'
+      - 'skills.json'
+      - 'timeline.json'
+      - 'data/*.json'
+      - 'scripts/build_readme.py'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (preview only)'
+        required: false
+        default: 'false'
+        type: boolean
+      verbose:
+        description: 'Verbose output'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 🛰 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Initialize Python Runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: 📦 Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: ⚙️ Build README
+        run: |
+          python scripts/build_readme.py ${{ inputs.verbose == 'true' && '--verbose' || '' }}
+        env:
+          PYTHONPATH: ${{ github.workspace }}/scripts
+
+      - name: 📡 Push Changes
+        if: inputs.dry_run != 'true'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add README.md assets/*.svg
+          
+          if ! git diff --cached --quiet; then
+            git commit -m "sys: quantum surface v6 sync [skip ci]"
+            git push origin main
+          else
+            echo "◈ No changes detected - README is current"
+          fi
+
+      - name: 📊 Summary
+        run: |
+          echo "## Quantum Surface v6.0 Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp:** $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status:** ✅ Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- **Assets Generated:** skills-neon.svg, timeline-quantum.svg, section_quote.svg" >> $GITHUB_STEP_SUMMARY
