@@ -1,0 +1,111 @@
+<svg width="1000" height="140" viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0.8"/>
+    </linearGradient>
+    <filter id="hero-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <style>
+    .bg { fill: #0d1117; }
+    .text-cyan { fill: #00f3ff; }
+    .text-magenta { fill: #bc8cff; }
+    .text-muted { fill: #484f58; }
+    .particle { fill: #00f3ff; }
+    
+    .matrix { font-family: monospace; font-size: 8px; fill: #00f3ff; opacity: 0.12; animation: rain 1.8s linear infinite; }
+    @keyframes rain { 0% { transform: translateY(-140px); } 100% { transform: translateY(140px); } }
+    
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+    
+    .boot { opacity: 0; animation: boot 0.4s ease-out forwards; }
+    .boot-1 { animation-delay: 0.2s; }
+    .boot-2 { animation-delay: 0.5s; }
+    .boot-3 { animation-delay: 0.8s; }
+    @keyframes boot { to { opacity: 1; } }
+    
+    .username { font-family: 'SF Pro Display', -apple-system, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.5px; opacity: 0; animation: reveal 1s ease-out 1.5s forwards; }
+    @keyframes reveal { to { opacity: 1; } }
+    
+    .cursor { animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
+    
+    .scan { animation: scan 4s linear infinite; }
+    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(300%); } }
+    
+    .mono { font-family: 'SF Mono', monospace; }
+    
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f8fa; }
+      .text-cyan { fill: #0969da; }
+      .text-magenta { fill: #8250df; }
+      .text-muted { fill: #57606a; }
+      .particle { fill: #0969da; }
+      .matrix { fill: #0969da; }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .matrix, .pulse, .boot, .username, .cursor, .scan { animation: none; opacity: 1; }
+    }
+  </style>
+  
+  <rect class="bg" width="1000" height="140"/>
+  
+  <g class="matrix">
+    <text x="50" y="20">1010101010</text>
+    <text x="150" y="60">01100101</text>
+    <text x="250" y="30">11010011</text>
+    <text x="350" y="90">00110101</text>
+    <text x="500" y="45">10011010</text>
+    <text x="650" y="75">01010111</text>
+    <text x="800" y="55">11100010</text>
+  </g>
+  
+  <g filter="url(#hero-glow)">
+    <circle class="particle pulse" cx="50" cy="30" r="2" style="animation-delay:0s"/>
+    <circle class="particle pulse" cx="150" cy="110" r="1.5" style="animation-delay:0.3s"/>
+    <circle class="particle pulse" cx="280" cy="45" r="2" style="animation-delay:0.6s"/>
+    <circle class="particle pulse" cx="550" cy="25" r="1.5" style="animation-delay:0.9s"/>
+    <circle class="particle pulse" cx="700" cy="115" r="2" style="animation-delay:1.2s"/>
+    <circle class="particle pulse" cx="850" cy="40" r="1.5" style="animation-delay:1.5s"/>
+    <circle class="particle pulse" cx="950" cy="100" r="2" style="animation-delay:1.8s"/>
+  </g>
+  
+  <g class="mono" font-size="9">
+    <text class="text-muted boot boot-1" x="30" y="40">[ BOOT ] Quantum surface online...</text>
+    <text class="text-cyan boot boot-2" x="30" y="55">[ OK ] Protocol stack loaded</text>
+    <text class="text-magenta boot boot-3" x="30" y="70">[ READY ] System operational</text>
+  </g>
+  
+  <g filter="url(#hero-glow)">
+    <text class="username text-cyan" x="420" y="65">PopDeuxRem</text>
+    <rect class="cursor" x="598" y="48" width="2" height="20" fill="#00f3ff"/>
+  </g>
+  
+  <g transform="translate(420, 80)">
+    <rect x="0" y="-10" width="200" height="14" rx="2" fill="#00f3ff" fill-opacity="0.1" stroke="#00f3ff" stroke-width="0.5" stroke-opacity="0.3"/>
+    <text class="mono text-cyan" x="8" y="1" font-size="10" letter-spacing="1">PRINCIPAL SYSTEMS ARCHITECT</text>
+  </g>
+  
+  <g transform="translate(870, 55)">
+    <circle cx="0" cy="0" r="4" fill="#00f3ff" class="pulse"/>
+    <text class="mono text-muted" x="12" y="3" font-size="8">STATUS: ONLINE</text>
+    <circle cx="0" cy="18" r="4" fill="#bc8cff" class="pulse" style="animation-delay:0.5s"/>
+    <text class="mono text-muted" x="12" y="21" font-size="8">SYNC: ACTIVE</text>
+    <circle cx="0" cy="36" r="4" fill="#3fb950" class="pulse" style="animation-delay:1s"/>
+    <text class="mono text-muted" x="12" y="39" font-size="8">MODE: QUANTUM</text>
+  </g>
+  
+  <line x1="0" y1="138" x2="1000" y2="138" stroke="#30363d" stroke-width="2"/>
+  <rect x="0" y="137" width="300" height="3" fill="url(#hero-grad)">
+    <animate attributeName="width" values="0;1000;0" dur="8s" repeatCount="indefinite"/>
+  </rect>
+  
+  <text class="mono text-muted" x="30" y="118" font-size="8">v7.0 // build:quantum.stable</text>
+</svg>

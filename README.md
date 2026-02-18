@@ -8,6 +8,14 @@
 
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/section_hero.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/section_hero.svg">
+  <img src="assets/section_hero.svg" width="1000" alt="PopDeuxRem Quantum Surface">
+</picture>
+
+<br/><br/>
+
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=00F3FF&center=true&vCenter=true&repeat=true&width=600&lines=%F0%9D%95%B1%F0%9D%96%86%F0%9D%96%87%F0%9D%96%8A%F0%9D%96%97%F0%9D%96%86%F0%9D%96%93%F0%9D%96%99" alt="Typing"/>
 
 <br/>
