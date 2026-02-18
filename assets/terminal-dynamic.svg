@@ -1,0 +1,67 @@
+<svg width="820" height="460" viewBox="0 0 820 460" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc">
+  <title id="title">PopDeuxRem Quantum Terminal — LIVE</title>
+  <desc id="desc">Dynamic terminal with typing animation, blinking cursor, quantum scanline</desc>
+  <defs>
+    <style>
+      .terminal { font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace; font-size: 15.2px; fill: #00ff9d; }
+      .prompt { fill: #00f3ff; font-weight: 500; }
+      .cursor { animation: blink 0.72s step-end infinite; }
+      .header { fill: #161b22; }
+      .scanline { animation: scan 4.2s linear infinite; opacity: 0.07; }
+      @keyframes blink { 50% { opacity: 0; } }
+      @keyframes scan { 0% { transform: translateY(-460px); } 100% { transform: translateY(460px); } }
+      .line { opacity: 0; animation: typeLine 0.65s steps(60,end) forwards; }
+      @keyframes typeLine { to { opacity: 1; } }
+      .l1 { animation-delay: 0.4s; }
+      .l2 { animation-delay: 1.8s; }
+      .l3 { animation-delay: 3.3s; }
+      .particle { animation: quantumFloat 3.8s ease-in-out infinite; }
+      @keyframes quantumFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+      @media (prefers-color-scheme: light) {
+        .terminal { fill: #1a7f37; }
+        .prompt { fill: #0969da; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cursor, .scanline, .line, .particle { animation: none; opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="820" height="460" rx="14" fill="#0d1117" stroke="#21262d" stroke-width="12"/>
+  <circle cx="28" cy="22" r="7" fill="#ff5f57"/>
+  <circle cx="52" cy="22" r="7" fill="#ffbd2e"/>
+  <circle cx="76" cy="22" r="7" fill="#27c93f"/>
+  <text x="410" y="27" text-anchor="middle" fill="#8b949e" font-size="13" font-family="'SF Mono', monospace">𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ@popdeuxrem — zsh — 132×42</text>
+
+  <rect x="18" y="48" width="784" height="392" fill="#0d1117"/>
+  <rect class="scanline" x="18" y="48" width="784" height="4" fill="#00f3ff"/>
+
+  <text x="32" y="78" class="terminal">Last login: 2026-02-19 00:43:12 on ttys000</text>
+
+  <text x="32" y="106" class="terminal prompt">𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ@popdeuxrem ~ % </text>
+  <text x="278" y="106" class="terminal line l1">uptime</text>
+  <text x="32" y="134" class="terminal">2026-02-19 00:43:12 up 4 days,  3 users,  load average: 0.41 0.52 0.63</text>
+
+  <text x="32" y="162" class="terminal prompt">𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ@popdeuxrem ~ % </text>
+  <text x="278" y="162" class="terminal line l2">ls -la Projects/</text>
+  <text x="32" y="190" class="terminal">total 48</text>
+  <text x="32" y="214" class="terminal">drwxr-xr-x  8 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  256 Feb 19 00:41 .</text>
+  <text x="32" y="238" class="terminal">drwxr-xr-x  5 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  160 Feb 19 00:41 ..</text>
+  <text x="32" y="262" class="terminal">drwxr-xr-x  7 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  224 Feb 19 00:42 DevOps</text>
+  <text x="32" y="286" class="terminal">drwxr-xr-x  6 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  192 Feb 19 00:42 iOSAutomation</text>
+  <text x="32" y="310" class="terminal">drwxr-xr-x  5 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  160 Feb 19 00:42 ProxyMesh</text>
+  <text x="32" y="334" class="terminal">drwxr-xr-x  6 𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ  staff  192 Feb 19 00:42 ShadowTools</text>
+
+  <text x="32" y="362" class="terminal prompt">𖢧ꛅ𖤢ꚽꚳꛈ𖢧ꛕꛅ@popdeuxrem ~ % </text>
+  <text x="278" y="362" class="terminal line l3">cat Projects/TODO.md</text>
+
+  <text x="32" y="390" class="terminal">→ iOS Shortcuts + Scriptable Operators</text>
+  <text x="32" y="414" class="terminal">→ Proxy meshes &amp; stealth routing</text>
+  <text x="32" y="438" class="terminal">→ Auditable reversible AI systems</text>
+
+  <text x="278" y="362" class="terminal prompt cursor">_</text>
+
+  <circle cx="720" cy="120" r="1.8" fill="#00f3ff" class="particle" style="animation-delay:0s"/>
+  <circle cx="740" cy="280" r="1.4" fill="#bc8cff" class="particle" style="animation-delay:0.9s"/>
+  <circle cx="690" cy="360" r="2" fill="#00ff9d" class="particle" style="animation-delay:1.7s"/>
+</svg>

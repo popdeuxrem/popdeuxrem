@@ -51,6 +51,17 @@ I design and ship auditable, reversible AI systems and automation stacks, from i
 
 <br/>
 
+<a name="terminal"></a>
+
+### ◈ QUANTUM_TERMINAL // LIVE_SNAPSHOT
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
+  <img src="assets/terminal-dynamic.svg" width="820" alt="PopDeuxRem Dynamic Terminal">
+</picture>
+
+<br/>
+
 <code>
 <a href="#uplink">UPLINK</a> · <a href="#thesis">THESIS</a> · <a href="#shadow">SHADOW</a> · <a href="#stack">STACK</a> · <a href="#skills">SKILLS</a> · <a href="#proxy">PROXY</a> · <a href="#work">WORK</a> · <a href="#telemetry">TELEMETRY</a> · <a href="#timeline">TIMELINE</a> · <a href="#security">SECURITY</a>
 </code>
