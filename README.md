@@ -42,13 +42,19 @@
 
 <br />
 
-<!-- 7. SECURITY STATUS (Binary Pass/Fail) -->
+<!-- 7. QUANTUM AXIOM (Particle-emphasized) -->
+<a name="quote"></a>
+<img src="assets/section_quote.svg" width="800" alt="QUANTUM_AXIOM" />
+
+<br />
+
+<!-- 8. SECURITY STATUS (Binary Pass/Fail) -->
 <a name="security"></a>
 <img src="assets/section_security.svg" width="1000" alt="SECURITY_AUDIT" />
 
 <br /><br />
 
-<!-- 8. UPLINK / CONTACT -->
+<!-- 9. UPLINK / CONTACT -->
 <a name="uplink"></a>
 ### ◈ UPLINK_ESTABLISHED
 
@@ -60,10 +66,10 @@
 
 <br />
 
-<!-- 9. FOOTER SIGNATURE (Cryptographic Finality) -->
+<!-- 10. FOOTER SIGNATURE (Cryptographic Finality) -->
 ---
 <p align="right">
-    <code>BUILD: Surface/v5 · 2026-02-18 12:58 UTC · SHA256:61df2d0b · invariant</code>
+    <code>BUILD: Surface/v5 · 2026-02-18 21:55 UTC · SHA256:61df2d0b · invariant</code>
 </p>
 
 </div>

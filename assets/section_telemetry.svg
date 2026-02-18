@@ -1,18 +1,138 @@
 <svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .mono { font-family: 'Courier New', Consolas, monospace; }
+            .header-text { font-size: 14px; font-weight: bold; }
+            .label-text { font-size: 11px; }
+            .value-text { font-size: 24px; font-weight: bold; }
+            .small-value { font-size: 13px; }
+            .bar-fill { animation: fillBar 2s ease-out forwards; }
+            @keyframes fillBar { from { width: 0; } }
+            @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+            @keyframes countUp { from { opacity: 0.3; } to { opacity: 1; } }
+            .cursor { animation: blink 1s infinite; }
+            .value-animate { animation: countUp 0.5s ease-out; }
+        </style>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ff7b72"/>
+            <stop offset="100%" stop-color="#d29922"/>
+        </linearGradient>
+    </defs>
+
     <rect width="800" height="300" fill="#0d1117"/>
-    <g transform="translate(400, 150)" opacity="0.6">
-        <circle r="100" stroke="#30363d" stroke-width="1" fill="none"/>
-        <circle r="70" stroke="#30363d" stroke-width="1" fill="none"/>
-        <circle r="40" stroke="#30363d" stroke-width="1" fill="none"/>
-        <line x1="-100" y1="0" x2="100" y2="0" stroke="#30363d"/>
-        <line x1="0" y1="-100" x2="0" y2="100" stroke="#30363d"/>
-        <line x1="0" y1="0" x2="0" y2="-100" stroke="url(#scanGrad)" stroke-width="2">
-            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
-        </line>
-        <circle cx="30" cy="-50" r="3" fill="#ff7b72"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="4s" repeatCount="indefinite"/></circle>
-        <circle cx="-40" cy="20" r="2" fill="#ff7b72"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="5.5s" repeatCount="indefinite"/></circle>
+    <rect width="800" height="300" fill="#161b22" style="media (prefers-color-scheme: light)"/>
+
+    <rect x="0" y="0" width="800" height="32" fill="#21262d"/>
+    <line x1="0" y1="32" x2="800" y2="32" stroke="#30363d" stroke-width="1"/>
+
+    <circle cx="16" cy="16" r="6" fill="#ff7b72"/>
+    <circle cx="36" cy="16" r="6" fill="#d29922"/>
+    <circle cx="56" cy="16" r="6" fill="#3fb950"/>
+
+    <text x="400" y="21" text-anchor="middle" class="mono header-text" fill="url(#headerGrad)">GitHub Telemetry Monitor v2.4.1</text>
+
+    <rect x="16" y="48" width="762" height="242" fill="none" stroke="#30363d" stroke-width="1" rx="4"/>
+    <rect x="16" y="48" width="762" height="28" fill="#21262d" rx="4"/>
+    <rect x="16" y="72" width="762" height="2" fill="#30363d"/>
+
+    <text x="28" y="67" class="mono label-text" fill="#8b949e">METRIC</text>
+    <text x="200" y="67" class="mono label-text" fill="#8b949e">VALUE</text>
+    <text x="340" y="67" class="mono label-text" fill="#8b949e">STATUS</text>
+    <text x="440" y="67" class="mono label-text" fill="#8b949e">METRIC</text>
+    <text x="620" y="67" class="mono label-text" fill="#8b949e">VALUE</text>
+    <text x="720" y="67" class="mono label-text" fill="#8b949e">STATUS</text>
+
+    <g transform="translate(28, 100)">
+        <g transform="translate(0, 0)">
+            <path d="M0 6 L4 6 L4 0 L10 0 L10 6 L14 6 L7 14 Z" fill="#3fb950"/>
+            <text x="22" y="12" class="mono label-text" fill="#c9d1d9">COMMITS</text>
+            <text x="172" y="12" class="mono value-text value-animate" fill="#3fb950">
+                <tspan>2847</tspan>
+                <animate attributeName="opacity" values="0;1" dur="1.5s" fill="freeze"/>
+            </text>
+            <rect x="298" y="2" width="40" height="14" fill="#238636" rx="2"/>
+            <text x="318" y="12" text-anchor="middle" class="mono label-text" fill="#fff">HEALTHY</text>
+        </g>
+
+        <g transform="translate(0, 42)">
+            <path d="M7 0 L10 5 L7 10 L4 5 Z M0 10 L3 5 L0 0 L7 0 L14 0 L11 5 L14 10 Z" fill="#ff7b72" transform="translate(0, 2) scale(1)"/>
+            <text x="22" y="12" class="mono label-text" fill="#c9d1d9">REPOSITORIES</text>
+            <text x="172" y="12" class="mono value-text value-animate" fill="#ff7b72">
+                <tspan>23</tspan>
+                <animate attributeName="opacity" values="0;1" dur="1.2s" fill="freeze"/>
+            </text>
+            <rect x="298" y="2" width="40" height="14" fill="#9e6a03" rx="2"/>
+            <text x="318" y="12" text-anchor="middle" class="mono label-text" fill="#fff">ACTIVE</text>
+        </g>
+
+        <g transform="translate(0, 84)">
+            <path d="M7 0 L9 5 L14 6 L10 9 L11 14 L7 11 L3 14 L4 9 L0 6 L5 5 Z" fill="#d29922"/>
+            <text x="22" y="12" class="mono label-text" fill="#c9d1d9">STARS EARNED</text>
+            <text x="172" y="12" class="mono value-text value-animate" fill="#d29922">
+                <tspan>462</tspan>
+                <animate attributeName="opacity" values="0;1" dur="1.8s" fill="freeze"/>
+            </text>
+            <rect x="298" y="2" width="40" height="14" fill="#238636" rx="2"/>
+            <text x="318" y="12" text-anchor="middle" class="mono label-text" fill="#fff">RISING</text>
+        </g>
     </g>
-    <defs><linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff7b72"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
-    <text x="30" y="280" font-family="monospace" font-size="12" fill="#ff7b72" opacity="0.8">LIVE_TELEMETRY // MONITORING</text>
-    <text x="650" y="280" font-family="monospace" font-size="12" fill="#ff7b72" opacity="0.8">SIGNAL: NOMINAL</text>
-    </svg>
+
+    <g transform="translate(412, 100)">
+        <g transform="translate(0, 0)">
+            <path d="M2 0 L12 0 C13 0 14 1 14 2 L14 8 C14 9 13 10 12 10 L9 10 L7 13 L5 10 L2 10 C1 10 0 9 0 8 L0 2 C0 1 1 0 2 0" fill="#58a6ff"/>
+            <text x="22" y="12" class="mono label-text" fill="#c9d1d9">PULL REQUESTS</text>
+            <text x="188" y="12" class="mono value-text value-animate" fill="#58a6ff">
+                <tspan>156</tspan>
+                <animate attributeName="opacity" values="0;1" dur="1.4s" fill="freeze"/>
+            </text>
+            <rect x="288" y="2" width="40" height="14" fill="#238636" rx="2"/>
+            <text x="308" y="12" text-anchor="middle" class="mono label-text" fill="#fff">MERGED</text>
+        </g>
+
+        <g transform="translate(0, 42)">
+            <circle cx="7" cy="7" r="7" fill="none" stroke="#f778ba" stroke-width="2"/>
+            <path d="M7 4 L7 7 L9 9" stroke="#f778ba" stroke-width="2" fill="none"/>
+            <text x="22" y="12" class="mono label-text" fill="#c9d1d9">ISSUES CLOSED</text>
+            <text x="188" y="12" class="mono value-text value-animate" fill="#f778ba">
+                <tspan>89</tspan>
+                <animate attributeName="opacity" values="0;1" dur="1.6s" fill="freeze"/>
+            </text>
+            <rect x="288" y="2" width="40" height="14" fill="#238636" rx="2"/>
+            <text x="308" y="12" text-anchor="middle" class="mono label-text" fill="#fff">SOLVED</text>
+        </g>
+
+        <g transform="translate(0, 84)">
+            <path d="M0 3 L7 3 L7 0 L14 5 L7 10 L7 7 L0 7 Z" fill="#7ee787"/>
+            <path d="M14 3 L7 3 L7 0 L0 5 L7 10 L7 7 L14 7 Z" fill="#7ee787" opacity="0.5" transform="translate(2, 0)"/>
+            <text x="22" y="12" class="mono label-text" fill="#c9d1d9">CODE REVIEWS</text>
+            <text x="188" y="12" class="mono value-text value-animate" fill="#7ee787">
+                <tspan>234</tspan>
+                <animate attributeName="opacity" values="0;1" dur="2s" fill="freeze"/>
+            </text>
+            <rect x="288" y="2" width="40" height="14" fill="#238636" rx="2"/>
+            <text x="308" y="12" text-anchor="middle" class="mono label-text" fill="#fff">APPROVED</text>
+        </g>
+    </g>
+
+    <line x1="396" y1="82" x2="396" y2="282" stroke="#30363d" stroke-width="1"/>
+
+    <rect x="16" y="252" width="762" height="26" fill="#21262d" rx="0 0 4 4"/>
+    <line x1="16" y1="252" x2="778" y2="252" stroke="#30363d"/>
+
+    <text x="28" y="269" class="mono label-text" fill="#8b949e">UPTIME:</text>
+    <text x="88" y="269" class="mono small-value" fill="#3fb950">99.97%</text>
+
+    <text x="170" y="269" class="mono label-text" fill="#8b949e">LAST SYNC:</text>
+    <text x="248" y="269" class="mono small-value" fill="#c9d1d9">2026-02-17T08:42:16Z</text>
+
+    <text x="480" y="269" class="mono label-text" fill="#8b949e">STATUS:</text>
+    <circle cx="540" cy="265" r="4" fill="#3fb950">
+        <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="552" y="269" class="mono small-value" fill="#3fb950">LIVE</text>
+
+    <text x="620" y="269" class="mono label-text" fill="#8b949e">REFRESH:</text>
+    <text x="688" y="269" class="mono small-value" fill="#d29922">30s</text>
+
+    <rect class="cursor" x="716" y="258" width="8" height="14" fill="#ff7b72"/>
+</svg>

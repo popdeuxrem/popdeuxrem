@@ -8,6 +8,7 @@ from design_engine import (
     gen_stack, 
     gen_work, 
     gen_telemetry, 
+    gen_quote,
     gen_security
 )
 
@@ -25,6 +26,7 @@ def build_readme():
     gen_stack()
     gen_work()
     gen_telemetry()
+    gen_quote()
     gen_security()
     
     # 2. DEFINE STATIC CONTENT
@@ -75,13 +77,19 @@ def build_readme():
 
 <br />
 
-<!-- 7. SECURITY STATUS (Binary Pass/Fail) -->
+<!-- 7. QUANTUM AXIOM (Particle-emphasized) -->
+<a name="quote"></a>
+<img src="assets/section_quote.svg" width="800" alt="QUANTUM_AXIOM" />
+
+<br />
+
+<!-- 8. SECURITY STATUS (Binary Pass/Fail) -->
 <a name="security"></a>
 <img src="assets/section_security.svg" width="1000" alt="SECURITY_AUDIT" />
 
 <br /><br />
 
-<!-- 8. UPLINK / CONTACT -->
+<!-- 9. UPLINK / CONTACT -->
 <a name="uplink"></a>
 ### ◈ UPLINK_ESTABLISHED
 
@@ -93,7 +101,7 @@ def build_readme():
 
 <br />
 
-<!-- 9. FOOTER SIGNATURE (Cryptographic Finality) -->
+<!-- 10. FOOTER SIGNATURE (Cryptographic Finality) -->
 ---
 <p align="right">
     <code>BUILD: Surface/v5 · {ts} · SHA256:{build_hash} · invariant</code>

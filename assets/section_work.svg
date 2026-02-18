@@ -1,25 +1,245 @@
 <svg width="600" height="500" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
-    <rect width="600" height="500" fill="#0d1117"/>
-    <defs><filter id="glow"><feGaussianBlur stdDeviation="2.5" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-    <style>
-        .trace { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: flow 3s ease-out forwards; }
-        @keyframes flow { to { stroke-dashoffset: 0; } }
-        .node-text { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #d29922; }
-    </style>
-    <path d="M50 50 V150 H100" stroke="#30363d" stroke-width="2" fill="none"/>
-    <path d="M50 150 V300 H100" stroke="#30363d" stroke-width="2" fill="none"/>
-    <path d="M50 300 V450 H100" stroke="#30363d" stroke-width="2" fill="none"/>
-    <path class="trace" d="M50 50 V150 H100" stroke="#d29922" stroke-width="2" fill="none" filter="url(#glow)"/>
-    <path class="trace" d="M50 150 V300 H100" stroke="#d29922" stroke-width="2" fill="none" filter="url(#glow)" style="animation-delay: 0.5s"/>
-    <path class="trace" d="M50 300 V450 H100" stroke="#d29922" stroke-width="2" fill="none" filter="url(#glow)" style="animation-delay: 1.0s"/>
-    <circle cx="50" cy="50" r="5" fill="#d29922"/>
+  <defs>
+    <linearGradient id="card-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
     
-    <rect x="100" y="130" width="400" height="40" rx="4" fill="#161b22" stroke="#d29922"/>
-    <text x="120" y="155" class="node-text">SHADOW_SCRIPTS // SECOPS_MESH</text>
+    <linearGradient id="ship-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d29922" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#d29922" stop-opacity="0"/>
+    </linearGradient>
     
-    <rect x="100" y="280" width="400" height="40" rx="4" fill="#161b22" stroke="#d29922"/>
-    <text x="120" y="305" class="node-text">SMOOTH_OPERATOR // AUTO_AGENT</text>
+    <linearGradient id="beta-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </linearGradient>
     
-    <rect x="100" y="430" width="400" height="40" rx="4" fill="#161b22" stroke="#d29922"/>
-    <text x="120" y="455" class="node-text">BRAND_TERMINAL // UI_SURFACE</text>
-    </svg>
+    <filter id="glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#d29922" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#00f3ff" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <filter id="star-glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <style>
+    .bg { fill: #0d1117; }
+    .bg-light { fill: #f6f8fa; }
+    .card-bg { fill: #161b22; stroke: #30363d; stroke-width: 1; }
+    .card-bg-light { fill: #ffffff; stroke: #d0d7de; stroke-width: 1; }
+    .text-primary { fill: #e6edf3; }
+    .text-primary-light { fill: #1f2328; }
+    .text-muted { fill: #7d8590; }
+    .text-muted-light { fill: #656d76; }
+    .text-gold { fill: #d29922; }
+    .text-cyan { fill: #00f3ff; }
+    .border-line { stroke: #30363d; }
+    .border-line-light { stroke: #d0d7de; }
+    
+    .mono { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+    .project-name { font-family: 'SF Pro Display', -apple-system, sans-serif; font-weight: 700; }
+    
+    .card-1 { opacity: 0; animation: slideIn 0.6s ease-out 0.2s forwards; }
+    .card-2 { opacity: 0; animation: slideIn 0.6s ease-out 0.5s forwards; }
+    .card-3 { opacity: 0; animation: slideIn 0.6s ease-out 0.8s forwards; }
+    
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(-30px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    
+    .star-icon { animation: twinkle 2s ease-in-out infinite; }
+    .star-icon-1 { animation-delay: 0s; }
+    .star-icon-2 { animation-delay: 0.3s; }
+    .star-icon-3 { animation-delay: 0.6s; }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(0.9); }
+    }
+    
+    .badge-ship { animation: pulse-gold 2s ease-in-out infinite; }
+    .badge-beta { animation: pulse-cyan 2s ease-in-out infinite; }
+    
+    @keyframes pulse-gold {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    
+    @keyframes pulse-cyan {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    
+    .glow-line-ship { animation: glow-pulse-gold 3s ease-in-out infinite; }
+    .glow-line-beta { animation: glow-pulse-cyan 3s ease-in-out infinite; }
+    
+    @keyframes glow-pulse-gold {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+    
+    @keyframes glow-pulse-cyan {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.7; }
+    }
+    
+    .header-underline { 
+      stroke-dasharray: 600; 
+      stroke-dashoffset: 600; 
+      animation: drawLine 1s ease-out 0.1s forwards; 
+    }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+    
+    .cursor-blink { animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+    
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f8fa; }
+      .card-bg { fill: #ffffff; stroke: #d0d7de; }
+      .text-primary { fill: #1f2328; }
+      .text-muted { fill: #656d76; }
+      .border-line { stroke: #d0d7de; }
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      .card-1, .card-2, .card-3 { animation: none; opacity: 1; }
+      .star-icon, .badge-ship, .badge-beta { animation: none; }
+      .glow-line-ship, .glow-line-beta { animation: none; opacity: 0.5; }
+      .header-underline { animation: none; stroke-dashoffset: 0; }
+      .cursor-blink { animation: none; opacity: 1; }
+    }
+  </style>
+  
+  <rect class="bg" width="600" height="500"/>
+  
+  <text class="mono" x="30" y="40" font-size="18" font-weight="bold" fill="#58a6ff">
+    <tspan fill="#7d8590">$</tspan> ls -la ~/projects/
+  </text>
+  <rect class="cursor-blink" x="175" y="28" width="8" height="16" fill="#58a6ff"/>
+  
+  <line class="border-line header-underline" x1="30" y1="55" x2="570" y2="55" stroke-width="1"/>
+  
+  <g class="mono" font-size="10" fill="#7d8590">
+    <text x="30" y="80">PERMISSIONS</text>
+    <text x="120" y="80">DOMAIN</text>
+    <text x="200" y="80">STARS</text>
+    <text x="270" y="80">NAME</text>
+    <text x="480" y="80">STATUS</text>
+  </g>
+  
+  <g class="card-1" transform="translate(30, 100)">
+    <rect class="card-bg" width="540" height="100" rx="6"/>
+    <rect class="glow-line-ship" x="0" y="0" width="4" height="100" rx="2" fill="url(#ship-glow)"/>
+    
+    <text class="mono" x="20" y="30" font-size="12" fill="#3fb950">drwxr-xr-x</text>
+    
+    <g transform="translate(120, 18)">
+      <rect width="60" height="20" rx="10" fill="#21262d" stroke="#30363d" stroke-width="0.5"/>
+      <text class="mono" x="30" y="14" text-anchor="middle" font-size="10" fill="#ff7b72">SecOps</text>
+    </g>
+    
+    <g class="star-icon star-icon-1" transform="translate(200, 15)" filter="url(#star-glow)">
+      <polygon points="10,0 12,7 20,7 14,12 16,20 10,15 4,20 6,12 0,7 8,7" fill="#d29922"/>
+      <text class="mono" x="28" y="16" font-size="14" font-weight="bold" fill="#d29922">128</text>
+    </g>
+    
+    <text class="project-name" x="270" y="28" font-size="18" fill="#e6edf3">shadow-scripts</text>
+    <text class="mono" x="270" y="50" font-size="11" fill="#7d8590">Proxy meshes, DNS overlays, and stealth routing</text>
+    
+    <g class="badge-ship" transform="translate(480, 15)">
+      <rect width="50" height="22" rx="4" fill="#d29922" fill-opacity="0.15" stroke="#d29922" stroke-width="1"/>
+      <text class="mono" x="25" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#d29922" filter="url(#glow-gold)">SHIP</text>
+    </g>
+    
+    <line x1="20" y1="65" x2="520" y2="65" stroke="#30363d" stroke-width="0.5" stroke-dasharray="4,2"/>
+    
+    <text class="mono" x="20" y="85" font-size="9" fill="#7d8590">
+      <tspan fill="#58a6ff">→</tspan> github.com/Thugger069/shadow-scripts
+    </text>
+  </g>
+  
+  <g class="card-2" transform="translate(30, 215)">
+    <rect class="card-bg" width="540" height="100" rx="6"/>
+    <rect class="glow-line-beta" x="0" y="0" width="4" height="100" rx="2" fill="url(#beta-glow)"/>
+    
+    <text class="mono" x="20" y="30" font-size="12" fill="#3fb950">drwxr-xr-x</text>
+    
+    <g transform="translate(120, 18)">
+      <rect width="80" height="20" rx="10" fill="#21262d" stroke="#30363d" stroke-width="0.5"/>
+      <text class="mono" x="40" y="14" text-anchor="middle" font-size="10" fill="#a371f7">Automation</text>
+    </g>
+    
+    <g class="star-icon star-icon-2" transform="translate(200, 15)" filter="url(#star-glow)">
+      <polygon points="10,0 12,7 20,7 14,12 16,20 10,15 4,20 6,12 0,7 8,7" fill="#00f3ff"/>
+      <text class="mono" x="28" y="16" font-size="14" font-weight="bold" fill="#00f3ff">245</text>
+    </g>
+    
+    <text class="project-name" x="270" y="28" font-size="18" fill="#e6edf3">smooth-operator</text>
+    <text class="mono" x="270" y="50" font-size="11" fill="#7d8590">Siri-driven reply engine with JSON state</text>
+    
+    <g class="badge-beta" transform="translate(480, 15)">
+      <rect width="50" height="22" rx="4" fill="#00f3ff" fill-opacity="0.15" stroke="#00f3ff" stroke-width="1"/>
+      <text class="mono" x="25" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#00f3ff" filter="url(#glow-cyan)">BETA</text>
+    </g>
+    
+    <line x1="20" y1="65" x2="520" y2="65" stroke="#30363d" stroke-width="0.5" stroke-dasharray="4,2"/>
+    
+    <text class="mono" x="20" y="85" font-size="9" fill="#7d8590">
+      <tspan fill="#58a6ff">→</tspan> github.com/Thugger069/smooth-operator
+    </text>
+  </g>
+  
+  <g class="card-3" transform="translate(30, 330)">
+    <rect class="card-bg" width="540" height="100" rx="6"/>
+    <rect class="glow-line-ship" x="0" y="0" width="4" height="100" rx="2" fill="url(#ship-glow)"/>
+    
+    <text class="mono" x="20" y="30" font-size="12" fill="#3fb950">drwxr-xr-x</text>
+    
+    <g transform="translate(120, 18)">
+      <rect width="65" height="20" rx="10" fill="#21262d" stroke="#30363d" stroke-width="0.5"/>
+      <text class="mono" x="32" y="14" text-anchor="middle" font-size="10" fill="#79c0ff">Surface</text>
+    </g>
+    
+    <g class="star-icon star-icon-3" transform="translate(200, 15)" filter="url(#star-glow)">
+      <polygon points="10,0 12,7 20,7 14,12 16,20 10,15 4,20 6,12 0,7 8,7" fill="#d29922"/>
+      <text class="mono" x="28" y="16" font-size="14" font-weight="bold" fill="#d29922">89</text>
+    </g>
+    
+    <text class="project-name" x="270" y="28" font-size="18" fill="#e6edf3">brand-terminal</text>
+    <text class="mono" x="270" y="50" font-size="11" fill="#7d8590">CLI-style UI skins with real-time telemetry</text>
+    
+    <g class="badge-ship" transform="translate(480, 15)">
+      <rect width="50" height="22" rx="4" fill="#d29922" fill-opacity="0.15" stroke="#d29922" stroke-width="1"/>
+      <text class="mono" x="25" y="15" text-anchor="middle" font-size="11" font-weight="bold" fill="#d29922" filter="url(#glow-gold)">SHIP</text>
+    </g>
+    
+    <line x1="20" y1="65" x2="520" y2="65" stroke="#30363d" stroke-width="0.5" stroke-dasharray="4,2"/>
+    
+    <text class="mono" x="20" y="85" font-size="9" fill="#7d8590">
+      <tspan fill="#58a6ff">→</tspan> github.com/Thugger069/brand-terminal
+    </text>
+  </g>
+  
+  <text class="mono" x="30" y="470" font-size="10" fill="#7d8590">
+    <tspan fill="#3fb950">3 directories</tspan>, <tspan fill="#58a6ff">462 total stars</tspan>
+  </text>
+  
+  <g transform="translate(480, 455)">
+    <rect width="90" height="28" rx="4" fill="#21262d" stroke="#30363d"/>
+    <text class="mono" x="45" y="18" text-anchor="middle" font-size="10" fill="#7d8590">total 3 proj</text>
+  </g>
+</svg>
