@@ -356,7 +356,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 
 <br/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=00F3FF&center=true&vCenter=true&repeat=true&width=600&lines=Full+Stack+Engineer;Engineered+Clarity;Tech+Innovator;Open+Source+Enthusiast;Auditable+Systems;Composable+By+Design;Problem+Solver;+%F0%9D%95%B1%F0%9D%96%86%F0%9D%96%87%F0%9D%96%8A%F0%9D%96%97%F0%9D%96%86%F0%9D%96%93%F0%9D%96%99" alt="Typing"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Playfair+Display&weight=600&size=26&duration=3000&pause=1000&color=00F3FF&center=true&vCenter=true&repeat=true&width=600&lines=Full+Stack+Engineer;Engineered+Clarity;Tech+Innovator;Open+Source+Enthusiast;Auditable+Systems;Composable+By+Design;Problem+Solver;+%F0%9D%95%B1%F0%9D%96%86%F0%9D%96%87%F0%9D%96%8A%F0%9D%96%97%F0%9D%96%86%F0%9D%96%93%F0%9D%96%99" alt="Typing"/>
 
 <br/>
 
@@ -372,7 +372,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
      SECTION 5: ABOUT ME
      ═══════════════════════════════════════════════════════════════════════════ -->
 
-## <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f9d1_200d_1f4bb/512.gif" width="35"/> 𝒜𝒷𝑜𝓊𝓉 𝑀𝑒
+## ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢
 
 > I design and ship systems that prioritize **determinism**, **observability**,  
 > and **long-term maintainability**.  
@@ -460,10 +460,8 @@ Product Infrastructure - Complex logic made operable.
 <img src="assets/divider_mesh.svg" width="1000" alt="Divider"/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     SECTION 8: QUANTUM TECH MATRIX
+     SECTION 8: TECH STACK
      ═══════════════════════════════════════════════════════════════════════════ -->
-
-### ⚡ QUANTUM TECH MATRIX v2.1
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; max-width: 1280px; margin: 40px auto 50px auto;">
 
