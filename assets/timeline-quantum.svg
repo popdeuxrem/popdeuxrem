@@ -1,0 +1,97 @@
+<svg width="800" height="280" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="tunnel-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .bg { fill: #0d1117; }
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-node-0, .timeline-node-1, .timeline-node-2, .timeline-node-3, .timeline-node-4, .timeline-node-5 {
+        animation: none; opacity: 1;
+      }
+    }
+  </style>
+  
+  <rect class="bg" width="800" height="280"/>
+  
+  <text x="400" y="40" text-anchor="middle" font-family="monospace" font-size="14" fill="#00f3ff">
+    ◈ TIMELINE_EVOLUTION // QUANTUM_TUNNEL
+  </text>
+  <line x1="60" y1="55" x2="740" y2="55" stroke="#30363d" stroke-width="1"/>
+  
+  <g>
+    <line x1="80" y1="120" x2="720" y2="120" stroke="#3fb950" stroke-width="3" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" values="0,1000;640,0" dur="2s" fill="freeze"/>
+    </line>
+    
+    
+    <g class="timeline-node-0" opacity="0">
+      <circle cx="80" cy="120" r="12" fill="#3fb950" filter="url(#glow)">
+        <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" begin="0.0s"/>
+      </circle>
+      <line x1="80" y1="132" x2="80" y2="180" stroke="#3fb950" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="80" y="200" text-anchor="middle" font-family="monospace" font-size="12" fill="#3fb950">2016</text>
+      <text x="80" y="220" text-anchor="middle" font-family="monospace" font-size="10" fill="#e6edf3">Bash/Linux</text>
+      <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.0s"/>
+    </g>
+    <g class="timeline-node-1" opacity="0">
+      <circle cx="180" cy="120" r="12" fill="#3fb950" filter="url(#glow)">
+        <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+      </circle>
+      <line x1="180" y1="132" x2="180" y2="180" stroke="#3fb950" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="180" y="200" text-anchor="middle" font-family="monospace" font-size="12" fill="#3fb950">2017</text>
+      <text x="180" y="220" text-anchor="middle" font-family="monospace" font-size="10" fill="#e6edf3">Node.js</text>
+      <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.2s"/>
+    </g>
+    <g class="timeline-node-2" opacity="0">
+      <circle cx="280" cy="120" r="12" fill="#3fb950" filter="url(#glow)">
+        <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+      </circle>
+      <line x1="280" y1="132" x2="280" y2="180" stroke="#3fb950" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="280" y="200" text-anchor="middle" font-family="monospace" font-size="12" fill="#3fb950">2019</text>
+      <text x="280" y="220" text-anchor="middle" font-family="monospace" font-size="10" fill="#e6edf3">Docker/K8s</text>
+      <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.4s"/>
+    </g>
+    <g class="timeline-node-3" opacity="0">
+      <circle cx="380" cy="120" r="12" fill="#3fb950" filter="url(#glow)">
+        <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" begin="0.8999999999999999s"/>
+      </circle>
+      <line x1="380" y1="132" x2="380" y2="180" stroke="#3fb950" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="380" y="200" text-anchor="middle" font-family="monospace" font-size="12" fill="#3fb950">2021</text>
+      <text x="380" y="220" text-anchor="middle" font-family="monospace" font-size="10" fill="#e6edf3">Rust/WASM</text>
+      <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.6000000000000001s"/>
+    </g>
+    <g class="timeline-node-4" opacity="0">
+      <circle cx="480" cy="120" r="12" fill="#3fb950" filter="url(#glow)">
+        <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+      </circle>
+      <line x1="480" y1="132" x2="480" y2="180" stroke="#3fb950" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="480" y="200" text-anchor="middle" font-family="monospace" font-size="12" fill="#3fb950">2023</text>
+      <text x="480" y="220" text-anchor="middle" font-family="monospace" font-size="10" fill="#e6edf3">AI Agents</text>
+      <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="0.8s"/>
+    </g>
+    <g class="timeline-node-5" opacity="0">
+      <circle cx="580" cy="120" r="12" fill="#00f3ff" filter="url(#glow)">
+        <animate attributeName="r" values="12;14;12" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      </circle>
+      <line x1="580" y1="132" x2="580" y2="180" stroke="#00f3ff" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="580" y="200" text-anchor="middle" font-family="monospace" font-size="12" fill="#00f3ff">2025</text>
+      <text x="580" y="220" text-anchor="middle" font-family="monospace" font-size="10" fill="#e6edf3">Quantum/Sim</text>
+      <animate attributeName="opacity" values="0;1" dur="0.5s" fill="freeze" begin="1.0s"/>
+    </g>
+  </g>
+  
+  <g opacity="0.3">
+    <text x="400" y="260" text-anchor="middle" font-family="monospace" font-size="10" fill="#8b949e">
+      ~~⟨ψ|t⟩~~  time evolution operator  ~~⟨ψ|t⟩~~
+    </text>
+  </g>
+</svg>
