@@ -30,7 +30,7 @@
     .boot-3 { animation-delay: 0.8s; }
     @keyframes boot { to { opacity: 1; } }
     
-    .username { font-family: 'SF Pro Display', -apple-system, sans-serif; font-weight: 800; font-size: 28px; letter-spacing: -0.5px; opacity: 0; animation: reveal 1s ease-out 1.5s forwards; }
+    .username { font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif; font-weight: 700; font-style: italic; font-size: 32px; letter-spacing: 2px; opacity: 0; animation: reveal 1s ease-out 1.5s forwards; }
     @keyframes reveal { to { opacity: 1; } }
     
     .cursor { animation: blink 1s step-end infinite; }
