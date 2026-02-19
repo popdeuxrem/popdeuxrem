@@ -339,7 +339,11 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
      SECTION 1: HERO BANNER
      ═══════════════════════════════════════════════════════════════════════════ -->
 
-<img src="assets/hero_banner.png" width="1000" alt="PopDeuxRem Banner"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero_banner.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/hero_banner.svg">
+  <img src="assets/hero_banner.svg" width="1000" alt="PopDeuxRem Banner"/>
+</picture>
 
 <br/><br/>
 
