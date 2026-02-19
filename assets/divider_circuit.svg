@@ -1,0 +1,57 @@
+<svg width="1000" height="32" viewBox="0 0 1000 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="circuit-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#00f3ff" stop-opacity="1"/>
+      <stop offset="80%" stop-color="#bc8cff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .bg { fill: #0d1117; }
+    .trace { stroke: #00f3ff; stroke-width: 1; fill: none; stroke-linecap: round; }
+    .trace-alt { stroke: #bc8cff; stroke-width: 1; fill: none; stroke-linecap: round; }
+    .node { fill: #00f3ff; }
+    .node-alt { fill: #bc8cff; }
+    .pulse { animation: nodePulse 2s ease-in-out infinite; }
+    @keyframes nodePulse { 0%,100% { opacity: 0.5; r: 2; } 50% { opacity: 1; r: 3; } }
+    .flow { animation: flowStroke 3s linear infinite; }
+    @keyframes flowStroke { 0% { stroke-dashoffset: 40; } 100% { stroke-dashoffset: 0; } }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f8fa; }
+      .trace { stroke: #0969da; }
+      .trace-alt { stroke: #8250df; }
+      .node { fill: #0969da; }
+      .node-alt { fill: #8250df; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pulse, .flow { animation: none; }
+      .pulse { opacity: 1; }
+    }
+  </style>
+  
+  <rect class="bg" width="1000" height="32"/>
+  
+  <g class="trace flow" stroke-dasharray="4 4">
+    <path d="M0 16 H150 L170 6 H250 L270 26 H350 L370 16 H500"/>
+    <path d="M500 16 H630 L650 6 H730 L750 26 H830 L850 16 H1000"/>
+  </g>
+  
+  <g class="trace-alt flow" stroke-dasharray="4 4" style="animation-delay: 1.5s">
+    <path d="M0 26 H100 L120 6 H200 L220 16 H300 L320 26 H400 L420 16 H500"/>
+    <path d="M500 16 H580 L600 26 H680 L700 6 H780 L800 16 H900 L920 6 H1000"/>
+  </g>
+  
+  <g>
+    <circle class="node pulse" cx="150" cy="16" r="2" style="animation-delay:0s"/>
+    <circle class="node pulse" cx="270" cy="26" r="2" style="animation-delay:0.3s"/>
+    <circle class="node-alt pulse" cx="370" cy="16" r="2" style="animation-delay:0.6s"/>
+    <circle class="node pulse" cx="500" cy="16" r="2.5" style="animation-delay:0.9s"/>
+    <circle class="node-alt pulse" cx="630" cy="16" r="2" style="animation-delay:1.2s"/>
+    <circle class="node pulse" cx="750" cy="26" r="2" style="animation-delay:1.5s"/>
+    <circle class="node-alt pulse" cx="850" cy="16" r="2" style="animation-delay:1.8s"/>
+  </g>
+  
+  <rect x="400" y="14" width="200" height="4" rx="2" fill="url(#circuit-grad)"/>
+</svg>

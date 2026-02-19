@@ -7,6 +7,10 @@
 
 <div align="center">
 
+<img src="assets/hero_banner.png" width="1000" alt="PopDeuxRem Banner"/>
+
+<br/><br/>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/section_hero.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/section_hero.svg">
@@ -25,7 +29,11 @@
 
 **ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢**
 
-<br/><br/>
+<br/>
+
+<img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
+
+<br/>
 
 ## ⟁ SIGNAL
 
@@ -34,6 +42,10 @@
 >  
 > My work lives at the intersection of **architecture**, **automation**,  
 > and **interface-level control**
+
+<br/>
+
+<img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
 
 <br/>
 
@@ -55,6 +67,10 @@ Systems Architecture - Composable, reversible designs that survive scale.
 Automation Pipelines that remove human fragility.
 Product Infrastructure - Complex logic made operable.
 ```
+
+<br/>
+
+<img src="assets/divider_stream.svg" width="1000" alt="Divider"/>
 
 <br/>
 
@@ -106,6 +122,87 @@ Product Infrastructure - Complex logic made operable.
 
 </details>
 
+<br/>
+
+<img src="assets/divider_mesh.svg" width="1000" alt="Divider"/>
+
+<br/><br/>
+
+<div align="center">
+
+### ⚡ QUANTUM TECH MATRIX v2.1
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; max-width: 1280px; margin: 40px auto 50px auto;">
+
+  <div style="background:#0d1117; border:2px solid #00f3ff; border-radius:16px; padding:26px; box-shadow:0 0 35px rgba(0,243,255,0.18); transition:all .35s ease;">
+    <h3 style="color:#00f3ff; margin:0 0 24px 0; text-align:center; letter-spacing:1.2px; text-shadow:0 0 12px #00f3ff;">🧰 ꛤ𖦪ꛈ𖢑ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:9px; justify-content:center;">
+      <img src="https://img.shields.io/badge/web3.js-F16822?style=for-the-badge&logo=web3.js&logoColor=white" alt="web3.js"/>
+      <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
+      <img src="https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+      <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react"/>
+      <img src="https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="react native"/>
+      <img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js"/>
+      <img src="https://img.shields.io/badge/remix-%23000.svg?style=for-the-badge&logo=remix&logoColor=white" alt="remix"/>
+      <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="tailwindcss"/>
+      <img src="https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white" alt="redux"/>
+      <img src="https://img.shields.io/badge/-React%20Query-FF4154?style=for-the-badge&logo=react%20query&logoColor=white" alt="React Query"/>
+      <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="vite"/>
+      <img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift"/>
+      <img src="https://img.shields.io/badge/iOS%20Shortcuts-000000?style=for-the-badge&logo=apple&logoColor=white" alt="iOS Shortcuts"/>
+    </div>
+  </div>
+
+  <div style="background:#0d1117; border:2px solid #bc8cff; border-radius:16px; padding:26px; box-shadow:0 0 35px rgba(188,140,255,0.18); transition:all .35s ease;">
+    <h3 style="color:#bc8cff; margin:0 0 24px 0; text-align:center; letter-spacing:1.2px; text-shadow:0 0 12px #bc8cff;">⚙️ ꕷ𖤢ꛕ𖣠ꛘ𖤀ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:9px; justify-content:center;">
+      <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS"/>
+      <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS"/>
+      <img src="https://img.shields.io/badge/fastify-%23000000.svg?style=for-the-badge&logo=fastify&logoColor=white" alt="Fastify"/>
+      <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python"/>
+      <img src="https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL"/>
+      <img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" alt="Flutter"/>
+      <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+      <img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase&logoColor=white" alt="Firebase"/>
+      <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n"/>
+      <img src="https://img.shields.io/badge/Pulumi-8A3391?style=for-the-badge&logo=pulumi&logoColor=white" alt="Pulumi"/>
+    </div>
+  </div>
+
+  <div style="background:#0d1117; border:2px solid #00ff9d; border-radius:16px; padding:26px; box-shadow:0 0 35px rgba(0,255,157,0.18); transition:all .35s ease;">
+    <h3 style="color:#00ff9d; margin:0 0 24px 0; text-align:center; letter-spacing:1.2px; text-shadow:0 0 12px #00ff9d;">🔬 𖢧𖤢𖦪𖢧ꛈꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</h3>
+    <div style="display:flex; flex-wrap:wrap; gap:9px; justify-content:center;">
+      <img src="https://img.shields.io/badge/-Docker-46a2f1?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+      <img src="https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform"/>
+      <img src="https://img.shields.io/badge/kubernetes-%23326CE5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" alt="kubernetes"/>
+      <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
+      <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white" alt="Cloudflare"/>
+      <img src="https://img.shields.io/badge/-Github_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" alt="GitHub Actions"/>
+      <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis"/>
+      <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/>
+      <img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" alt="NPM"/>
+      <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code"/>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<style>
+  div[style*="grid-template-columns"] > div:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 45px rgba(0,243,255,0.35) !important;
+  }
+  img[src*="shields.io"] {
+    transition: all 0.25s ease;
+  }
+  img[src*="shields.io"]:hover {
+    transform: scale(1.08) translateY(-2px);
+    filter: brightness(1.15) drop-shadow(0 0 18px #00f3ff);
+  }
+</style>
+
 <br/><br/>
 
 📈 ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
@@ -114,7 +211,11 @@ Product Infrastructure - Complex logic made operable.
 
 <img src="https://streak-stats.demolab.com?user=popdeuxrem&theme=highcontrast&hide_border=true&background=0d1117&stroke=00f3ff&ring=00f3ff&fire=bc8cff&currStreakLabel=bc8cff" alt="Streak"/>
 
-<br/><br/>
+<br/>
+
+<img src="assets/divider_pulse.svg" width="1000" alt="Divider"/>
+
+<br/>
 
 🤝 ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢
 
@@ -126,14 +227,22 @@ Product Infrastructure - Complex logic made operable.
 ╰─ Send: context · constraints · ideal outcome ─╯
 ```
 
-<br/><br/>
+<br/>
+
+<img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
+
+<br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="dist/github-snake-dark.svg">
   <img src="dist/github-snake-dark.svg" width="880" alt="GitHub Snake">
 </picture>
 
-<br/><br/>
+<br/>
+
+<img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
+
+<br/>
 
 <a name="quote"></a>
 <picture>
