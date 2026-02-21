@@ -268,22 +268,98 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
      TELEMETRY v12.0 // SNAKE CONTRIBUTION MATRIX
      ═══════════════════════════════════════════════════════════════════════════ -->
 <a name="stats"></a>
-<div align="center">
 
 ### ◈ 𖢧𖤢ꚳ𖤢𖢑𖤢𖢧𖦪ꚲ ◈
 
-<br/>
+```javascript
+/**
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║  POPDEUXREM :: FLIGHT RECORDER — BLACK BOX RECOVERY v1.0                 ║
+ * ║  SYNC: 2026-02-21T22:15:00Z | SHA: 7b2e9f4a1c8d | INTEGRITY: VERIFIED ✓ ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ */
+
+const flightRecorder = {
+  
+  blackBox: {
+    unit:          'POPDEUXREM-FDR-001',
+    classification: 'FLIGHT DATA RECORDER',
+    recoveryStatus: 'INTACT',
+    dataIntegrity:  'VERIFIED ✓',
+    lastSync:       new Date().toISOString()
+  },
+
+  activityLog: {
+    commits:       '████████████████████░░ [ONGOING]',
+    streak:        '◉ UNBROKEN — see telemetry below ↓',
+    contributions: '████████████████░░░░░░ [ACTIVE]',
+    codeReviews:   '████████░░░░░░░░░░░░░░ [ACTIVE]',
+    openIssues:    '░░░░░░░░░░░░░░░░░░░░░░ [CLEAN]'
+  },
+
+  systemReadout: {
+    languages:     { Python: '83.6%', Shell: '16.4%' },
+    languageBar:   '█████████████████░░░░ Python · ███░░░░░░░░░░░░░░░░░░ Shell',
+    repositories:  'PUBLIC · PRIVATE · [CLASSIFIED]',
+    loadAverage:   '∞',
+    uptime:        'always',
+    tasksRunning:  'see stack manifest → stack.js'
+  },
+
+  verdict: 'No anomalies detected. All systems nominal. Operator uptime: ∞.'
+
+};
+
+export default flightRecorder; // ◈ Recovered. Verified. Nominal.
+```
 
 <img src="https://streak-stats.demolab.com?user=popdeuxrem&theme=highcontrast&hide_border=true&background=0d1117&stroke=00f3ff&ring=00f3ff&fire=bc8cff&currStreakLabel=bc8cff" alt="GitHub Streak" style="border-radius:12px; box-shadow:0 0 24px rgba(188,140,255,0.22);"/>
-
-<br/><br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="dist/github-snake-dark.svg">
   <img src="dist/github-snake-dark.svg" width="880" alt="GitHub Snake">
 </picture>
 
-</div>
+```javascript
+/**
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║  POPDEUXREM :: TELEMETRY STREAM v1.0                                      ║
+ * ║  SYNC: 2026-02-21T22:15:00Z | SHA: c9d3e8f2a5b1 | CHANNEL: CONTRIBUTION_FEED ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ */
+
+const telemetry = {
+  
+  stream: {
+    source:        'github.com/popdeuxrem',
+    channel:       'CONTRIBUTION_FEED',
+    renderer:      'dist/github-snake-dark.svg',
+    updateCycle:   'daily via .github/workflows',
+    encoding:      'SVG · DARK_MODE · ANIMATED'
+  },
+
+  signals: [
+    'COMMIT_PUSH     → logged',
+    'PULL_REQUEST    → logged',
+    'CODE_REVIEW     → logged',
+    'ISSUE_CLOSE     → logged',
+    'RELEASE_TAG     → logged',
+    'SHADOW_OPS      → [REDACTED]'
+  ],
+
+  axiom: 'Observability is currency — systems that cannot speak are already broken.',
+
+  transmission: {
+    status:   'LIVE',
+    feed:     'streak-stats.demolab.com · komarev.com',
+    protocol: 'HTTPS · SVG · SHIELDS',
+    noise:    '0.000%'
+  }
+
+};
+
+export default telemetry; // ◈ Observable. Auditable. Always transmitting.
+```
 
 <img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
 
