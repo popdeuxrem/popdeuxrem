@@ -727,7 +727,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 
 <img src="https://komarev.com/ghpvc/?username=popdeuxrem&label=VIEWS&color=00f3ff&style=flat-square&labelColor=0d1117" alt="Views"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      NAVIGATION
@@ -737,11 +737,11 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 <a href="#about">ABOUT</a> · <a href="#terminal">TERMINAL</a> · <a href="#stack">STACK</a> · <a href="#stats">STATS</a> · <a href="#connect">CONNECT</a>
 </code>
 
-<br/><br/>
+<br/>
 
 <img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      OPERATOR CORE v12.0 // LIVING JAVASCRIPT OBJECT
@@ -822,11 +822,11 @@ const popdeuxrem = {{
 export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 ```
 
-<br/><br/>
+<br/>
 
 <img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      TERMINAL v12.0 // DYNAMIC SVG WITH LIVE PARTICLES
@@ -841,11 +841,11 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
   <img src="assets/terminal-dynamic.svg" width="880" alt="PopDeuxRem Dynamic Terminal">
 </picture>
 
-<br/><br/>
+<br/>
 
 <img src="assets/divider_stream.svg" width="1000" alt="Divider"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      PROXY MESH :: FEATURED ARTIFACT
@@ -941,11 +941,11 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </details>
 
-<br/><br/>
+<br/>
 
 <img src="assets/divider_mesh.svg" width="1000" alt="Divider"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      TECH MATRIX v12.0 // NEON CARD GRID
@@ -1018,11 +1018,11 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </div>
 
-<br/><br/>
+<br/>
 
 <img src="assets/divider_pulse.svg" width="1000" alt="Quantum Divider"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      TELEMETRY v12.0 // SNAKE CONTRIBUTION MATRIX
@@ -1045,11 +1045,11 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </div>
 
-<br/><br/>
+<br/>
 
 <img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      UPLINK v12.0 // IMMERSIVE CONNECT CONSOLE
@@ -1077,11 +1077,11 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </div>
 
-<br/><br/>
+<br/>
 
 <img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
 
-<br/><br/>
+<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      AXIOM v12.0 // QUANTUM QUOTE SURFACE
