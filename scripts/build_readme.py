@@ -757,7 +757,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 
 <br/>
 
-### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ OPERATOR CORE
+### ◈ ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ◈ OPERATOR CORE
 
 ```javascript
 /**
@@ -834,7 +834,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 
 <a name="terminal"></a>
 
-### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ TERMINAL
+### ◈ 𖢧𖤢𖦪𖢑ꛈꛘꛎꚳ ◈ TERMINAL
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
@@ -853,7 +853,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 
 <a name="proxy"></a>
 
-### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ PROXY MESH
+### ◈ ꛤ𖦪ꛣ𖤗ꚲ 𖢑𖤢ꕷꛅ ◈ PROXY MESH
 
 <div align="center">
 
@@ -953,7 +953,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <a name="stack"></a>
 <div align="center">
 
-### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ TECH STACK
+### ◈ 𖢧𖤢ꛕꛅ ꕷ𖢧ꛎꛕ𖢉 ◈ TECH STACK
 
 <br/>
 
@@ -1030,7 +1030,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <a name="stats"></a>
 <div align="center">
 
-### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ TELEMETRY
+### ◈ 𖢧𖤢ꚳ𖤢𖢑𖤢𖢧𖦪ꚲ ◈ TELEMETRY
 
 <br/>
 
@@ -1057,7 +1057,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 <a name="connect"></a>
 
-### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ CONNECT
+### ◈ 🤝 ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢 ◈ CONNECT
 
 <div align="center">
 
