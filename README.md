@@ -111,10 +111,108 @@ export default dossier; // ◈ Classified. Redacted. Quantum-grade.
 
 ### ◈ 𖢧𖤢𖦪𖢑ꛈꛘꛎꚳ ◈
 
+```javascript
+/**
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║  POPDEUXREM :: PROCESS MONITOR — SYSTEM DASHBOARD v3.0                   ║
+ * ║  SYNC: 2026-02-21T22:30:00Z | SHA: 4f8a2c1e9d3b | KERNEL: QUANTUM_STEALTH║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ */
+
+const processMonitor = {
+  
+  kernel: {
+    id:            'POPDEUXREM-SYS-CORE',
+    version:       'QUANTUM_STEALTH v12.0',
+    scheduler:     'DETERMINISTIC',
+    loadAverage:   ['∞', '∞', '∞'],
+    uptime:        'always',
+    lastBoot:      new Date().toISOString()
+  },
+
+  resources: {
+    cpu:           '████████████████░░░░ 82% — architecture cycles',
+    memory:        '███████████░░░░░░░░░ 58% — active pipelines',
+    network:       '█████████████████░░░ 87% — shadow routing mesh',
+    io:            '██████░░░░░░░░░░░░░░ 31% — automation queues'
+  },
+
+  mounts: [
+    { path: '/systems/architecture',   type: 'composable',  status: 'MOUNTED · RW' },
+    { path: '/automation/pipelines',   type: 'reversible',  status: 'MOUNTED · RW' },
+    { path: '/infra/shadow-routing',   type: 'stealth',     status: 'MOUNTED · RX' },
+    { path: '/ios/shortcuts-operator', type: 'automation',  status: 'MOUNTED · RW' },
+    { path: '/observability/daemon',   type: 'telemetry',   status: 'MOUNTED · RO' },
+    { path: '/classified/[REDACTED]',  type: '[REDACTED]',  status: '[REDACTED]'   }
+  ]
+
+};
+
+export default processMonitor; // ◈ Scheduled. Monitored. Deterministic.
+```
+
+```
+PID   PROCESS                        CPU%    MEM%    STATUS
+────────────────────────────────────────────────────────────────────
+001   shadow-routing.mesh            14.7    2.9     ███████ RUNNING
+002   composable.system.build        22.3    7.4     █████████ RUNNING
+003   n8n.automation.pipeline         8.9    3.3     █████░ RUNNING
+004   cloudflare.dns.overlay         11.2    2.1     ██████ RUNNING
+005   ios.shortcuts.operator          5.2    1.8     ████░░ IDLE
+006   observability.daemon            3.1    0.9     ███░░░ SLEEPING
+007   postgres.audit.trail            4.4    1.4     ████░░ RUNNING
+008   github.actions.pipeline         6.7    2.2     █████░ RUNNING
+009   proxy.mesh.hardening           17.9    4.8     ████████ RUNNING
+010   [REDACTED].stealth.op           0.0    0.0     ░░░░░░ [MASKED]
+────────────────────────────────────────────────────────────────────
+LOAD AVG: ∞   UPTIME: always   TASKS: 9 running · 1 masked · 0 zombie
+```
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
   <img src="assets/terminal-dynamic.svg" width="880" alt="PopDeuxRem Dynamic Terminal">
 </picture>
+
+```javascript
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║  POPDEUXREM :: SESSION LOG v3.0                                           ║
+ * ║  SYNC: 2026-02-21T22:30:00Z | SHA: e5b7d9f3a2c8 | TTY: QUANTUM_SHELL     ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ */
+
+const sessionLog = {
+  
+  session: {
+    tty:           'QUANTUM_SHELL',
+    user:          '@popdeuxrem',
+    host:          'gateway.net',
+    shell:         'zsh · tmux · neovim',
+    env:           'DETERMINISM=1 · OBSERVABILITY=MAX · STEALTH=ACTIVE',
+    historySize:   '∞'
+  },
+
+  recentCommands: [
+    '→ architect composable.system –reversible –auditable',
+    '→ deploy shadow-routing.mesh –mode=stealth –verify',
+    '→ run ios.shortcuts.operator –eliminate-toil',
+    '→ pipe n8n.workflow | docker.compose up –detach',
+    '→ query observability.daemon –output=structured-log',
+    '→ exec [REDACTED] –clearance=QUANTUM_STEALTH –silent'
+  ],
+
+  exitCode: {
+    last:    0,
+    status:  'NOMINAL',
+    verdict: 'All processes nominal. Zero zombie tasks. Uptime: ∞.'
+  }
+
+};
+
+export default sessionLog; // ◈ Logged. Auditable. Zero zombies.
+```
 
 <img src="assets/divider_stream.svg" width="1000" alt="Divider"/>
 
