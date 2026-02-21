@@ -1,0 +1,8 @@
+<svg width="1000" height="20" viewBox="0 0 1000 20" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .flow-line { stroke: #00f3ff; stroke-width: 1; stroke-dasharray: 8 4; animation: flow 2s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -24; } }
+    @media (prefers-color-scheme: light) { .flow-line { stroke: #0969da; } }
+  </style>
+  <line class="flow-line" x1="0" y1="10" x2="1000" y2="10"/>
+</svg>
