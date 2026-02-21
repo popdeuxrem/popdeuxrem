@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PopDeuxRem Quantum Surface v10.0 - README Auto-Generator
+PopDeuxRem Quantum Surface v12.0 - README Auto-Generator
 ========================================================
 Deterministic README.md generation from JSON data sources.
 Reads: portfolio.json, skills.json, timeline.json, data/quotes.json
@@ -65,18 +65,28 @@ def write_svg(filename: str, content: str) -> None:
 
 
 def generate_hero_orbital_svg() -> str:
-    """Generate hero orbital identity SVG."""
-    return """<svg width="1000" height="180" viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg">
+    """Generate hero orbital identity SVG v12.0 - Quantum Orb with orbiting pillars."""
+    return """<svg width="1000" height="220" viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="orbit-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#00f3ff" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
-    </linearGradient>
+    <radialGradient id="orb-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#bc8cff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0"/>
+    </radialGradient>
     <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00f3ff"/>
       <stop offset="50%" stop-color="#bc8cff"/>
       <stop offset="100%" stop-color="#00ff9d"/>
+    </linearGradient>
+    <linearGradient id="flow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0"/>
+      <stop offset="25%" stop-color="#00f3ff" stop-opacity="1"/>
+      <stop offset="75%" stop-color="#bc8cff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0"/>
     </linearGradient>
     <filter id="glow-heavy" x="-100%" y="-100%" width="300%" height="300%">
       <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -86,96 +96,185 @@ def generate_hero_orbital_svg() -> str:
       <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="orb-filter" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   
   <style>
     .bg { fill: #0d1117; }
-    .grid { stroke: #30363d; stroke-width: 0.5; opacity: 0.3; }
-    .matrix { font-family: monospace; font-size: 9px; fill: #00f3ff; opacity: 0.08; }
-    .title-fancy { font-family: 'Playfair Display', 'Bodoni MT', 'Didot', 'Times New Roman', Georgia, serif; font-weight: 900; font-style: italic; font-size: 52px; letter-spacing: 6px; fill: url(#title-grad); filter: url(#glow-heavy); }
-    .subtitle { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; letter-spacing: 4px; fill: #bc8cff; }
-    .status { font-family: 'SF Mono', monospace; font-size: 9px; fill: #8b949e; }
-    .orbit { fill: none; stroke-width: 1.5; opacity: 0.4; }
-    .orbit-1 { stroke: #00f3ff; animation: spin-orbit 20s linear infinite; transform-origin: 500px 90px; }
-    .orbit-2 { stroke: #bc8cff; animation: spin-orbit 15s linear infinite reverse; transform-origin: 500px 90px; }
-    .orbit-3 { stroke: #00ff9d; animation: spin-orbit 25s linear infinite; transform-origin: 500px 90px; }
+    .grid { stroke: #30363d; stroke-width: 0.3; opacity: 0.2; }
+    .matrix { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 8px; fill: #00f3ff; opacity: 0.06; }
+    .title-fancy { font-family: 'Playfair Display', 'Bodoni MT', 'Didot', Georgia, serif; font-weight: 900; font-style: italic; font-size: 48px; letter-spacing: 4px; fill: url(#title-grad); filter: url(#glow-heavy); }
+    .subtitle { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 3px; fill: #bc8cff; }
+    .pillar { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 2px; fill: #8b949e; font-weight: 600; }
+    .pillar-value { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 8px; fill: #c9d1d9; }
+    .status-label { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 8px; fill: #8b949e; }
+    .status-value { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; }
+    .glyph { font-family: monospace; font-size: 14px; fill: #bc8cff; opacity: 0.4; }
+    .boot-text { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 7px; fill: #00ff9d; opacity: 0.5; }
+    .orbit-ring { fill: none; stroke-width: 1; opacity: 0.3; }
+    .orbit-1 { stroke: #00f3ff; animation: spin-orbit 25s linear infinite; transform-origin: 500px 95px; }
+    .orbit-2 { stroke: #bc8cff; animation: spin-orbit 20s linear infinite reverse; transform-origin: 500px 95px; }
+    .orbit-3 { stroke: #00ff9d; animation: spin-orbit 30s linear infinite; transform-origin: 500px 95px; }
+    .orbit-4 { stroke: #d29922; animation: spin-orbit 35s linear infinite reverse; transform-origin: 500px 95px; }
     @keyframes spin-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    .particle { fill: #00f3ff; animation: float 3s ease-in-out infinite; }
-    .particle-m { fill: #bc8cff; animation: float 3s ease-in-out infinite reverse; }
-    .particle-g { fill: #00ff9d; animation: float 3s ease-in-out infinite; }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
-    @keyframes pulse-dot { 0%,100% { r: 3; opacity: 1; } 50% { r: 5; opacity: 0.6; } }
-    .scanline { fill: #00f3ff; opacity: 0.03; animation: scan 4s linear infinite; }
-    @keyframes scan { 0% { transform: translateY(-180px); } 100% { transform: translateY(180px); } }
-    .data-stream { font-family: monospace; font-size: 7px; fill: #00f3ff; opacity: 0.15; animation: stream 2s linear infinite; }
-    @keyframes stream { 0% { opacity: 0.05; } 50% { opacity: 0.2; } 100% { opacity: 0.05; } }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+    .status-pulse { animation: status-pulse 2s ease-in-out infinite; }
+    @keyframes status-pulse { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
     .reveal { opacity: 0; animation: reveal 1.5s ease-out forwards; }
-    .reveal-1 { animation-delay: 0.3s; }
-    .reveal-2 { animation-delay: 0.8s; }
-    .reveal-3 { animation-delay: 1.3s; }
+    .reveal-1 { animation-delay: 0.2s; }
+    .reveal-2 { animation-delay: 0.5s; }
+    .reveal-3 { animation-delay: 0.8s; }
+    .reveal-4 { animation-delay: 1.1s; }
+    .reveal-5 { animation-delay: 1.4s; }
     @keyframes reveal { to { opacity: 1; } }
-    @media (prefers-color-scheme: light) { .bg { fill: #f6f8fa; } .grid { stroke: #d0d7de; } .matrix { fill: #0969da; } .title-fancy { fill: #0969da; filter: none; } .subtitle { fill: #8250df; } }
-    @media (prefers-reduced-motion: reduce) { .orbit, .particle, .pulse-dot, .scanline, .data-stream, .reveal { animation: none; opacity: 1; } }
+    .float { animation: float 4s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .data-flow { animation: data-flow 3s linear infinite; }
+    @keyframes data-flow { 0% { opacity: 0.3; } 50% { opacity: 0.8; } 100% { opacity: 0.3; } }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #f6f8fa; }
+      .grid { stroke: #d0d7de; }
+      .matrix { fill: #0969da; }
+      .title-fancy { fill: #0969da; filter: none; }
+      .subtitle { fill: #8250df; }
+      .pillar { fill: #57606a; }
+      .pillar-value { fill: #24292f; }
+      .glyph { fill: #8250df; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .orbit-ring, .pulse, .status-pulse, .reveal, .float, .data-flow { animation: none; opacity: 1; }
+    }
   </style>
   
-  <rect class="bg" width="1000" height="180"/>
+  <rect class="bg" width="1000" height="220"/>
+  
   <g class="grid">
-    <line x1="0" y1="30" x2="1000" y2="30"/><line x1="0" y1="60" x2="1000" y2="60"/>
-    <line x1="0" y1="90" x2="1000" y2="90"/><line x1="0" y1="120" x2="1000" y2="120"/>
-    <line x1="0" y1="150" x2="1000" y2="150"/>
-    <line x1="100" y1="0" x2="100" y2="180"/><line x1="200" y1="0" x2="200" y2="180"/>
-    <line x1="300" y1="0" x2="300" y2="180"/><line x1="400" y1="0" x2="400" y2="180"/>
-    <line x1="500" y1="0" x2="500" y2="180"/><line x1="600" y1="0" x2="600" y2="180"/>
-    <line x1="700" y1="0" x2="700" y2="180"/><line x1="800" y1="0" x2="800" y2="180"/>
-    <line x1="900" y1="0" x2="900" y2="180"/>
+    <line x1="0" y1="20" x2="1000" y2="20"/><line x1="0" y1="40" x2="1000" y2="40"/>
+    <line x1="0" y1="60" x2="1000" y2="60"/><line x1="0" y1="80" x2="1000" y2="80"/>
+    <line x1="0" y1="100" x2="1000" y2="100"/><line x1="0" y1="120" x2="1000" y2="120"/>
+    <line x1="0" y1="140" x2="1000" y2="140"/><line x1="0" y1="160" x2="1000" y2="160"/>
+    <line x1="0" y1="180" x2="1000" y2="180"/><line x1="0" y1="200" x2="1000" y2="200"/>
+    <line x1="50" y1="0" x2="50" y2="220"/><line x1="100" y1="0" x2="100" y2="220"/>
+    <line x1="150" y1="0" x2="150" y2="220"/><line x1="200" y1="0" x2="200" y2="220"/>
+    <line x1="250" y1="0" x2="250" y2="220"/><line x1="300" y1="0" x2="300" y2="220"/>
+    <line x1="350" y1="0" x2="350" y2="220"/><line x1="400" y1="0" x2="400" y2="220"/>
+    <line x1="450" y1="0" x2="450" y2="220"/><line x1="500" y1="0" x2="500" y2="220"/>
+    <line x1="550" y1="0" x2="550" y2="220"/><line x1="600" y1="0" x2="600" y2="220"/>
+    <line x1="650" y1="0" x2="650" y2="220"/><line x1="700" y1="0" x2="700" y2="220"/>
+    <line x1="750" y1="0" x2="750" y2="220"/><line x1="800" y1="0" x2="800" y2="220"/>
+    <line x1="850" y1="0" x2="850" y2="220"/><line x1="900" y1="0" x2="900" y2="220"/>
+    <line x1="950" y1="0" x2="950" y2="220"/>
   </g>
+  
   <g class="matrix">
-    <text x="20" y="25">01010010</text><text x="120" y="45">10110101</text><text x="220" y="35">01101001</text>
-    <text x="320" y="55">11010010</text><text x="620" y="25">00101101</text><text x="720" y="45">10010110</text>
-    <text x="820" y="35">01110011</text><text x="920" y="55">11001010</text>
+    <text x="15" y="18">01001101</text><text x="95" y="38">10110100</text><text x="195" y="28">01101001</text>
+    <text x="295" y="48">11010010</text><text x="395" y="18">00101101</text><text x="495" y="38">10010110</text>
+    <text x="595" y="28">01110011</text><text x="695" y="48">11001010</text><text x="795" y="18">01010010</text>
+    <text x="895" y="38">10110101</text><text x="65" y="58">01101001</text><text x="165" y="78">11010010</text>
+    <text x="265" y="98">00101101</text><text x="365" y="118">10010110</text><text x="465" y="58">01110011</text>
+    <text x="565" y="78">11001010</text><text x="665" y="98">01010010</text><text x="765" y="118">10110101</text>
+    <text x="865" y="58">01101001</text><text x="45" y="138">11010010</text><text x="145" y="158">00101101</text>
+    <text x="245" y="178">10010110</text><text x="345" y="138">01110011</text><text x="445" y="158">11001010</text>
+    <text x="545" y="178">01010010</text><text x="645" y="138">10110101</text><text x="745" y="158">01101001</text>
+    <text x="845" y="178">11010010</text><text x="945" y="138">00101101</text>
   </g>
-  <rect class="scanline" x="0" y="0" width="1000" height="3"/>
-  <g transform="translate(500, 90)">
-    <ellipse class="orbit orbit-1" cx="0" cy="0" rx="280" ry="60"/>
-    <ellipse class="orbit orbit-2" cx="0" cy="0" rx="220" ry="45"/>
-    <ellipse class="orbit orbit-3" cx="0" cy="0" rx="160" ry="30"/>
+  
+  <g transform="translate(500, 95)">
+    <ellipse class="orbit-ring orbit-1" cx="0" cy="0" rx="320" ry="65"/>
+    <ellipse class="orbit-ring orbit-2" cx="0" cy="0" rx="260" ry="50"/>
+    <ellipse class="orbit-ring orbit-3" cx="0" cy="0" rx="200" ry="38"/>
+    <ellipse class="orbit-ring orbit-4" cx="0" cy="0" rx="140" ry="25"/>
   </g>
-  <g filter="url(#glow-soft)">
-    <circle class="particle pulse-dot" cx="220" cy="90" r="3" style="animation-delay:0s"/>
-    <circle class="particle-m pulse-dot" cx="280" cy="45" r="2" style="animation-delay:0.4s"/>
-    <circle class="particle-g pulse-dot" cx="720" cy="135" r="2.5" style="animation-delay:0.8s"/>
-    <circle class="particle pulse-dot" cx="780" cy="90" r="3" style="animation-delay:1.2s"/>
-    <circle class="particle-m pulse-dot" cx="340" cy="135" r="2" style="animation-delay:1.6s"/>
-    <circle class="particle-g pulse-dot" cx="660" cy="45" r="2.5" style="animation-delay:2s"/>
+  
+  <circle cx="500" cy="95" r="60" fill="url(#orb-glow)" filter="url(#orb-filter)" class="pulse"/>
+  <circle cx="500" cy="95" r="35" fill="url(#orb-core)" filter="url(#glow-soft)"/>
+  <circle cx="500" cy="95" r="12" fill="#00f3ff" opacity="0.9" class="pulse"/>
+  
+  <g class="reveal reveal-1">
+    <g transform="translate(135, 85)" class="float">
+      <rect x="-45" y="-18" width="90" height="36" rx="4" fill="#0d1117" stroke="#00f3ff" stroke-width="1" opacity="0.8"/>
+      <text class="pillar" x="0" y="-4" text-anchor="middle" fill="#00f3ff">DETERMINISM</text>
+      <text class="pillar-value" x="0" y="10" text-anchor="middle">traceable · reproducible</text>
+    </g>
   </g>
-  <g class="data-stream">
-    <text x="50" y="100">⟁ INIT QUANTUM_FLUX</text>
-    <text x="750" y="80">◉ SYNC_COMPLETE</text>
-    <text x="400" y="165">⬡ PROTOCOL_STACK::LOADED</text>
-  </g>
-  <g class="reveal reveal-1" filter="url(#glow-heavy)">
-    <text class="title-fancy" x="500" y="100" text-anchor="middle">𝓟𝓸𝓹𝓓𝓮𝓾𝔁𝓡𝓮𝓶</text>
-  </g>
+  
   <g class="reveal reveal-2">
+    <g transform="translate(865, 85)" class="float" style="animation-delay: 0.5s">
+      <rect x="-50" y="-18" width="100" height="36" rx="4" fill="#0d1117" stroke="#bc8cff" stroke-width="1" opacity="0.8"/>
+      <text class="pillar" x="0" y="-4" text-anchor="middle" fill="#bc8cff">OBSERVABILITY</text>
+      <text class="pillar-value" x="0" y="10" text-anchor="middle">systems that speak</text>
+    </g>
+  </g>
+  
+  <g class="reveal reveal-3">
+    <g transform="translate(135, 145)" class="float" style="animation-delay: 1s">
+      <rect x="-50" y="-18" width="100" height="36" rx="4" fill="#0d1117" stroke="#00ff9d" stroke-width="1" opacity="0.8"/>
+      <text class="pillar" x="0" y="-4" text-anchor="middle" fill="#00ff9d">iOS AUTOMATION</text>
+      <text class="pillar-value" x="0" y="10" text-anchor="middle">Shortcuts · Scriptable</text>
+    </g>
+  </g>
+  
+  <g class="reveal reveal-4">
+    <g transform="translate(865, 145)" class="float" style="animation-delay: 1.5s">
+      <rect x="-45" y="-18" width="90" height="36" rx="4" fill="#0d1117" stroke="#d29922" stroke-width="1" opacity="0.8"/>
+      <text class="pillar" x="0" y="-4" text-anchor="middle" fill="#d29922">PROXY MESH</text>
+      <text class="pillar-value" x="0" y="10" text-anchor="middle">shadow routing</text>
+    </g>
+  </g>
+  
+  <text class="glyph float" x="420" y="65">𖢧ꛅ𖤢</text>
+  <text class="glyph float" x="565" y="130" style="animation-delay: 1s">ꚽꚳꛈ𖢧ꛕꛅ</text>
+  
+  <g class="reveal reveal-3" filter="url(#glow-heavy)">
+    <text class="title-fancy" x="500" y="100" text-anchor="middle">𝒫𝑜𝓅𝒟𝑒𝓊𝓍𝑅𝑒𝓂</text>
+  </g>
+  
+  <g class="reveal reveal-4">
     <text class="subtitle" x="500" y="125" text-anchor="middle">PRINCIPAL SYSTEMS ARCHITECT</text>
   </g>
-  <g class="reveal reveal-3">
-    <rect x="50" y="145" width="140" height="22" rx="4" fill="#0d1117" stroke="#00f3ff" stroke-width="1" opacity="0.8"/>
-    <text class="status" x="60" y="160">◉ STATUS: ONLINE</text>
-    <rect x="200" y="145" width="130" height="22" rx="4" fill="#0d1117" stroke="#bc8cff" stroke-width="1" opacity="0.8"/>
-    <text class="status" x="210" y="160">◈ SYNC: ACTIVE</text>
-    <rect x="340" y="145" width="150" height="22" rx="4" fill="#0d1117" stroke="#00ff9d" stroke-width="1" opacity="0.8"/>
-    <text class="status" x="350" y="160">⬡ MODE: QUANTUM</text>
+  
+  <g class="reveal reveal-5">
+    <g transform="translate(180, 195)">
+      <circle cx="0" cy="0" r="4" fill="#00f3ff" class="status-pulse"/>
+      <text class="status-label" x="10" y="-3">STATUS</text>
+      <text class="status-value" x="10" y="8" fill="#00f3ff">ONLINE</text>
+    </g>
+    <g transform="translate(350, 195)">
+      <circle cx="0" cy="0" r="4" fill="#bc8cff" class="status-pulse" style="animation-delay: 0.3s"/>
+      <text class="status-label" x="10" y="-3">SYNC</text>
+      <text class="status-value" x="10" y="8" fill="#bc8cff">ACTIVE</text>
+    </g>
+    <g transform="translate(520, 195)">
+      <circle cx="0" cy="0" r="4" fill="#00ff9d" class="status-pulse" style="animation-delay: 0.6s"/>
+      <text class="status-label" x="10" y="-3">MODE</text>
+      <text class="status-value" x="10" y="8" fill="#00ff9d">QUANTUM</text>
+    </g>
+    <g transform="translate(690, 195)">
+      <circle cx="0" cy="0" r="4" fill="#d29922" class="status-pulse" style="animation-delay: 0.9s"/>
+      <text class="status-label" x="10" y="-3">UPTIME</text>
+      <text class="status-value" x="10" y="8" fill="#d29922">∞</text>
+    </g>
+    <g transform="translate(850, 195)">
+      <circle cx="0" cy="0" r="4" fill="#8b949e" class="status-pulse" style="animation-delay: 1.2s"/>
+      <text class="status-label" x="10" y="-3">CHANNEL</text>
+      <text class="status-value" x="10" y="8" fill="#8b949e">OPEN</text>
+    </g>
   </g>
-  <g class="reveal reveal-3" transform="translate(850, 150)">
-    <rect x="0" y="0" width="120" height="22" rx="4" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-    <text class="status" x="10" y="15">v10.0 // surface</text>
-  </g>
-  <line x1="0" y1="178" x2="1000" y2="178" stroke="#30363d" stroke-width="2"/>
-  <rect x="0" y="177" width="400" height="3" fill="url(#orbit-grad)">
-    <animate attributeName="width" values="0;1000;0" dur="6s" repeatCount="indefinite"/>
+  
+  <line x1="0" y1="218" x2="1000" y2="218" stroke="#30363d" stroke-width="2"/>
+  <rect x="0" y="217" width="300" height="3" fill="url(#flow-grad)" class="data-flow">
+    <animate attributeName="x" values="0;700;0" dur="4s" repeatCount="indefinite"/>
   </rect>
+  
+  <g class="boot-text" opacity="0">
+    <text x="30" y="10">◈ BOOT: iOS Shortcuts + Scriptable operators loaded</text>
+    <text x="600" y="10">◈ PROXY: Shadow mesh routing active</text>
+    <animate attributeName="opacity" values="0;0.5;0" dur="3s" repeatCount="indefinite"/>
+  </g>
 </svg>"""
 
 
@@ -192,74 +291,114 @@ def generate_flow_line_svg() -> str:
 
 
 def generate_uplink_console_svg() -> str:
-    """Generate uplink console SVG."""
-    return """<svg width="700" height="200" viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+    """Generate uplink console SVG v12.0 - Polished connect card."""
+    return """<svg width="800" height="240" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="uplink-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.3"/>
-      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.3"/>
+    <linearGradient id="uplink-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0d1117"/>
     </linearGradient>
-    <filter id="uplink-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
+    <linearGradient id="uplink-border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.6"/>
+    </linearGradient>
+    <filter id="uplink-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
+  
   <style>
-    .uplink-bg { fill: #0d1117; }
-    .uplink-border { fill: none; stroke: #00f3ff; stroke-width: 2; stroke-opacity: 0.5; }
-    .uplink-header { font-family: 'SF Mono', monospace; font-size: 11px; fill: #00f3ff; letter-spacing: 2px; }
-    .uplink-label { font-family: 'SF Mono', monospace; font-size: 10px; fill: #8b949e; }
-    .uplink-value { font-family: 'SF Mono', monospace; font-size: 12px; fill: #c9d1d9; }
-    .uplink-accent { font-family: 'SF Mono', monospace; font-size: 10px; fill: #bc8cff; }
-    .uplink-footer { font-family: 'SF Mono', monospace; font-size: 9px; fill: #484f58; }
-    .signal { fill: #00ff9d; animation: signal-pulse 2s ease-in-out infinite; }
-    @keyframes signal-pulse { 0%,100% { opacity: 0.6; r: 3; } 50% { opacity: 1; r: 4; } }
-    .orbit-ring { fill: none; stroke: #00f3ff; stroke-width: 0.5; stroke-dasharray: 4 4; animation: orbit-spin 10s linear infinite; transform-origin: 350px 80px; }
-    @keyframes orbit-spin { to { transform: rotate(360deg); } }
-    .data-packet { fill: #00f3ff; animation: packet 3s ease-in-out infinite; }
-    @keyframes packet { 0%,100% { opacity: 0.3; } 50% { opacity: 0.8; } }
-    .corner-decor { fill: none; stroke: #bc8cff; stroke-width: 1; stroke-opacity: 0.4; }
-    @media (prefers-color-scheme: light) { .uplink-bg { fill: #f6f8fa; } .uplink-border { stroke: #0969da; } .uplink-header { fill: #0969da; } .uplink-value { fill: #24292f; } }
-    @media (prefers-reduced-motion: reduce) { .signal, .orbit-ring, .data-packet { animation: none; opacity: 0.7; } }
+    .card-bg { fill: url(#uplink-bg-grad); }
+    .card-border { fill: none; stroke: url(#uplink-border-grad); stroke-width: 2; }
+    .card-inner-border { fill: none; stroke: #30363d; stroke-width: 0.5; stroke-dasharray: 4 2; }
+    .header-text { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 12px; fill: #00f3ff; letter-spacing: 3px; font-weight: 600; }
+    .channel-label { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 9px; fill: #8b949e; letter-spacing: 1px; }
+    .channel-value { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 13px; fill: #c9d1d9; font-weight: 500; }
+    .channel-handle { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 11px; fill: #58a6ff; }
+    .footer-text { font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 8px; fill: #484f58; letter-spacing: 2px; }
+    .glyph { font-family: monospace; font-size: 10px; fill: #bc8cff; opacity: 0.5; }
+    .signal-dot { animation: signal-pulse 2s ease-in-out infinite; }
+    @keyframes signal-pulse { 0%,100% { opacity: 0.5; r: 3; } 50% { opacity: 1; r: 4; } }
+    .corner-bracket { fill: none; stroke: #00f3ff; stroke-width: 1.5; stroke-opacity: 0.4; }
+    .data-line { stroke: #00f3ff; stroke-width: 0.5; stroke-dasharray: 2 4; opacity: 0.3; animation: data-flow 3s linear infinite; }
+    @keyframes data-flow { to { stroke-dashoffset: -24; } }
+    @media (prefers-color-scheme: light) {
+      .card-bg { fill: #f6f8fa; }
+      .card-border { stroke: url(#uplink-border-grad); }
+      .card-inner-border { stroke: #d0d7de; }
+      .header-text { fill: #0969da; }
+      .channel-label { fill: #57606a; }
+      .channel-value { fill: #24292f; }
+      .channel-handle { fill: #0969da; }
+      .corner-bracket { stroke: #0969da; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .signal-dot, .data-line { animation: none; opacity: 0.7; }
+    }
   </style>
-  <rect class="uplink-bg" x="0" y="0" width="700" height="200" rx="8"/>
-  <rect class="uplink-border" x="1" y="1" width="698" height="198" rx="8"/>
-  <path class="corner-decor" d="M10,30 L10,10 L30,10"/>
-  <path class="corner-decor" d="M670,10 L690,10 L690,30"/>
-  <path class="corner-decor" d="M690,170 L690,190 L670,190"/>
-  <path class="corner-decor" d="M30,190 L10,190 L10,170"/>
-  <g transform="translate(350, 80)">
-    <ellipse class="orbit-ring" cx="0" cy="0" rx="60" ry="20"/>
-  </g>
-  <circle class="data-packet" cx="290" cy="80" r="2" style="animation-delay:0s"/>
-  <circle class="data-packet" cx="410" cy="80" r="2" style="animation-delay:1s"/>
-  <circle class="data-packet" cx="350" cy="60" r="2" style="animation-delay:2s"/>
+  
+  <rect class="card-bg" x="0" y="0" width="800" height="240" rx="12"/>
+  <rect class="card-border" x="1" y="1" width="798" height="238" rx="12"/>
+  <rect class="card-inner-border" x="8" y="8" width="784" height="224" rx="8"/>
+  
+  <path class="corner-bracket" d="M20,40 L20,20 L40,20"/>
+  <path class="corner-bracket" d="M760,20 L780,20 L780,40"/>
+  <path class="corner-bracket" d="M780,200 L780,220 L760,220"/>
+  <path class="corner-bracket" d="M40,220 L20,220 L20,200"/>
+  
   <g filter="url(#uplink-glow)">
-    <text class="uplink-header" x="350" y="30" text-anchor="middle">◈ UPLINK CONSOLE v10.0 ◈</text>
+    <text class="header-text" x="400" y="45" text-anchor="middle">◈ UPLINK CONSOLE ◈</text>
   </g>
-  <g transform="translate(30, 60)">
-    <circle class="signal" cx="0" cy="5" r="3"/>
-    <text class="uplink-label" x="15" y="3">GITHUB</text>
-    <text class="uplink-value" x="15" y="18">@popdeuxrem</text>
-    <circle class="signal" cx="0" cy="45" r="3" style="animation-delay:0.5s"/>
-    <text class="uplink-label" x="15" y="43">EMAIL</text>
-    <text class="uplink-value" x="15" y="58">popdeuxrem@gateway.net</text>
+  
+  <line class="data-line" x1="50" y1="60" x2="750" y2="60"/>
+  
+  <g transform="translate(100, 90)">
+    <circle class="signal-dot" cx="0" cy="0" r="3" fill="#00f3ff"/>
+    <text class="channel-label" x="15" y="-8">GITHUB</text>
+    <text class="channel-value" x="15" y="8">@popdeuxrem</text>
+    <text class="glyph" x="15" y="22">◈ primary</text>
   </g>
-  <g transform="translate(350, 60)">
-    <circle class="signal" cx="0" cy="5" r="3" style="animation-delay:1s"/>
-    <text class="uplink-label" x="15" y="3">PROTOCOL</text>
-    <text class="uplink-value" x="15" y="18">context · constraints</text>
-    <circle class="signal" cx="0" cy="45" r="3" style="animation-delay:1.5s"/>
-    <text class="uplink-label" x="15" y="43">IDEAL OUTCOME</text>
-    <text class="uplink-accent" x="15" y="58">specify for engagement</text>
+  
+  <g transform="translate(300, 90)">
+    <circle class="signal-dot" cx="0" cy="0" r="3" fill="#8b949e" style="animation-delay: 0.3s"/>
+    <text class="channel-label" x="15" y="-8">X / TWITTER</text>
+    <text class="channel-value" x="15" y="8">@d3_glitch</text>
+    <text class="glyph" x="15" y="22">◈ alias</text>
   </g>
-  <line x1="30" y1="140" x2="670" y2="140" stroke="#30363d" stroke-width="1" stroke-dasharray="2 4"/>
-  <g transform="translate(350, 165)">
-    <text class="uplink-footer" x="0" y="0" text-anchor="middle">ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢 ∙ 𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ ∙ 🛰 CHANNEL ACTIVE</text>
+  
+  <g transform="translate(500, 90)">
+    <circle class="signal-dot" cx="0" cy="0" r="3" fill="#bc8cff" style="animation-delay: 0.6s"/>
+    <text class="channel-label" x="15" y="-8">MATRIX</text>
+    <text class="channel-value" x="15" y="8">@popdeuxrem:matrix.org</text>
+    <text class="glyph" x="15" y="22">◈ encrypted</text>
   </g>
-  <g transform="translate(350, 185)">
-    <text class="uplink-footer" x="0" y="0" text-anchor="middle">Send transmission → await entanglement</text>
+  
+  <g transform="translate(700, 90)">
+    <circle class="signal-dot" cx="0" cy="0" r="3" fill="#00ff9d" style="animation-delay: 0.9s"/>
+    <text class="channel-label" x="15" y="-8">EMAIL</text>
+    <text class="channel-value" x="15" y="8">@gateway.net</text>
+    <text class="glyph" x="15" y="22">◈ async</text>
+  </g>
+  
+  <line x1="50" y1="140" x2="750" y2="140" stroke="#30363d" stroke-width="0.5"/>
+  
+  <g transform="translate(400, 165)">
+    <text class="footer-text" x="0" y="0" text-anchor="middle">PROTOCOL: context · constraints · ideal outcome</text>
+  </g>
+  
+  <g transform="translate(400, 185)">
+    <text class="footer-text" x="0" y="0" text-anchor="middle" fill="#00f3ff" opacity="0.7">ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢 ∙ 🛰 CHANNEL ACTIVE</text>
+  </g>
+  
+  <g transform="translate(400, 215)">
+    <text class="footer-text" x="0" y="0" text-anchor="middle">Send transmission → await entanglement</text>
+  </g>
+  
+  <g opacity="0.15">
+    <text x="30" y="230" font-family="monospace" font-size="8" fill="#00f3ff">𖢧ꛅ𖤢</text>
+    <text x="750" y="230" font-family="monospace" font-size="8" fill="#bc8cff">ꚽꚳꛈ𖢧ꛕꛅ</text>
   </g>
 </svg>"""
 
@@ -433,7 +572,7 @@ def generate_timeline_svg(timeline: List[Dict]) -> str:
 
 
 def generate_quote_svg(quotes: List[Dict]) -> str:
-    """Generate quantum axiom quote SVG v10.0."""
+    """Generate quantum axiom quote SVG v12.0."""
     quote_data = (
         random.choice(quotes)
         if quotes
@@ -466,7 +605,7 @@ def generate_quote_svg(quotes: List[Dict]) -> str:
     .quote-mark {{ font-family: Georgia, serif; font-size: 64px; fill: #00f3ff; opacity: 0.15; }}
     .quote-text {{ font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-style: italic; fill: #c9d1d9; }}
     .quote-accent {{ fill: #bc8cff; }}
-    .quote-author {{ font-family: 'SF Mono', monospace; font-size: 11px; fill: #8b949e; letter-spacing: 2px; }}
+    .quote-author {{ font-family: 'SF Mono', 'JetBrains Mono', monospace; font-size: 11px; fill: #8b949e; letter-spacing: 2px; }}
     .quote-glyph {{ font-family: monospace; font-size: 10px; fill: #00ff9d; opacity: 0.6; }}
     
     .pulse-line {{ stroke: #00f3ff; stroke-width: 1; stroke-dasharray: 4 2; animation: pulse-line 2s ease-in-out infinite; }}
@@ -505,7 +644,7 @@ def generate_quote_svg(quotes: List[Dict]) -> str:
   
   <text class="quote-author" x="400" y="100" text-anchor="middle">— 𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ ∙ {author}</text>
   
-  <text class="quote-glyph" x="400" y="125" text-anchor="middle">ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ∙ ◈ ∙ AXIOM v10.0</text>
+  <text class="quote-glyph" x="400" y="125" text-anchor="middle">ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ∙ ◈ ∙ AXIOM</text>
   
   <text class="quote-mark" x="750" y="100">"</text>
 </svg>'''
@@ -515,7 +654,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
     """Main build function - generates README.md from data sources."""
 
     print("=" * 60)
-    print("◈ POPDEUXREM QUANTUM SURFACE v10.0 - README BUILDER")
+    print("◈ POPDEUXREM QUANTUM SURFACE v12.0 - README BUILDER")
     print("=" * 60)
 
     portfolio = load_json(BASE_DIR / "portfolio.json")
@@ -556,7 +695,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 
     readme_content = f"""<!--
   ╔═══════════════════════════════════════════════════════════════════════════╗
-  ║  POPDEUXREM // QUANTUM SURFACE v10.0                                      ║
+  ║  POPDEUXREM // QUANTUM SURFACE v12.0                                      ║
   ║  AUTO-GENERATED BY build_readme.py                                        ║
   ║  LAST SYNC: {timestamp} | SHA: {build_hash[:16]}               ║
   ╚═══════════════════════════════════════════════════════════════════════════╝
@@ -565,7 +704,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 <div align="center">
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     HERO SURFACE v10.0 // IMMERSIVE ORBITAL IDENTITY
+     HERO SURFACE v12.0 // IMMERSIVE ORBITAL IDENTITY
      ═══════════════════════════════════════════════════════════════════════════ -->
 
 <picture>
@@ -574,21 +713,21 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
   <img src="assets/hero_banner.svg" width="1000" alt="PopDeuxRem Banner"/>
 </picture>
 
-<br/>
+<br/><br/>
 
 <a name="header"></a>
 
 <img src="assets/hero_orbital.svg" width="1000" alt="PopDeuxRem Orbital Identity"/>
 
-<br/>
+<br/><br/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Playfair+Display&weight=700&size=28&duration=4000&pause=1500&color=BC8CFF66&center=true&vCenter=true&repeat=true&width=700&lines=Full+Stack+Engineer;Engineered+Clarity;Tech+Innovator;Open+Source+Enthusiast;Auditable+Systems;Composable+By+Design;Problem+Solver;𝕱𝖆𝖛𝖔𝖗𝖆𝖓𝖙𝖚𝖒" alt="Typing"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Playfair+Display&weight=700&size=28&duration=4000&pause=1500&color=BC8CFF66&center=true&vCenter=true&repeat=true&width=700&lines=Full+Stack+Engineer;Engineered+Clarity;Tech+Innovator;Open+Source+Enthusiast;Auditable+Systems;Composable+By+Design;Problem+Solver;Quantum+Architect" alt="Typing"/>
 
-<br/>
+<br/><br/>
 
 <img src="https://komarev.com/ghpvc/?username=popdeuxrem&label=VIEWS&color=00f3ff&style=flat-square&labelColor=0d1117" alt="Views"/>
 
-<br/>
+<br/><br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      NAVIGATION
@@ -598,12 +737,14 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 <a href="#about">ABOUT</a> · <a href="#terminal">TERMINAL</a> · <a href="#stack">STACK</a> · <a href="#stats">STATS</a> · <a href="#connect">CONNECT</a>
 </code>
 
+<br/><br/>
+
 <img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
 
 <br/><br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     OPERATOR CORE v10.0 // LIVING JAVASCRIPT OBJECT
+     OPERATOR CORE v12.0 // LIVING JAVASCRIPT OBJECT
      ═══════════════════════════════════════════════════════════════════════════ -->
 
 <a name="about"></a>
@@ -614,12 +755,14 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 
 </div>
 
-### ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢
+<br/>
+
+### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
 
 ```javascript
 /**
  * ╔═══════════════════════════════════════════════════════════════════════════╗
- * ║  POPDEUXREM :: QUANTUM OPERATOR DEFINITION v10.0                          ║
+ * ║  POPDEUXREM :: QUANTUM OPERATOR DEFINITION v12.0                          ║
  * ║  SYNC: {timestamp} | SHA: {build_hash[:16]}                    ║
  * ╚═══════════════════════════════════════════════════════════════════════════╝
  */
@@ -666,6 +809,8 @@ const popdeuxrem = {{
   
   uplink: {{
     github: "@popdeuxrem",
+    twitter: "@d3_glitch",
+    matrix: "@popdeuxrem:matrix.org",
     email: "popdeuxrem@gateway.net",
     protocol: "Send: context · constraints · ideal outcome"
   }},
@@ -684,10 +829,12 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 <br/><br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     TERMINAL v10.0 // DYNAMIC SVG WITH LIVE PARTICLES
+     TERMINAL v12.0 // DYNAMIC SVG WITH LIVE PARTICLES
      ═══════════════════════════════════════════════════════════════════════════ -->
 
 <a name="terminal"></a>
+
+### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
@@ -706,7 +853,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 
 <a name="proxy"></a>
 
-### ◈ PROXY_MESH :: FEATURED_ARTIFACT
+### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
 
 <div align="center">
 
@@ -717,6 +864,8 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 <img src="https://img.shields.io/badge/STATUS-SHIP-d29922?style=for-the-badge&labelColor=0d1117" alt="status"/>
 
 </div>
+
+<br/>
 
 > **Proxy meshes, DNS overlays, stealth routing, iOS Shortcuts operators, n8n/Docker pipelines.**
 
@@ -730,7 +879,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 ```typescript
 /**
  * ╔═══════════════════════════════════════════════════════════════════════════╗
- * ║  POPDEUXREM :: OPERATIONAL MANIFEST v10.0                                 ║
+ * ║  POPDEUXREM :: OPERATIONAL MANIFEST v12.0                                 ║
  * ║  SYNC: {timestamp} | SHA: manifest.shadow.stable                 ║
  * ╚═══════════════════════════════════════════════════════════════════════════╝
  */
@@ -792,17 +941,19 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </details>
 
+<br/><br/>
+
 <img src="assets/divider_mesh.svg" width="1000" alt="Divider"/>
 
 <br/><br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     TECH MATRIX v10.0 // NEON CARD GRID
+     TECH MATRIX v12.0 // NEON CARD GRID
      ═══════════════════════════════════════════════════════════════════════════ -->
 <a name="stack"></a>
 <div align="center">
 
-### ⚡ ꛤ𖦪ꛈ𖢑ꛎ𖦪ꚲ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
 
 <br/>
 
@@ -832,7 +983,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 <h3 align="center">⚙️ ꕷ𖤢ꛕ𖣠ꛘ𖤀ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</h3>
 <p align="center">
-<img src="https://img.shields.io/badge/node.js-6DA55F?style=flat-square&logo=node.js&logoColor=white" alt="NodeJS"/>
+<img src="https://img.shields.io/badge/node.js-6DA55G?style=flat-square&logo=node.js&logoColor=white" alt="NodeJS"/>
 <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS"/><br/>
 <img src="https://img.shields.io/badge/fastify-%23000000.svg?style=flat-square&logo=fastify&logoColor=white" alt="Fastify"/>
 <img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python"/><br/>
@@ -869,13 +1020,17 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 <br/><br/>
 
+<img src="assets/divider_pulse.svg" width="1000" alt="Quantum Divider"/>
+
+<br/><br/>
+
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     TELEMETRY v10.0 // SNAKE CONTRIBUTION MATRIX
+     TELEMETRY v12.0 // SNAKE CONTRIBUTION MATRIX
      ═══════════════════════════════════════════════════════════════════════════ -->
 <a name="stats"></a>
 <div align="center">
 
-### 📈 ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
 
 <br/>
 
@@ -892,17 +1047,21 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 <br/><br/>
 
-<img src="assets/divider_pulse.svg" width="1000" alt="Quantum Divider"/>
+<img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
+
+<br/><br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     UPLINK v10.0 // IMMERSIVE CONNECT CONSOLE
+     UPLINK v12.0 // IMMERSIVE CONNECT CONSOLE
      ═══════════════════════════════════════════════════════════════════════════ -->
 
 <a name="connect"></a>
 
+### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+
 <div align="center">
 
-<img src="assets/uplink-console.svg" width="700" alt="Uplink Console"/>
+<img src="assets/uplink-console.svg" width="800" alt="Uplink Console"/>
 
 <br/><br/>
 
@@ -911,6 +1070,9 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 </a>
 <a href="https://github.com/popdeuxrem">
   <img src="https://img.shields.io/badge/GitHub-@popdeuxrem-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" alt="GitHub"/>
+</a>
+<a href="https://x.com/d3_glitch">
+  <img src="https://img.shields.io/badge/X-@d3_glitch-1DA1F2?style=for-the-badge&logo=x&logoColor=white&labelColor=0d1117" alt="X/Twitter"/>
 </a>
 
 </div>
@@ -922,7 +1084,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <br/><br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     AXIOM v10.0 // QUANTUM QUOTE SURFACE
+     AXIOM v12.0 // QUANTUM QUOTE SURFACE
      ═══════════════════════════════════════════════════════════════════════════ -->
 
 <a name="quote"></a>
@@ -968,7 +1130,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 def main():
     parser = argparse.ArgumentParser(
-        description="PopDeuxRem README Auto-Generator v10.0",
+        description="PopDeuxRem README Auto-Generator v12.0",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
