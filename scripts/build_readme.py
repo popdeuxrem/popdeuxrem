@@ -757,7 +757,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 
 <br/>
 
-### ◈ ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ◈ OPERATOR CORE
+### ◈ ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ◈
 
 ```javascript
 /**
@@ -834,7 +834,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 
 <a name="terminal"></a>
 
-### ◈ 𖢧𖤢𖦪𖢑ꛈꛘꛎꚳ ◈ TERMINAL
+### ◈ 𖢧𖤢𖦪𖢑ꛈꛘꛎꚳ ◈
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
@@ -853,7 +853,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 
 <a name="proxy"></a>
 
-### ◈ ꛤ𖦪ꛣ𖤗ꚲ 𖢑𖤢ꕷꛅ ◈ PROXY MESH
+### ◈ ꛤ𖦪ꛣ𖤗ꚲ 𖢑𖤢ꕷꛅ ◈
 
 <div align="center">
 
@@ -872,7 +872,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 <a name="shadow"></a>
 
 <details>
-<summary><b>◈ SHADOW_CORE // EXPAND_OPERATIONAL_PHILOSOPHY</b></summary>
+<summary><b>◈ ꕷꛅꛎ𖤀𖣠ꛃ_ꛕ𖣠𖦪𖤢 ◈</b></summary>
 
 <br/>
 
@@ -953,7 +953,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <a name="stack"></a>
 <div align="center">
 
-### ◈ 𖢧𖤢ꛕꛅ ꕷ𖢧ꛎꛕ𖢉 ◈ TECH STACK
+### ◈ 𖢧𖤢ꛕꛅ ꕷ𖢧ꛎꛕ𖢉 ◈
 
 <br/>
 
@@ -961,7 +961,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <tr>
 <td valign="top" width="33%">
 
-<h3 align="center">🧰 FRONTEND</h3>
+<h3 align="center">🧰 ꘘ𖦪𖣠ꛘ𖢧𖤢ꛘ𖤀</h3>
 <p align="center">
 <img src="https://img.shields.io/badge/web3.js-F16822?style=flat-square&logo=web3.js&logoColor=white" alt="web3.js"/><br/>
 <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
@@ -981,7 +981,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 </td>
 <td valign="top" width="33%">
 
-<h3 align="center">⚙️ BACKEND</h3>
+<h3 align="center">⚙️ ꔪꛎꛕ𖢉𖤢ꛘ𖤀</h3>
 <p align="center">
 <img src="https://img.shields.io/badge/node.js-6DA55G?style=flat-square&logo=node.js&logoColor=white" alt="NodeJS"/>
 <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS"/><br/>
@@ -998,7 +998,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 </td>
 <td valign="top" width="33%">
 
-<h3 align="center">🔬 INFRASTRUCTURE</h3>
+<h3 align="center">🔬 ꛈꛘꘘ𖦪ꛎ</h3>
 <p align="center">
 <img src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
 <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white" alt="Terraform"/><br/>
@@ -1030,7 +1030,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <a name="stats"></a>
 <div align="center">
 
-### ◈ 𖢧𖤢ꚳ𖤢𖢑𖤢𖢧𖦪ꚲ ◈ TELEMETRY
+### ◈ 𖢧𖤢ꚳ𖤢𖢑𖤢𖢧𖦪ꚲ ◈
 
 <br/>
 
@@ -1057,23 +1057,24 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 <a name="connect"></a>
 
-### ◈ 🤝 ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢 ◈ CONNECT
+### 🤝 ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢
 
 <div align="center">
 
-<img src="assets/uplink-console.svg" width="800" alt="Uplink Console"/>
+```
+⟁ ORBIT // UPLINK
 
-<br/><br/>
+╭────────────────────────────────────────────────────────────╮
+│ 🛰 GitHub → https://github.com/Popdeuxrem                  │
+│ ✉ DM (X) → https://x.com/d3_glitch                        │
+│                                                            │
+│ 📓 Quantum Lab → https://github.com/Popdeuxrem/quantum-lab │
+│ 📧 Email → mailto:contact@popdeuxrem@email                 │
+╰────────────────────────────────────────────────────────────╯
 
-<a href="mailto:popdeuxrem@gateway.net">
-  <img src="https://img.shields.io/badge/Email-popdeuxrem%40gateway.net-00f3ff?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117" alt="Email"/>
-</a>
-<a href="https://github.com/popdeuxrem">
-  <img src="https://img.shields.io/badge/GitHub-@popdeuxrem-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" alt="GitHub"/>
-</a>
-<a href="https://x.com/d3_glitch">
-  <img src="https://img.shields.io/badge/X-@d3_glitch-1DA1F2?style=for-the-badge&logo=x&logoColor=white&labelColor=0d1117" alt="X/Twitter"/>
-</a>
+Transmission Schema
+context · constraints · ideal_outcome
+```
 
 </div>
 
