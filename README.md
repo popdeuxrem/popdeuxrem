@@ -9,128 +9,32 @@
 <div align="center">
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     HERO SURFACE v12.0 // CLASSIFIED FILM REEL
+     HERO SURFACE v12.0 // IMMERSIVE ORBITAL IDENTITY
      ═══════════════════════════════════════════════════════════════════════════ -->
-
-<table>
-<tr>
-<td valign="top" align="center">
-
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-
-</td>
-<td valign="top" align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/hero_banner.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/hero_banner.svg">
-  <img src="assets/hero_banner.svg" width="700" alt="PopDeuxRem Banner"/>
+  <img src="assets/hero_banner.svg" width="1000" alt="PopDeuxRem Banner"/>
 </picture>
-
-<br/>
-
-<a name="header"></a>
-
-<img src="assets/hero_orbital.svg" width="120" alt="PopDeuxRem Orbital Identity"/>
 
 <br/><br/>
 
-<table>
-<tr>
-<td bgcolor="#0d1117" style="border: 1px solid #d100ff; padding: 8px 16px;">
-<code style="color: #d100ff;">HANDLE</code> <span style="color: #c9d1d9;">//</span> <code style="color: #00f3ff;">@d3_glitch</code>
-</td>
-</tr>
-</table>
+<img src="assets/hero_particle_banner.svg" width="1200" alt="Chris Particle Banner"/>
 
-<table>
-<tr>
-<td bgcolor="#0d1117" style="border: 1px solid #d100ff; padding: 8px 16px;">
-<code style="color: #d100ff;">DESIGNATION</code> <span style="color: #c9d1d9;">//</span> <code style="color: #00f3ff;">PRINCIPAL SYSTEMS ARCHITECT</code>
-</td>
-</tr>
-</table>
+<br/><br/>
 
-<table>
-<tr>
-<td bgcolor="#0d1117" style="border: 1px solid #d100ff; padding: 8px 16px;">
-<code style="color: #d100ff;">CLEARANCE</code> <span style="color: #c9d1d9;">//</span> <code style="color: #00f3ff;">QUANTUM_STEALTH</code>
-</td>
-</tr>
-</table>
+<a name="header"></a>
 
-<table>
-<tr>
-<td bgcolor="#0d1117" style="border: 1px solid #d100ff; padding: 8px 16px;">
-<code style="color: #d100ff;">UPTIME</code> <span style="color: #c9d1d9;">//</span> <code style="color: #00f3ff;">∞ · OPERATIONAL</code>
-</td>
-</tr>
-</table>
+<img src="assets/hero_orbital.svg" width="1000" alt="PopDeuxRem Orbital Identity"/>
 
-<br/>
+<br/><br/>
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Playfair+Display&weight=700&size=28&duration=4000&pause=1500&color=BC8CFF66&center=true&vCenter=true&repeat=true&width=700&lines=Full+Stack+Engineer;Engineered+Clarity;Tech+Innovator;Open+Source+Enthusiast;Auditable+Systems;Composable+By+Design;Problem+Solver;Quantum+Architect" alt="Typing"/>
 
 <br/><br/>
 
 <img src="https://komarev.com/ghpvc/?username=popdeuxrem&label=VIEWS&color=00f3ff&style=flat-square&labelColor=0d1117" alt="Views"/>
-
-<br/>
-
-</td>
-<td valign="top" align="center">
-
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-░▓░▓░▓░▓░▓░▓<br/>
-▓░▓░▓░▓░▓░▓░<br/>
-
-</td>
-</tr>
-</table>
 
 <br/>
 
