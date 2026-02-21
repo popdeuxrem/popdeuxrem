@@ -1,155 +1,111 @@
-<svg width="1000" height="200" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc">
-  <title id="title">PopDeuxRem Quantum Hero Surface v12.0</title>
-  <desc id="desc">From-scratch quantum hero with exact fancy text 𝒫𝑜𝓅𝒟𝑒𝓊𝓍𝑅𝑒𝓂, dense matrix rain, central glowing orb, orbiting pillars, boot sequence, floating glyphs, live status, and streaming data flow</desc>
-
+<svg width="1000" height="180" viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="orbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="orbit-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00f3ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#bc8cff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#00f3ff"/>
       <stop offset="50%" stop-color="#bc8cff"/>
       <stop offset="100%" stop-color="#00ff9d"/>
     </linearGradient>
-    <filter id="orbGlow" x="-90%" y="-90%" width="280%" height="280%">
-      <feGaussianBlur stdDeviation="18" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="glow-heavy" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.95"/>
-      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.95"/>
-    </linearGradient>
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-
+  
   <style>
     .bg { fill: #0d1117; }
-    .matrix { font-family: monospace; font-size: 9px; fill: #00f3ff; opacity: 0.14; animation: rain 1.52s linear infinite; }
-    @keyframes rain { 0% { transform: translateY(-200px); } 100% { transform: translateY(200px); } }
-    
-    .particle { fill: #00f3ff; animation: quantumFloat 2.6s ease-in-out infinite; }
-    .particle-m { fill: #bc8cff; animation: quantumFloat 3.4s ease-in-out infinite reverse; }
-    .particle-g { fill: #00ff9d; animation: quantumFloat 2.0s ease-in-out infinite; }
-    @keyframes quantumFloat { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-15px) scale(1.4); } }
-    
-    .boot { opacity: 0; animation: bootSeq 0.4s ease-out forwards; }
-    .boot-1 { animation-delay: 0.2s; }
-    .boot-2 { animation-delay: 0.55s; }
-    .boot-3 { animation-delay: 0.9s; }
-    .boot-4 { animation-delay: 1.25s; }
-    @keyframes bootSeq { to { opacity: 1; } }
-    
-    .username { font-family: 'Playfair Display', 'Didot', 'Bodoni MT', serif; font-weight: 900; font-style: italic; font-size: 43px; letter-spacing: 6px; fill: url(#orbGrad); filter: url(#orbGlow); opacity: 0; animation: revealName 1.35s ease-out 1.7s forwards; }
-    @keyframes revealName { to { opacity: 1; } }
-    
-    .cursor { animation: blink 0.8s step-end infinite; }
-    @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
-    
-    .scanline { fill: #00f3ff; opacity: 0.05; animation: scan 3.5s linear infinite; }
-    @keyframes scan { 0% { transform: translateY(-200px); } 100% { transform: translateY(200px); } }
-    
-    .orbit-label { font-family: 'SF Mono', monospace; font-size: 12px; font-weight: 500; opacity: 0.92; animation: orbitLabel 20s linear infinite; }
-    @keyframes orbitLabel { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    
-    .status-dot { animation: statusPulse 1.5s ease-in-out infinite; }
-    @keyframes statusPulse { 0%,100% { r: 4; opacity: 0.8; } 50% { r: 5.5; opacity: 1; } }
-    
-    .mono { font-family: 'SF Mono', monospace; }
-    
-    @media (prefers-color-scheme: light) {
-      .bg { fill: #f6f8fa; }
-      .matrix { fill: #0969da; }
-    }
-    
-    @media (prefers-reduced-motion: reduce) {
-      .matrix, .particle, .boot, .username, .cursor, .scanline, .orbit-label, .status-dot { animation: none; opacity: 1; }
-    }
+    .grid { stroke: #30363d; stroke-width: 0.5; opacity: 0.3; }
+    .matrix { font-family: monospace; font-size: 9px; fill: #00f3ff; opacity: 0.08; }
+    .title-fancy { font-family: 'Playfair Display', 'Bodoni MT', 'Didot', 'Times New Roman', Georgia, serif; font-weight: 900; font-style: italic; font-size: 52px; letter-spacing: 6px; fill: url(#title-grad); filter: url(#glow-heavy); }
+    .subtitle { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 11px; letter-spacing: 4px; fill: #bc8cff; }
+    .status { font-family: 'SF Mono', monospace; font-size: 9px; fill: #8b949e; }
+    .orbit { fill: none; stroke-width: 1.5; opacity: 0.4; }
+    .orbit-1 { stroke: #00f3ff; animation: spin-orbit 20s linear infinite; transform-origin: 500px 90px; }
+    .orbit-2 { stroke: #bc8cff; animation: spin-orbit 15s linear infinite reverse; transform-origin: 500px 90px; }
+    .orbit-3 { stroke: #00ff9d; animation: spin-orbit 25s linear infinite; transform-origin: 500px 90px; }
+    @keyframes spin-orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .particle { fill: #00f3ff; animation: float 3s ease-in-out infinite; }
+    .particle-m { fill: #bc8cff; animation: float 3s ease-in-out infinite reverse; }
+    .particle-g { fill: #00ff9d; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+    @keyframes pulse-dot { 0%,100% { r: 3; opacity: 1; } 50% { r: 5; opacity: 0.6; } }
+    .scanline { fill: #00f3ff; opacity: 0.03; animation: scan 4s linear infinite; }
+    @keyframes scan { 0% { transform: translateY(-180px); } 100% { transform: translateY(180px); } }
+    .data-stream { font-family: monospace; font-size: 7px; fill: #00f3ff; opacity: 0.15; animation: stream 2s linear infinite; }
+    @keyframes stream { 0% { opacity: 0.05; } 50% { opacity: 0.2; } 100% { opacity: 0.05; } }
+    .reveal { opacity: 0; animation: reveal 1.5s ease-out forwards; }
+    .reveal-1 { animation-delay: 0.3s; }
+    .reveal-2 { animation-delay: 0.8s; }
+    .reveal-3 { animation-delay: 1.3s; }
+    @keyframes reveal { to { opacity: 1; } }
+    @media (prefers-color-scheme: light) { .bg { fill: #f6f8fa; } .grid { stroke: #d0d7de; } .matrix { fill: #0969da; } .title-fancy { fill: #0969da; filter: none; } .subtitle { fill: #8250df; } }
+    @media (prefers-reduced-motion: reduce) { .orbit, .particle, .pulse-dot, .scanline, .data-stream, .reveal { animation: none; opacity: 1; } }
   </style>
-
-  <rect class="bg" width="1000" height="200"/>
-
-  <!-- Dense Matrix Rain -->
+  
+  <rect class="bg" width="1000" height="180"/>
+  <g class="grid">
+    <line x1="0" y1="30" x2="1000" y2="30"/><line x1="0" y1="60" x2="1000" y2="60"/>
+    <line x1="0" y1="90" x2="1000" y2="90"/><line x1="0" y1="120" x2="1000" y2="120"/>
+    <line x1="0" y1="150" x2="1000" y2="150"/>
+    <line x1="100" y1="0" x2="100" y2="180"/><line x1="200" y1="0" x2="200" y2="180"/>
+    <line x1="300" y1="0" x2="300" y2="180"/><line x1="400" y1="0" x2="400" y2="180"/>
+    <line x1="500" y1="0" x2="500" y2="180"/><line x1="600" y1="0" x2="600" y2="180"/>
+    <line x1="700" y1="0" x2="700" y2="180"/><line x1="800" y1="0" x2="800" y2="180"/>
+    <line x1="900" y1="0" x2="900" y2="180"/>
+  </g>
   <g class="matrix">
-    <text x="25" y="22">10101010101101</text>
-    <text x="115" y="47" style="animation-delay:0.12s">01100101101001</text>
-    <text x="195" y="29" style="animation-delay:0.38s">11010011010110</text>
-    <text x="285" y="68" style="animation-delay:0.07s">00110101100101</text>
-    <text x="375" y="35" style="animation-delay:0.62s">10011010111001</text>
-    <text x="465" y="58" style="animation-delay:0.28s">01010111001010</text>
-    <text x="555" y="75" style="animation-delay:0.48s">11100010110100</text>
-    <text x="645" y="41" style="animation-delay:0.52s">00101101011001</text>
-    <text x="735" y="64" style="animation-delay:0.71s">10110100101101</text>
-    <text x="825" y="48" style="animation-delay:0.19s">01101001100110</text>
-    <text x="915" y="81" style="animation-delay:0.41s">11001010110100</text>
+    <text x="20" y="25">01010010</text><text x="120" y="45">10110101</text><text x="220" y="35">01101001</text>
+    <text x="320" y="55">11010010</text><text x="620" y="25">00101101</text><text x="720" y="45">10010110</text>
+    <text x="820" y="35">01110011</text><text x="920" y="55">11001010</text>
   </g>
-
-  <!-- Scanline -->
-  <rect class="scanline" x="0" y="0" width="1000" height="5"/>
-
-  <!-- Quantum Particles -->
-  <g filter="url(#orbGlow)">
-    <circle class="particle" cx="72" cy="42" r="2.3" style="animation-delay:0s"/>
-    <circle class="particle-m" cx="158" cy="128" r="1.95" style="animation-delay:0.32s"/>
-    <circle class="particle-g" cx="262" cy="51" r="2.45" style="animation-delay:0.68s"/>
-    <circle class="particle" cx="498" cy="29" r="1.7" style="animation-delay:1.02s"/>
-    <circle class="particle-m" cx="702" cy="135" r="2.15" style="animation-delay:1.38s"/>
-    <circle class="particle-g" cx="852" cy="47" r="1.85" style="animation-delay:0.81s"/>
-    <circle class="particle" cx="942" cy="108" r="2.05" style="animation-delay:1.55s"/>
+  <rect class="scanline" x="0" y="0" width="1000" height="3"/>
+  <g transform="translate(500, 90)">
+    <ellipse class="orbit orbit-1" cx="0" cy="0" rx="280" ry="60"/>
+    <ellipse class="orbit orbit-2" cx="0" cy="0" rx="220" ry="45"/>
+    <ellipse class="orbit orbit-3" cx="0" cy="0" rx="160" ry="30"/>
   </g>
-
-  <!-- Boot Sequence -->
-  <g class="mono" font-size="9.9">
-    <text class="text-muted boot boot-1" x="38" y="55">[BOOT] Quantum surface v12.0 online • 2026-02-19 07:11 UTC</text>
-    <text class="text-cyan boot boot-2" x="38" y="71">[OK] Determinism + Observability engine loaded</text>
-    <text class="text-magenta boot boot-3" x="38" y="87">[OK] iOS Shortcuts / Scriptable + Proxy mesh synced</text>
-    <text class="text-green boot boot-4" x="38" y="103">[READY] Reversible AI systems fully operational</text>
+  <g filter="url(#glow-soft)">
+    <circle class="particle pulse-dot" cx="220" cy="90" r="3" style="animation-delay:0s"/>
+    <circle class="particle-m pulse-dot" cx="280" cy="45" r="2" style="animation-delay:0.4s"/>
+    <circle class="particle-g pulse-dot" cx="720" cy="135" r="2.5" style="animation-delay:0.8s"/>
+    <circle class="particle pulse-dot" cx="780" cy="90" r="3" style="animation-delay:1.2s"/>
+    <circle class="particle-m pulse-dot" cx="340" cy="135" r="2" style="animation-delay:1.6s"/>
+    <circle class="particle-g pulse-dot" cx="660" cy="45" r="2.5" style="animation-delay:2s"/>
   </g>
-
-  <!-- Central Quantum Orb + Orbiting Pillars -->
-  <g transform="translate(500 105)">
-    <circle r="78" fill="url(#orbGrad)" filter="url(#orbGlow)" opacity="0.97"/>
-    <circle r="62" fill="#0d1117"/>
-    
-    <!-- Orbiting pillars -->
-    <g class="orbit-label" style="animation-delay:0s"><text x="108" y="7" text-anchor="middle" fill="#00f3ff">DETERMINISM</text></g>
-    <g class="orbit-label" style="animation-delay:5s"><text x="108" y="7" text-anchor="middle" fill="#bc8cff">OBSERVABILITY</text></g>
-    <g class="orbit-label" style="animation-delay:10s"><text x="108" y="7" text-anchor="middle" fill="#00ff9d">iOS AUTOMATION</text></g>
-    <g class="orbit-label" style="animation-delay:15s"><text x="108" y="7" text-anchor="middle" fill="#ff7b72">PROXY MESH</text></g>
+  <g class="data-stream">
+    <text x="50" y="100">⟁ INIT QUANTUM_FLUX</text>
+    <text x="750" y="80">◉ SYNC_COMPLETE</text>
+    <text x="400" y="165">⬡ PROTOCOL_STACK::LOADED</text>
   </g>
-
-  <!-- Exact Fancy Text as requested -->
-  <g filter="url(#orbGlow)">
-    <text class="username" x="500" y="112" text-anchor="middle">𝒫𝑜𝓅𝒟𝑒𝓊𝓍𝑅𝑒𝓂</text>
-    <rect class="cursor" x="658" y="85" width="3.5" height="32" fill="#00f3ff"/>
+  <g class="reveal reveal-1" filter="url(#glow-heavy)">
+    <text class="title-fancy" x="500" y="100" text-anchor="middle">𝓟𝓸𝓹𝓓𝓮𝓾𝔁𝓡𝓮𝓶</text>
   </g>
-
-  <!-- Floating Glyphs -->
-  <text x="292" y="138" font-size="27" fill="#bc8cff" opacity="0.9">𖢧ꛅ𖤢</text>
-  <text x="692" y="138" font-size="27" fill="#00f3ff" opacity="0.9">ꚽꚳꛈ𖢧ꛕꛅ</text>
-
-  <!-- Expanded Live Status Panel -->
-  <g transform="translate(815 58)">
-    <circle cx="0" cy="0" r="4" fill="#00f3ff" class="status-dot"/>
-    <text class="mono" x="17" y="4" font-size="8.9" fill="#8b949e">STATUS: ONLINE</text>
-    
-    <circle cx="0" cy="19" r="4" fill="#bc8cff" class="status-dot" style="animation-delay:0.3s"/>
-    <text class="mono" x="17" y="23" font-size="8.9" fill="#8b949e">SYNC: ACTIVE</text>
-    
-    <circle cx="0" cy="38" r="4" fill="#00ff9d" class="status-dot" style="animation-delay:0.65s"/>
-    <text class="mono" x="17" y="42" font-size="8.9" fill="#8b949e">MODE: QUANTUM</text>
-    
-    <circle cx="0" cy="57" r="4" fill="#ff7b72" class="status-dot" style="animation-delay:1.0s"/>
-    <text class="mono" x="17" y="61" font-size="8.9" fill="#8b949e">REVERSIBLE</text>
+  <g class="reveal reveal-2">
+    <text class="subtitle" x="500" y="125" text-anchor="middle">PRINCIPAL SYSTEMS ARCHITECT</text>
   </g>
-
-  <!-- Bottom Streaming Data Flow Bar -->
-  <line x1="0" y1="188" x2="1000" y2="188" stroke="#30363d" stroke-width="3"/>
-  <rect x="0" y="187" width="1000" height="6" fill="url(#flowGrad)">
-    <animate attributeName="width" values="0;1000;0" dur="6.5s" repeatCount="indefinite"/>
+  <g class="reveal reveal-3">
+    <rect x="50" y="145" width="140" height="22" rx="4" fill="#0d1117" stroke="#00f3ff" stroke-width="1" opacity="0.8"/>
+    <text class="status" x="60" y="160">◉ STATUS: ONLINE</text>
+    <rect x="200" y="145" width="130" height="22" rx="4" fill="#0d1117" stroke="#bc8cff" stroke-width="1" opacity="0.8"/>
+    <text class="status" x="210" y="160">◈ SYNC: ACTIVE</text>
+    <rect x="340" y="145" width="150" height="22" rx="4" fill="#0d1117" stroke="#00ff9d" stroke-width="1" opacity="0.8"/>
+    <text class="status" x="350" y="160">⬡ MODE: QUANTUM</text>
+  </g>
+  <g class="reveal reveal-3" transform="translate(850, 150)">
+    <rect x="0" y="0" width="120" height="22" rx="4" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+    <text class="status" x="10" y="15">v10.0 // surface</text>
+  </g>
+  <line x1="0" y1="178" x2="1000" y2="178" stroke="#30363d" stroke-width="2"/>
+  <rect x="0" y="177" width="400" height="3" fill="url(#orbit-grad)">
+    <animate attributeName="width" values="0;1000;0" dur="6s" repeatCount="indefinite"/>
   </rect>
-
-  <!-- Version Footer -->
-  <text class="mono" x="38" y="179" font-size="8.9" fill="#484f58">v12.0 // quantum.stable • 2026-02-19 07:11 UTC</text>
 </svg>
