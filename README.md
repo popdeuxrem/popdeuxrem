@@ -57,64 +57,48 @@
 ```javascript
 /**
  * ╔═══════════════════════════════════════════════════════════════════════════╗
- * ║  POPDEUXREM :: QUANTUM OPERATOR DEFINITION v12.0                          ║
- * ║  SYNC: 2026-02-21T20:07:10Z | SHA: 49f2eb37858ef4a0                    ║
+ * ║  POPDEUXREM :: CLASSIFIED DOSSIER v2.0                                    ║
+ * ║  SYNC: 2026-02-21T21:00:00Z | SHA: a3f8c2d1e9b7 | CLEARANCE: TS/SCI//QUANTUM             ║
  * ╚═══════════════════════════════════════════════════════════════════════════╝
  */
 
-const popdeuxrem = {
+const dossier = {
   
+  classification: {
+    level: 'TS/SCI//QUANTUM',
+    fileRef: 'PDR-████-████-ARCH',
+    subject: '████████████████ aka @popdeuxrem',
+    accessGranted: '██/██/████',
+    authorizedBy: '████████████',
+    status: 'ACTIVE · ONLINE · [REDACTED]'
+  },
+
   identity: {
-    handle: "𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ",
-    alias: "@d3_glitch",
-    designation: "PRINCIPAL SYSTEMS ARCHITECT",
-    clearance: "QUANTUM_STEALTH"
+    handle: '𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ',
+    alias: '@d3_glitch',
+    designation: 'PRINCIPAL SYSTEMS ARCHITECT',
+    clearance: 'QUANTUM_STEALTH',
+    mode: 'QUANTUM',
+    uptime: '∞',
+    lastVerified: new Date().toISOString()
   },
-  
-  coreAxioms: [
-    "Determinism first — every action must be traceable and reproducible",
-    "Observability is currency — systems that can't speak are already broken",
-    "iOS automation (Shortcuts/Scriptable/Data Jar) eliminates operational toil",
-    "Proxy meshes + shadow routing for infrastructure hardening",
-    "Every system is reversible, auditable, and composable by design",
-    "Complexity is debt; simplicity is the ultimate sophistication"
-  ],
-  
-  mission: {
-    primary: "Design and ship systems that prioritize determinism, observability, and long-term maintainability",
-    focus: "Architecture ∙ Automation ∙ Interface-level control",
-    philosophy: "Building quantum-grade infrastructure that fails gracefully, scales infinitely, and tells you when it's unhappy"
+
+  directive: {
+    primary: 'COMPOSABLE',
+    secondary: 'REVERSIBLE',
+    tertiary: 'AUDITABLE',
+    payload: 'see operator definition → popdeuxrem.js'
   },
-  
-  specializations: [
-    { domain: "Systems Architecture", focus: "Composable, reversible designs that survive scale" },
-    { domain: "Automation Pipelines", focus: "Remove human fragility from critical workflows" },
-    { domain: "Product Infrastructure", focus: "Complex logic made operable and observable" },
-    { domain: "iOS Ecosystem", focus: "Shortcuts, Scriptable, Data Jar operators" },
-    { domain: "Infrastructure Hardening", focus: "Proxy meshes, DNS overlays, stealth routing" }
-  ],
-  
-  status: {
-    operational: "ONLINE",
-    sync: "ACTIVE",
-    mode: "QUANTUM",
-    uptime: "∞",
-    lastPing: new Date().toISOString()
-  },
-  
-  uplink: {
-    github: "@popdeuxrem",
-    twitter: "@d3_glitch",
-    matrix: "@popdeuxrem:matrix.org",
-    email: "popdeuxrem@gateway.net",
-    protocol: "Send: context · constraints · ideal outcome"
-  },
-  
-  directive: "ꛤ𖦪ꛈ𖢑ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ ∙ ꕷ𖤢ꛕ𖣠ꛘ𖤀ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ ∙ 𖢧𖤢𖦪𖢧ꛈꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ"
-  
+
+  redacted: [
+    '██████████████████████████████████████',
+    '████████████████ [CLASSIFIED] ████████',
+    '██████████████████████████████████████'
+  ]
+
 };
 
-export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
+export default dossier; // ◈ Classified. Redacted. Quantum-grade.
 ```
 
 <img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
