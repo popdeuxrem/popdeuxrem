@@ -1,6 +1,6 @@
 <svg width="1000" height="200" viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc">
-  <title id="title">PopDeuxRem Quantum Hero Surface v11.0</title>
-  <desc id="desc">Immersive quantum boot with matrix rain, central orb, orbiting pillars, floating glyphs, live status and data flow</desc>
+  <title id="title">PopDeuxRem Quantum Hero Surface v12.0</title>
+  <desc id="desc">From-scratch quantum hero with exact fancy text 𝒫𝑜𝓅𝒟𝑒𝓊𝓍𝑅𝑒𝓂, dense matrix rain, central glowing orb, orbiting pillars, boot sequence, floating glyphs, live status, and streaming data flow</desc>
 
   <defs>
     <linearGradient id="orbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -8,48 +8,53 @@
       <stop offset="50%" stop-color="#bc8cff"/>
       <stop offset="100%" stop-color="#00ff9d"/>
     </linearGradient>
-    <filter id="orbGlow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="16" result="glow"/>
-      <feMerge><feMergeNode in="glow"/><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="orbGlow" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="18" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
     <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.95"/>
-      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.95"/>
     </linearGradient>
   </defs>
 
   <style>
     .bg { fill: #0d1117; }
-    .matrix { font-family: monospace; font-size: 9px; fill: #00f3ff; opacity: 0.13; animation: rain 1.55s linear infinite; }
+    .matrix { font-family: monospace; font-size: 9px; fill: #00f3ff; opacity: 0.14; animation: rain 1.52s linear infinite; }
     @keyframes rain { 0% { transform: translateY(-200px); } 100% { transform: translateY(200px); } }
     
-    .particle { fill: #00f3ff; animation: quantumFloat 2.7s ease-in-out infinite; }
-    .particle-m { fill: #bc8cff; animation: quantumFloat 3.3s ease-in-out infinite reverse; }
-    .particle-g { fill: #00ff9d; animation: quantumFloat 2.1s ease-in-out infinite; }
-    @keyframes quantumFloat { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.35); } }
+    .particle { fill: #00f3ff; animation: quantumFloat 2.6s ease-in-out infinite; }
+    .particle-m { fill: #bc8cff; animation: quantumFloat 3.4s ease-in-out infinite reverse; }
+    .particle-g { fill: #00ff9d; animation: quantumFloat 2.0s ease-in-out infinite; }
+    @keyframes quantumFloat { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-15px) scale(1.4); } }
     
-    .boot { opacity: 0; animation: bootSeq 0.42s ease-out forwards; }
-    .boot-1 { animation-delay: 0.25s; }
-    .boot-2 { animation-delay: 0.6s; }
-    .boot-3 { animation-delay: 0.95s; }
-    .boot-4 { animation-delay: 1.3s; }
+    .boot { opacity: 0; animation: bootSeq 0.4s ease-out forwards; }
+    .boot-1 { animation-delay: 0.2s; }
+    .boot-2 { animation-delay: 0.55s; }
+    .boot-3 { animation-delay: 0.9s; }
+    .boot-4 { animation-delay: 1.25s; }
     @keyframes bootSeq { to { opacity: 1; } }
     
-    .username { font-family: 'Playfair Display', 'Didot', 'Bodoni MT', serif; font-weight: 900; font-style: italic; font-size: 42px; letter-spacing: 5px; fill: url(#orbGrad); filter: url(#orbGlow); opacity: 0; animation: revealName 1.3s ease-out 1.6s forwards; }
+    .username { font-family: 'Playfair Display', 'Didot', 'Bodoni MT', serif; font-weight: 900; font-style: italic; font-size: 43px; letter-spacing: 6px; fill: url(#orbGrad); filter: url(#orbGlow); opacity: 0; animation: revealName 1.35s ease-out 1.7s forwards; }
     @keyframes revealName { to { opacity: 1; } }
     
-    .cursor { animation: blink 0.82s step-end infinite; }
+    .cursor { animation: blink 0.8s step-end infinite; }
     @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
     
-    .scanline { fill: #00f3ff; opacity: 0.045; animation: scan 3.6s linear infinite; }
+    .scanline { fill: #00f3ff; opacity: 0.05; animation: scan 3.5s linear infinite; }
     @keyframes scan { 0% { transform: translateY(-200px); } 100% { transform: translateY(200px); } }
     
-    .orbit-label { font-family: 'SF Mono', monospace; font-size: 11.5px; font-weight: 500; opacity: 0.9; animation: orbitLabel 21s linear infinite; }
+    .orbit-label { font-family: 'SF Mono', monospace; font-size: 12px; font-weight: 500; opacity: 0.92; animation: orbitLabel 20s linear infinite; }
     @keyframes orbitLabel { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     
-    .status-dot { animation: statusPulse 1.55s ease-in-out infinite; }
-    @keyframes statusPulse { 0%,100% { r: 3.8; opacity: 0.75; } 50% { r: 5.2; opacity: 1; } }
+    .status-dot { animation: statusPulse 1.5s ease-in-out infinite; }
+    @keyframes statusPulse { 0%,100% { r: 4; opacity: 0.8; } 50% { r: 5.5; opacity: 1; } }
     
     .mono { font-family: 'SF Mono', monospace; }
     
@@ -67,79 +72,84 @@
 
   <!-- Dense Matrix Rain -->
   <g class="matrix">
-    <text x="30" y="25">1010101010</text><text x="110" y="48" style="animation-delay:0.15s">0110010110</text>
-    <text x="190" y="32" style="animation-delay:0.35s">1101001101</text><text x="280" y="65" style="animation-delay:0.08s">0011010110</text>
-    <text x="370" y="28" style="animation-delay:0.65s">1001101011</text><text x="460" y="52" style="animation-delay:0.25s">0101011100</text>
-    <text x="550" y="72" style="animation-delay:0.45s">1110001011</text><text x="640" y="38" style="animation-delay:0.55s">0010110101</text>
-    <text x="730" y="62" style="animation-delay:0.75s">1011010010</text><text x="820" y="45" style="animation-delay:0.2s">0110100110</text>
-    <text x="910" y="78" style="animation-delay:0.4s">1100101011</text>
+    <text x="25" y="22">10101010101101</text>
+    <text x="115" y="47" style="animation-delay:0.12s">01100101101001</text>
+    <text x="195" y="29" style="animation-delay:0.38s">11010011010110</text>
+    <text x="285" y="68" style="animation-delay:0.07s">00110101100101</text>
+    <text x="375" y="35" style="animation-delay:0.62s">10011010111001</text>
+    <text x="465" y="58" style="animation-delay:0.28s">01010111001010</text>
+    <text x="555" y="75" style="animation-delay:0.48s">11100010110100</text>
+    <text x="645" y="41" style="animation-delay:0.52s">00101101011001</text>
+    <text x="735" y="64" style="animation-delay:0.71s">10110100101101</text>
+    <text x="825" y="48" style="animation-delay:0.19s">01101001100110</text>
+    <text x="915" y="81" style="animation-delay:0.41s">11001010110100</text>
   </g>
 
   <!-- Scanline -->
-  <rect class="scanline" x="0" y="0" width="1000" height="4"/>
+  <rect class="scanline" x="0" y="0" width="1000" height="5"/>
 
   <!-- Quantum Particles -->
   <g filter="url(#orbGlow)">
-    <circle class="particle" cx="65" cy="38" r="2.2" style="animation-delay:0s"/>
-    <circle class="particle-m" cx="145" cy="125" r="1.9" style="animation-delay:0.35s"/>
-    <circle class="particle-g" cx="255" cy="48" r="2.4" style="animation-delay:0.65s"/>
-    <circle class="particle" cx="485" cy="32" r="1.6" style="animation-delay:1.05s"/>
-    <circle class="particle-m" cx="695" cy="132" r="2.1" style="animation-delay:1.35s"/>
-    <circle class="particle-g" cx="845" cy="52" r="1.8" style="animation-delay:0.85s"/>
-    <circle class="particle" cx="935" cy="105" r="2" style="animation-delay:1.6s"/>
+    <circle class="particle" cx="72" cy="42" r="2.3" style="animation-delay:0s"/>
+    <circle class="particle-m" cx="158" cy="128" r="1.95" style="animation-delay:0.32s"/>
+    <circle class="particle-g" cx="262" cy="51" r="2.45" style="animation-delay:0.68s"/>
+    <circle class="particle" cx="498" cy="29" r="1.7" style="animation-delay:1.02s"/>
+    <circle class="particle-m" cx="702" cy="135" r="2.15" style="animation-delay:1.38s"/>
+    <circle class="particle-g" cx="852" cy="47" r="1.85" style="animation-delay:0.81s"/>
+    <circle class="particle" cx="942" cy="108" r="2.05" style="animation-delay:1.55s"/>
   </g>
 
   <!-- Boot Sequence -->
-  <g class="mono" font-size="9.8">
-    <text class="text-muted boot boot-1" x="38" y="52">[BOOT] Quantum surface v11.0 online • 2026-02-19 07:11 UTC</text>
-    <text class="text-cyan boot boot-2" x="38" y="68">[OK] Determinism + Observability core loaded</text>
-    <text class="text-magenta boot boot-3" x="38" y="84">[OK] iOS Shortcuts / Scriptable operators synced</text>
-    <text class="text-green boot boot-4" x="38" y="100">[READY] Proxy mesh + shadow routing active</text>
+  <g class="mono" font-size="9.9">
+    <text class="text-muted boot boot-1" x="38" y="55">[BOOT] Quantum surface v12.0 online • 2026-02-19 07:11 UTC</text>
+    <text class="text-cyan boot boot-2" x="38" y="71">[OK] Determinism + Observability engine loaded</text>
+    <text class="text-magenta boot boot-3" x="38" y="87">[OK] iOS Shortcuts / Scriptable + Proxy mesh synced</text>
+    <text class="text-green boot boot-4" x="38" y="103">[READY] Reversible AI systems fully operational</text>
   </g>
 
   <!-- Central Quantum Orb + Orbiting Pillars -->
-  <g transform="translate(500 102)">
-    <circle r="74" fill="url(#orbGrad)" filter="url(#orbGlow)" opacity="0.96"/>
-    <circle r="59" fill="#0d1117"/>
+  <g transform="translate(500 105)">
+    <circle r="78" fill="url(#orbGrad)" filter="url(#orbGlow)" opacity="0.97"/>
+    <circle r="62" fill="#0d1117"/>
     
     <!-- Orbiting pillars -->
-    <g class="orbit-label" style="animation-delay:0s"><text x="105" y="7" text-anchor="middle" fill="#00f3ff">DETERMINISM</text></g>
-    <g class="orbit-label" style="animation-delay:5.25s"><text x="105" y="7" text-anchor="middle" fill="#bc8cff">OBSERVABILITY</text></g>
-    <g class="orbit-label" style="animation-delay:10.5s"><text x="105" y="7" text-anchor="middle" fill="#00ff9d">iOS OPS</text></g>
-    <g class="orbit-label" style="animation-delay:15.75s"><text x="105" y="7" text-anchor="middle" fill="#ff7b72">PROXY MESH</text></g>
+    <g class="orbit-label" style="animation-delay:0s"><text x="108" y="7" text-anchor="middle" fill="#00f3ff">DETERMINISM</text></g>
+    <g class="orbit-label" style="animation-delay:5s"><text x="108" y="7" text-anchor="middle" fill="#bc8cff">OBSERVABILITY</text></g>
+    <g class="orbit-label" style="animation-delay:10s"><text x="108" y="7" text-anchor="middle" fill="#00ff9d">iOS AUTOMATION</text></g>
+    <g class="orbit-label" style="animation-delay:15s"><text x="108" y="7" text-anchor="middle" fill="#ff7b72">PROXY MESH</text></g>
   </g>
 
-  <!-- Username + Cursor -->
+  <!-- Exact Fancy Text as requested -->
   <g filter="url(#orbGlow)">
-    <text class="username" x="500" y="107" text-anchor="middle">PopDeuxRem</text>
-    <rect class="cursor" x="635" y="83" width="3" height="29" fill="#00f3ff"/>
+    <text class="username" x="500" y="112" text-anchor="middle">𝒫𝑜𝓅𝒟𝑒𝓊𝓍𝑅𝑒𝓂</text>
+    <rect class="cursor" x="658" y="85" width="3.5" height="32" fill="#00f3ff"/>
   </g>
 
   <!-- Floating Glyphs -->
-  <text x="295" y="132" font-size="26" fill="#bc8cff" opacity="0.88">𖢧ꛅ𖤢</text>
-  <text x="685" y="132" font-size="26" fill="#00f3ff" opacity="0.88">ꚽꚳꛈ𖢧ꛕꛅ</text>
+  <text x="292" y="138" font-size="27" fill="#bc8cff" opacity="0.9">𖢧ꛅ𖤢</text>
+  <text x="692" y="138" font-size="27" fill="#00f3ff" opacity="0.9">ꚽꚳꛈ𖢧ꛕꛅ</text>
 
-  <!-- Live Status Panel -->
-  <g transform="translate(812 58)">
+  <!-- Expanded Live Status Panel -->
+  <g transform="translate(815 58)">
     <circle cx="0" cy="0" r="4" fill="#00f3ff" class="status-dot"/>
-    <text class="mono" x="16" y="4" font-size="8.8" fill="#8b949e">STATUS: ONLINE</text>
+    <text class="mono" x="17" y="4" font-size="8.9" fill="#8b949e">STATUS: ONLINE</text>
     
-    <circle cx="0" cy="19" r="4" fill="#bc8cff" class="status-dot" style="animation-delay:0.35s"/>
-    <text class="mono" x="16" y="23" font-size="8.8" fill="#8b949e">SYNC: ACTIVE</text>
+    <circle cx="0" cy="19" r="4" fill="#bc8cff" class="status-dot" style="animation-delay:0.3s"/>
+    <text class="mono" x="17" y="23" font-size="8.9" fill="#8b949e">SYNC: ACTIVE</text>
     
-    <circle cx="0" cy="38" r="4" fill="#00ff9d" class="status-dot" style="animation-delay:0.7s"/>
-    <text class="mono" x="16" y="42" font-size="8.8" fill="#8b949e">MODE: QUANTUM</text>
+    <circle cx="0" cy="38" r="4" fill="#00ff9d" class="status-dot" style="animation-delay:0.65s"/>
+    <text class="mono" x="17" y="42" font-size="8.9" fill="#8b949e">MODE: QUANTUM</text>
     
-    <circle cx="0" cy="57" r="4" fill="#ff7b72" class="status-dot" style="animation-delay:1.05s"/>
-    <text class="mono" x="16" y="61" font-size="8.8" fill="#8b949e">REVERSIBLE</text>
+    <circle cx="0" cy="57" r="4" fill="#ff7b72" class="status-dot" style="animation-delay:1.0s"/>
+    <text class="mono" x="17" y="61" font-size="8.9" fill="#8b949e">REVERSIBLE</text>
   </g>
 
-  <!-- Bottom Data Flow Bar -->
+  <!-- Bottom Streaming Data Flow Bar -->
   <line x1="0" y1="188" x2="1000" y2="188" stroke="#30363d" stroke-width="3"/>
-  <rect x="0" y="187" width="1000" height="5" fill="url(#flowGrad)">
-    <animate attributeName="width" values="0;1000;0" dur="6.8s" repeatCount="indefinite"/>
+  <rect x="0" y="187" width="1000" height="6" fill="url(#flowGrad)">
+    <animate attributeName="width" values="0;1000;0" dur="6.5s" repeatCount="indefinite"/>
   </rect>
 
   <!-- Version Footer -->
-  <text class="mono" x="38" y="178" font-size="8.8" fill="#484f58">v11.0 // quantum.stable • 2026-02-19 07:11 UTC</text>
+  <text class="mono" x="38" y="179" font-size="8.9" fill="#484f58">v12.0 // quantum.stable • 2026-02-19 07:11 UTC</text>
 </svg>
