@@ -18,17 +18,7 @@
   <img src="assets/hero_banner.svg" width="1000" alt="PopDeuxRem Banner"/>
 </picture>
 
-<br/><br/>
-
-<img src="assets/hero_particle_banner.svg" width="1200" alt="Chris Particle Banner"/>
-
-<br/><br/>
-
 <a name="header"></a>
-
-<img src="assets/hero_orbital.svg" width="1000" alt="PopDeuxRem Orbital Identity"/>
-
-<br/><br/>
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Playfair+Display&weight=700&size=28&duration=4000&pause=1500&color=BC8CFF66&center=true&vCenter=true&repeat=true&width=700&lines=Full+Stack+Engineer;Engineered+Clarity;Tech+Innovator;Open+Source+Enthusiast;Auditable+Systems;Composable+By+Design;Problem+Solver;Quantum+Architect" alt="Typing"/>
 
@@ -46,11 +36,7 @@
 <a href="#about">ABOUT</a> · <a href="#terminal">TERMINAL</a> · <a href="#stack">STACK</a> · <a href="#stats">STATS</a> · <a href="#connect">CONNECT</a>
 </code>
 
-<br/>
-
 <img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      OPERATOR CORE v12.0 // LIVING JAVASCRIPT OBJECT
@@ -131,11 +117,7 @@ const popdeuxrem = {
 export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 ```
 
-<br/>
-
 <img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      TERMINAL v12.0 // DYNAMIC SVG WITH LIVE PARTICLES
@@ -150,11 +132,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
   <img src="assets/terminal-dynamic.svg" width="880" alt="PopDeuxRem Dynamic Terminal">
 </picture>
 
-<br/>
-
 <img src="assets/divider_stream.svg" width="1000" alt="Divider"/>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      PROXY MESH :: FEATURED ARTIFACT
@@ -250,11 +228,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </details>
 
-<br/>
-
 <img src="assets/divider_mesh.svg" width="1000" alt="Divider"/>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      TECH MATRIX v12.0 // NEON CARD GRID
@@ -327,11 +301,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </div>
 
-<br/>
-
 <img src="assets/divider_pulse.svg" width="1000" alt="Quantum Divider"/>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      TELEMETRY v12.0 // SNAKE CONTRIBUTION MATRIX
@@ -354,11 +324,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </div>
 
-<br/>
-
 <img src="assets/divider_quantum.svg" width="1000" alt="Divider"/>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      UPLINK v12.0 // IMMERSIVE CONNECT CONSOLE
@@ -387,11 +353,7 @@ context · constraints · ideal_outcome
 
 </div>
 
-<br/>
-
 <img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
      AXIOM v12.0 // QUANTUM QUOTE SURFACE
