@@ -233,56 +233,81 @@ def generate_timeline_svg(timeline: List[Dict]) -> str:
 
 
 def generate_quote_svg(quotes: List[Dict]) -> str:
-    """Generate particle emanation quote SVG."""
+    """Generate quantum axiom quote SVG v10.0."""
     quote_data = (
         random.choice(quotes)
         if quotes
-        else {"text": "Velocity is a vector.", "author": "Systems"}
+        else {
+            "text": "Complexity is debt; simplicity is the ultimate sophistication.",
+            "author": "Operator Axiom",
+        }
     )
-    text = quote_data.get("text", "Velocity is a vector.")
-    author = quote_data.get("author", "Systems")
+    text = quote_data.get(
+        "text", "Complexity is debt; simplicity is the ultimate sophistication."
+    )
+    author = quote_data.get("author", "Operator Axiom")
 
-    particles = ""
-    for i in range(20):
-        x = random.randint(50, 750)
-        delay = random.uniform(0, 3)
-        dur = random.uniform(4, 8)
-        particles += f'''
-    <circle cx="{x}" cy="140" r="2" fill="#f0883e" opacity="0">
-      <animate attributeName="cy" values="140;20" dur="{dur}s" repeatCount="indefinite" begin="{delay}s"/>
-      <animate attributeName="opacity" values="0;0.8;0" dur="{dur}s" repeatCount="indefinite" begin="{delay}s"/>
-    </circle>'''
-
-    return f'''<svg width="800" height="150" viewBox="0 0 800 150" xmlns="http://www.w3.org/2000/svg">
+    return f'''<svg width="800" height="140" viewBox="0 0 800 140" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="quote-blur">
-      <feGaussianBlur stdDeviation="0.5"/>
+    <linearGradient id="quote-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="quote-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   
   <style>
-    .bg {{ fill: #0d1117; }}
-    .quote {{ font-family: Georgia, serif; font-size: 18px; font-style: italic; fill: #e6edf3; }}
-    .author {{ font-family: monospace; font-size: 11px; fill: #f0883e; }}
+    .quote-bg {{ fill: #0d1117; }}
+    .quote-border {{ fill: none; stroke: #30363d; stroke-width: 1; }}
+    .quote-mark {{ font-family: Georgia, serif; font-size: 64px; fill: #00f3ff; opacity: 0.15; }}
+    .quote-text {{ font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-style: italic; fill: #c9d1d9; }}
+    .quote-accent {{ fill: #bc8cff; }}
+    .quote-author {{ font-family: 'SF Mono', monospace; font-size: 11px; fill: #8b949e; letter-spacing: 2px; }}
+    .quote-glyph {{ font-family: monospace; font-size: 10px; fill: #00ff9d; opacity: 0.6; }}
+    
+    .pulse-line {{ stroke: #00f3ff; stroke-width: 1; stroke-dasharray: 4 2; animation: pulse-line 2s ease-in-out infinite; }}
+    @keyframes pulse-line {{ 0%,100% {{ opacity: 0.3; }} 50% {{ opacity: 0.7; }} }}
+    
+    .corner {{ fill: none; stroke: #bc8cff; stroke-width: 1; stroke-opacity: 0.3; }}
+    
+    @media (prefers-color-scheme: light) {{
+      .quote-bg {{ fill: #f6f8fa; }}
+      .quote-border {{ stroke: #d0d7de; }}
+      .quote-mark {{ fill: #0969da; }}
+      .quote-text {{ fill: #24292f; }}
+    }}
+    @media (prefers-reduced-motion: reduce) {{
+      .pulse-line {{ animation: none; opacity: 0.5; }}
+    }}
   </style>
   
-  <rect class="bg" width="800" height="150"/>
+  <rect class="quote-bg" x="0" y="0" width="800" height="140" rx="8"/>
+  <rect class="quote-border" x="0.5" y="0.5" width="799" height="139" rx="8"/>
   
-  <g>
-    {particles}
+  <path class="corner" d="M15,35 L15,15 L35,15"/>
+  <path class="corner" d="M765,15 L785,15 L785,35"/>
+  <path class="corner" d="M785,105 L785,125 L765,125"/>
+  <path class="corner" d="M35,125 L15,125 L15,105"/>
+  
+  <text class="quote-mark" x="30" y="70">"</text>
+  
+  <g filter="url(#quote-glow)">
+    <text class="quote-text" x="400" y="60" text-anchor="middle">
+      <tspan>"{text}"</tspan>
+    </text>
   </g>
   
-  <line x1="80" y1="60" x2="80" y2="110" stroke="#f0883e" stroke-width="3"/>
+  <line class="pulse-line" x1="300" y1="80" x2="500" y2="80"/>
   
-  <text class="quote" x="100" y="85">
-    <tspan>"{text}"</tspan>
-  </text>
+  <text class="quote-author" x="400" y="100" text-anchor="middle">— 𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ ∙ {author}</text>
   
-  <text class="author" x="700" y="120" text-anchor="end">— {author}</text>
+  <text class="quote-glyph" x="400" y="125" text-anchor="middle">ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ∙ ◈ ∙ AXIOM v10.0</text>
   
-  <text x="400" y="145" text-anchor="middle" font-family="monospace" font-size="9" fill="#30363d">
-    ◈ QUANTUM_AXIOM // PARTICLE_EMANATION
-  </text>
+  <text class="quote-mark" x="750" y="100">"</text>
 </svg>'''
 
 
