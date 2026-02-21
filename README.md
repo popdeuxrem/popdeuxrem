@@ -224,66 +224,43 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 <br/>
 
-<table>
-<tr>
-<td valign="top" width="33%">
+**⬡ FRONTEND**
 
-<h3 align="center">🧰 ꘘ𖦪𖣠ꛘ𖢧𖤢ꛘ𖤀</h3>
-<p align="center">
-<img src="https://img.shields.io/badge/web3.js-F16822?style=flat-square&logo=web3.js&logoColor=white" alt="web3.js"/><br/>
-<img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
-<img src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/><br/>
-<img src="https://img.shields.io/badge/react-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" alt="react"/>
-<img src="https://img.shields.io/badge/react_native-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB" alt="react native"/><br/>
-<img src="https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js"/>
-<img src="https://img.shields.io/badge/remix-%23000.svg?style=flat-square&logo=remix&logoColor=white" alt="remix"/><br/>
-<img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=flat-square&logo=tailwind-css&logoColor=white" alt="tailwindcss"/>
-<img src="https://img.shields.io/badge/redux-%23593d88.svg?style=flat-square&logo=redux&logoColor=white" alt="redux"/><br/>
-<img src="https://img.shields.io/badge/-React%20Query-FF4154?style=flat-square&logo=react%20query&logoColor=white" alt="React Query"/>
-<img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=flat-square&logo=vite&logoColor=white" alt="vite"/><br/>
-<img src="https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white" alt="Swift"/>
-<img src="https://img.shields.io/badge/iOS%20Shortcuts-000000?style=flat-square&logo=apple&logoColor=white" alt="iOS Shortcuts"/>
-</p>
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| `JS` | `TS` | `Rx` | `Nx` | `Tw` | `Vt` | `Rd` |
+| 01 | 02 | 03 | 04 | 05 | 06 | 07 |
+| JavaScript | TypeScript | React | Next.js | Tailwind | Vite | Redux |
 
-</td>
-<td valign="top" width="33%">
+**⬡ BACKEND**
 
-<h3 align="center">⚙️ ꔪꛎꛕ𖢉𖤢ꛘ𖤀</h3>
-<p align="center">
-<img src="https://img.shields.io/badge/node.js-6DA55G?style=flat-square&logo=node.js&logoColor=white" alt="NodeJS"/>
-<img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS"/><br/>
-<img src="https://img.shields.io/badge/fastify-%23000000.svg?style=flat-square&logo=fastify&logoColor=white" alt="Fastify"/>
-<img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" alt="Python"/><br/>
-<img src="https://img.shields.io/badge/-GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white" alt="GraphQL"/>
-<img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat-square&logo=Flutter&logoColor=white" alt="Flutter"/><br/>
-<img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS"/>
-<img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=flat-square&logo=firebase&logoColor=white" alt="Firebase"/><br/>
-<img src="https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white" alt="n8n"/>
-<img src="https://img.shields.io/badge/Pulumi-8A3391?style=flat-square&logo=pulumi&logoColor=white" alt="Pulumi"/>
-</p>
+|:----:|:----:|:----:|:----:|:----:|:----:|
+| `No` | `Ne` | `Fy` | `Py` | `Gq` | `Fl` |
+| 08 | 09 | 10 | 11 | 12 | 13 |
+| Node.js | NestJS | Fastify | Python | GraphQL | Flutter |
 
-</td>
-<td valign="top" width="33%">
+**⬡ INFRASTRUCTURE**
 
-<h3 align="center">🔬 ꛈꛘꘘ𖦪ꛎ</h3>
-<p align="center">
-<img src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
-<img src="https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white" alt="Terraform"/><br/>
-<img src="https://img.shields.io/badge/kubernetes-%23326CE5.svg?style=flat-square&logo=kubernetes&logoColor=white" alt="kubernetes"/>
-<img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux"/><br/>
-<img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=Cloudflare&logoColor=white" alt="Cloudflare"/>
-<img src="https://img.shields.io/badge/-Github_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white" alt="GitHub Actions"/><br/>
-<img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"/>
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"/><br/>
-<img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=flat-square&logo=npm&logoColor=white" alt="NPM"/>
-<img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=flat-square&logo=visual-studio-code&logoColor=white" alt="VS Code"/>
-</p>
+|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
+| `Dk` | `K8` | `Tf` | `Pu` | `n8` | `CF` | `Ga` |
+| 14 | 15 | 16 | 17 | 18 | 19 | 20 |
+| Docker | Kubernetes | Terraform | Pulumi | n8n | Cloudflare | GH Actions |
 
-</td>
-</tr>
-</table>
+**⬡ DATA & CLOUD**
 
-</div>
+|:----:|:----:|:----:|:----:|:----:|
+| `Rd` | `Pg` | `Fb` | `Aw` | `W3` |
+| 21 | 22 | 23 | 24 | 25 |
+| Redis | PostgreSQL | Firebase | AWS | web3.js |
+
+**⬡ iOS ECOSYSTEM**
+
+|:----:|:----:|:----:|:----:|
+| `Sw` | `iS` | `Sc` | `Dj` |
+| 26 | 27 | 28 | 29 |
+| Swift | iOS Shortcuts | Scriptable | Data Jar |
+
+> `∞` Mastery · `α` Advanced · `β` Proficient · `γ` Familiar
+> Element numbers reflect stack depth order, not seniority ranking.
 
 <img src="assets/divider_pulse.svg" width="1000" alt="Quantum Divider"/>
 
