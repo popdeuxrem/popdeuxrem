@@ -757,7 +757,7 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
 
 <br/>
 
-### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ OPERATOR CORE
 
 ```javascript
 /**
@@ -834,7 +834,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 
 <a name="terminal"></a>
 
-### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ TERMINAL
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
@@ -853,7 +853,7 @@ export default popdeuxrem; // ◈ Composable. Reversible. Quantum.
 
 <a name="proxy"></a>
 
-### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ PROXY MESH
 
 <div align="center">
 
@@ -953,7 +953,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <a name="stack"></a>
 <div align="center">
 
-### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ TECH STACK
 
 <br/>
 
@@ -961,7 +961,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <tr>
 <td valign="top" width="33%">
 
-<h3 align="center">🧰 ꛤ𖦪ꛈ𖢑ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</h3>
+<h3 align="center">🧰 FRONTEND</h3>
 <p align="center">
 <img src="https://img.shields.io/badge/web3.js-F16822?style=flat-square&logo=web3.js&logoColor=white" alt="web3.js"/><br/>
 <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="javascript"/>
@@ -981,7 +981,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 </td>
 <td valign="top" width="33%">
 
-<h3 align="center">⚙️ ꕷ𖤢ꛕ𖣠ꛘ𖤀ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</h3>
+<h3 align="center">⚙️ BACKEND</h3>
 <p align="center">
 <img src="https://img.shields.io/badge/node.js-6DA55G?style=flat-square&logo=node.js&logoColor=white" alt="NodeJS"/>
 <img src="https://img.shields.io/badge/nestjs-%23E0234E.svg?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS"/><br/>
@@ -998,7 +998,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 </td>
 <td valign="top" width="33%">
 
-<h3 align="center">🔬 𖢧𖤢𖦪𖢧ꛈꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</h3>
+<h3 align="center">🔬 INFRASTRUCTURE</h3>
 <p align="center">
 <img src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
 <img src="https://img.shields.io/badge/Terraform-844FBA?style=flat-square&logo=terraform&logoColor=white" alt="Terraform"/><br/>
@@ -1030,7 +1030,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 <a name="stats"></a>
 <div align="center">
 
-### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ TELEMETRY
 
 <br/>
 
@@ -1057,7 +1057,7 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 <a name="connect"></a>
 
-### ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ
+### ◈ ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ◈ CONNECT
 
 <div align="center">
 
