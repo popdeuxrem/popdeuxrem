@@ -1,6 +1,6 @@
 #!/bin/bash
 # ═══════════════════════════════════════════════════════════════════════════
-# POPDEUXREM // QUANTUM SURFACE AUTO-UPDATER
+# POPDEUXREM // QUANTUM SURFACE AUTO-UPDATER v10.0
 # Daily cron job for telemetry sync and README regeneration
 # ═══════════════════════════════════════════════════════════════════════════
 
@@ -9,7 +9,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "◈ Quantum Surface Updater v8.0"
+echo "◈ Quantum Surface Updater v10.0"
 echo "────────────────────────────────"
 
 cd "$ROOT_DIR"
@@ -36,8 +36,8 @@ if git diff --quiet README.md 2>/dev/null; then
     echo "▸ No README changes detected"
 else
     echo "▸ README updated, committing..."
-    git add README.md assets/*.svg dist/*.svg
-    git commit -m "sys: quantum surface v8 sync [skip ci]" 2>/dev/null || true
+    git add README.md assets/*.svg dist/*.svg 2>/dev/null || true
+    git commit -m "sys: quantum surface v10 sync [skip ci]" 2>/dev/null || true
 fi
 
 echo "◈ Sync complete: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
