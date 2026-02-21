@@ -1,111 +1,144 @@
-<svg width="1000" height="140" viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.8"/>
-      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#00f3ff" stop-opacity="0.8"/>
-    </linearGradient>
-    <filter id="hero-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
+<svg width="1000" height="180" viewBox="0 0 1000 180" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc">
+  <title id="title">PopDeuxRem Quantum Hero Surface v11.0</title>
+  <desc id="desc">Immersive quantum boot sequence with matrix rain, orbiting pillars, glyphs, live status and data flow</desc>
   
+  <defs>
+    <linearGradient id="orbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="50%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#00ff9d"/>
+    </linearGradient>
+    <filter id="orbGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f3ff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#bc8cff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#00ff9d" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
   <style>
     .bg { fill: #0d1117; }
-    .text-cyan { fill: #00f3ff; }
-    .text-magenta { fill: #bc8cff; }
-    .text-muted { fill: #484f58; }
-    .particle { fill: #00f3ff; }
+    .matrix { font-family: monospace; font-size: 9px; fill: #00f3ff; opacity: 0.11; animation: rain 1.6s linear infinite; }
+    @keyframes rain { 0% { transform: translateY(-180px); } 100% { transform: translateY(180px); } }
     
-    .matrix { font-family: monospace; font-size: 8px; fill: #00f3ff; opacity: 0.12; animation: rain 1.8s linear infinite; }
-    @keyframes rain { 0% { transform: translateY(-140px); } 100% { transform: translateY(140px); } }
+    .particle { fill: #00f3ff; animation: quantumFloat 2.8s ease-in-out infinite; }
+    .particle-m { fill: #bc8cff; animation: quantumFloat 3.4s ease-in-out infinite reverse; }
+    .particle-g { fill: #00ff9d; animation: quantumFloat 2.2s ease-in-out infinite; }
+    @keyframes quantumFloat { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-12px) scale(1.3); } }
     
-    .pulse { animation: pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
+    .boot { opacity: 0; animation: bootSeq 0.45s ease-out forwards; }
+    .boot-1 { animation-delay: 0.3s; }
+    .boot-2 { animation-delay: 0.7s; }
+    .boot-3 { animation-delay: 1.1s; }
+    .boot-4 { animation-delay: 1.5s; }
+    @keyframes bootSeq { to { opacity: 1; } }
     
-    .boot { opacity: 0; animation: boot 0.4s ease-out forwards; }
-    .boot-1 { animation-delay: 0.2s; }
-    .boot-2 { animation-delay: 0.5s; }
-    .boot-3 { animation-delay: 0.8s; }
-    @keyframes boot { to { opacity: 1; } }
+    .username { font-family: 'Playfair Display', 'Didot', 'Bodoni MT', serif; font-weight: 900; font-style: italic; font-size: 38px; letter-spacing: 4px; fill: url(#orbGrad); filter: url(#orbGlow); opacity: 0; animation: revealName 1.2s ease-out 1.8s forwards; }
+    @keyframes revealName { to { opacity: 1; } }
     
-    .username { font-family: 'Playfair Display', 'Didot', 'Bodoni MT', 'Times New Roman', serif; font-weight: 700; font-style: italic; font-size: 32px; letter-spacing: 2px; opacity: 0; animation: reveal 1s ease-out 1.5s forwards; }
-    @keyframes reveal { to { opacity: 1; } }
-    
-    .cursor { animation: blink 1s step-end infinite; }
+    .cursor { animation: blink 0.85s step-end infinite; }
     @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
     
-    .scan { animation: scan 4s linear infinite; }
-    @keyframes scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(300%); } }
+    .scanline { fill: #00f3ff; opacity: 0.04; animation: scan 3.8s linear infinite; }
+    @keyframes scan { 0% { transform: translateY(-180px); } 100% { transform: translateY(180px); } }
+    
+    .orbit-label { font-family: 'SF Mono', monospace; font-size: 11px; font-weight: 500; opacity: 0.85; animation: orbitLabel 22s linear infinite; }
+    @keyframes orbitLabel { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    
+    .status-dot { animation: statusPulse 1.6s ease-in-out infinite; }
+    @keyframes statusPulse { 0%,100% { r: 3.5; opacity: 0.7; } 50% { r: 5; opacity: 1; } }
     
     .mono { font-family: 'SF Mono', monospace; }
     
     @media (prefers-color-scheme: light) {
       .bg { fill: #f6f8fa; }
-      .text-cyan { fill: #0969da; }
-      .text-magenta { fill: #8250df; }
-      .text-muted { fill: #57606a; }
-      .particle { fill: #0969da; }
       .matrix { fill: #0969da; }
     }
     
     @media (prefers-reduced-motion: reduce) {
-      .matrix, .pulse, .boot, .username, .cursor, .scan { animation: none; opacity: 1; }
+      .matrix, .particle, .boot, .username, .cursor, .scanline, .orbit-label, .status-dot { animation: none; opacity: 1; }
     }
   </style>
-  
-  <rect class="bg" width="1000" height="140"/>
-  
+
+  <rect class="bg" width="1000" height="180"/>
+
+  <!-- Matrix Rain (more dense) -->
   <g class="matrix">
-    <text x="50" y="20">1010101010</text>
-    <text x="150" y="60">01100101</text>
-    <text x="250" y="30">11010011</text>
-    <text x="350" y="90">00110101</text>
-    <text x="500" y="45">10011010</text>
-    <text x="650" y="75">01010111</text>
-    <text x="800" y="55">11100010</text>
+    <text x="40" y="20">1010101010</text>
+    <text x="120" y="45" style="animation-delay:0.2s">0110010110</text>
+    <text x="210" y="32" style="animation-delay:0.4s">1101001101</text>
+    <text x="310" y="68" style="animation-delay:0.1s">0011010110</text>
+    <text x="420" y="28" style="animation-delay:0.7s">1001101011</text>
+    <text x="530" y="55" style="animation-delay:0.3s">0101011100</text>
+    <text x="640" y="75" style="animation-delay:0.5s">1110001011</text>
+    <text x="760" y="40" style="animation-delay:0.6s">0010110101</text>
+    <text x="860" y="65" style="animation-delay:0.8s">1011010010</text>
   </g>
-  
-  <g filter="url(#hero-glow)">
-    <circle class="particle pulse" cx="50" cy="30" r="2" style="animation-delay:0s"/>
-    <circle class="particle pulse" cx="150" cy="110" r="1.5" style="animation-delay:0.3s"/>
-    <circle class="particle pulse" cx="280" cy="45" r="2" style="animation-delay:0.6s"/>
-    <circle class="particle pulse" cx="550" cy="25" r="1.5" style="animation-delay:0.9s"/>
-    <circle class="particle pulse" cx="700" cy="115" r="2" style="animation-delay:1.2s"/>
-    <circle class="particle pulse" cx="850" cy="40" r="1.5" style="animation-delay:1.5s"/>
-    <circle class="particle pulse" cx="950" cy="100" r="2" style="animation-delay:1.8s"/>
+
+  <!-- Scanline -->
+  <rect class="scanline" x="0" y="0" width="1000" height="4"/>
+
+  <!-- Quantum Particles -->
+  <g filter="url(#orbGlow)">
+    <circle class="particle" cx="80" cy="35" r="2" style="animation-delay:0s"/>
+    <circle class="particle-m" cx="180" cy="120" r="1.8" style="animation-delay:0.4s"/>
+    <circle class="particle-g" cx="290" cy="52" r="2.2" style="animation-delay:0.7s"/>
+    <circle class="particle" cx="520" cy="28" r="1.5" style="animation-delay:1.1s"/>
+    <circle class="particle-m" cx="710" cy="125" r="2" style="animation-delay:1.4s"/>
+    <circle class="particle-g" cx="880" cy="45" r="1.7" style="animation-delay:0.9s"/>
   </g>
-  
-  <g class="mono" font-size="9">
-    <text class="text-muted boot boot-1" x="30" y="40">[ BOOT ] Quantum surface online...</text>
-    <text class="text-cyan boot boot-2" x="30" y="55">[ OK ] Protocol stack loaded</text>
-    <text class="text-magenta boot boot-3" x="30" y="70">[ READY ] System operational</text>
+
+  <!-- Boot Sequence -->
+  <g class="mono" font-size="9.5">
+    <text class="text-muted boot boot-1" x="35" y="48">[BOOT] Quantum surface v11.0 online...</text>
+    <text class="text-cyan boot boot-2" x="35" y="63">[OK] Determinism engine loaded</text>
+    <text class="text-magenta boot boot-3" x="35" y="78">[OK] Observability core active</text>
+    <text class="text-green boot boot-4" x="35" y="93">[READY] iOS + Proxy mesh synced</text>
   </g>
-  
-  <g filter="url(#hero-glow)">
-    <text class="username text-cyan" x="380" y="65">𝒫𝑜𝓅𝒟𝑒𝓊𝓍𝑅𝑒𝓂</text>
-    <rect class="cursor" x="598" y="48" width="2" height="20" fill="#00f3ff"/>
+
+  <!-- Central Quantum Orb + Orbiting Pillars -->
+  <g transform="translate(500 92)">
+    <circle r="68" fill="url(#orbGrad)" filter="url(#orbGlow)" opacity="0.95"/>
+    <circle r="54" fill="#0d1117"/>
+    
+    <!-- Orbiting labels -->
+    <g class="orbit-label" style="animation-delay:0s"><text x="92" y="6" text-anchor="middle" fill="#00f3ff">DETERMINISM</text></g>
+    <g class="orbit-label" style="animation-delay:5.5s"><text x="92" y="6" text-anchor="middle" fill="#bc8cff">OBSERVABILITY</text></g>
+    <g class="orbit-label" style="animation-delay:11s"><text x="92" y="6" text-anchor="middle" fill="#00ff9d">iOS OPS</text></g>
+    <g class="orbit-label" style="animation-delay:16.5s"><text x="92" y="6" text-anchor="middle" fill="#ff7b72">PROXY MESH</text></g>
   </g>
-  
-  <g transform="translate(420, 80)">
-    <rect x="0" y="-10" width="200" height="14" rx="2" fill="#00f3ff" fill-opacity="0.1" stroke="#00f3ff" stroke-width="0.5" stroke-opacity="0.3"/>
-    <text class="mono text-cyan" x="8" y="1" font-size="10" letter-spacing="1">PRINCIPAL SYSTEMS ARCHITECT</text>
+
+  <!-- Username + Cursor -->
+  <g filter="url(#orbGlow)">
+    <text class="username" x="500" y="98" text-anchor="middle">PopDeuxRem</text>
+    <rect class="cursor" x="612" y="78" width="3" height="26" fill="#00f3ff"/>
   </g>
-  
-  <g transform="translate(870, 55)">
-    <circle cx="0" cy="0" r="4" fill="#00f3ff" class="pulse"/>
-    <text class="mono text-muted" x="12" y="3" font-size="8">STATUS: ONLINE</text>
-    <circle cx="0" cy="18" r="4" fill="#bc8cff" class="pulse" style="animation-delay:0.5s"/>
-    <text class="mono text-muted" x="12" y="21" font-size="8">SYNC: ACTIVE</text>
-    <circle cx="0" cy="36" r="4" fill="#3fb950" class="pulse" style="animation-delay:1s"/>
-    <text class="mono text-muted" x="12" y="39" font-size="8">MODE: QUANTUM</text>
+
+  <!-- Glyph Signature -->
+  <text x="310" y="115" font-size="22" fill="#bc8cff" opacity="0.85">𖢧ꛅ𖤢</text>
+  <text x="680" y="115" font-size="22" fill="#00f3ff" opacity="0.85">ꚽꚳꛈ𖢧ꛕꛅ</text>
+
+  <!-- Live Status Panel -->
+  <g transform="translate(810 52)">
+    <circle cx="0" cy="0" r="4" fill="#00f3ff" class="status-dot"/>
+    <text class="mono" x="14" y="4" font-size="8.5" fill="#8b949e">STATUS: ONLINE</text>
+    
+    <circle cx="0" cy="18" r="4" fill="#bc8cff" class="status-dot" style="animation-delay:0.4s"/>
+    <text class="mono" x="14" y="22" font-size="8.5" fill="#8b949e">SYNC: ACTIVE</text>
+    
+    <circle cx="0" cy="36" r="4" fill="#00ff9d" class="status-dot" style="animation-delay:0.8s"/>
+    <text class="mono" x="14" y="40" font-size="8.5" fill="#8b949e">MODE: QUANTUM</text>
   </g>
-  
-  <line x1="0" y1="138" x2="1000" y2="138" stroke="#30363d" stroke-width="2"/>
-  <rect x="0" y="137" width="300" height="3" fill="url(#hero-grad)">
-    <animate attributeName="width" values="0;1000;0" dur="8s" repeatCount="indefinite"/>
+
+  <!-- Bottom Data Flow Bar -->
+  <line x1="0" y1="168" x2="1000" y2="168" stroke="#30363d" stroke-width="3"/>
+  <rect x="0" y="167" width="1000" height="4" fill="url(#flowGrad)">
+    <animate attributeName="width" values="0;1000;0" dur="7s" repeatCount="indefinite"/>
   </rect>
-  
-  <text class="mono text-muted" x="30" y="118" font-size="8">v7.0 // build:quantum.stable</text>
+
+  <!-- Version Footer -->
+  <text class="mono" x="38" y="158" font-size="8.5" fill="#484f58">v11.0 // quantum.stable • 2026-02-19 07:11 UTC</text>
 </svg>
