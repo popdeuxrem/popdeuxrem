@@ -20,13 +20,11 @@
 
 <br/><br/>
 
-<img src="assets/hero_particle_banner.svg" width="1200" alt="Chris Particle Banner"/>
 
 <br/><br/>
 
 <a name="header"></a>
 
-<img src="assets/hero_orbital.svg" width="1000" alt="PopDeuxRem Orbital Identity"/>
 
 <br/><br/>
 
