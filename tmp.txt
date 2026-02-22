@@ -338,9 +338,10 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 | Vessel | Domain | Status | ⭐ |
 |:-------|:------:|:------:|:--:|
-| [**shadow-scripts**](https://github.com/Thugger069/shadow-scripts) | `SecOps` | ![SHIP](https://img.shields.io/badge/SHIP-d29922?style=flat-square) | 128 |
-| [**smooth-operator**](https://github.com/Thugger069/smooth-operator) | `Automation` | ![BETA](https://img.shields.io/badge/BETA-00f3ff?style=flat-square) | 245 |
-| [**brand-terminal**](https://github.com/Thugger069/brand-terminal) | `Surface` | ![SHIP](https://img.shields.io/badge/SHIP-d29922?style=flat-square) | 89 |
+| [**shadow-scripts**](https://github.com/Popdeuxrem/shadow-scripts) | `SecOps` | ![SHIP](https://img.shields.io/badge/SHIP-d29922?style=flat-square) | 128 |
+| [**lysergic.systems**](https://github.com/popdeuxrem/lysergic.systems) | `Systems Architecture` | ![BUILD](https://img.shields.io/badge/BUILD-00f3ff?style=flat-square) | 245 |
+| [**Photext**](https://github.com/popdeuxrem/Photext) | `Creative Automation` | ![BUILD](https://img.shields.io/badge/BUILD-00f3ff?style=flat-square) | 0 |
+| [**popdeuxrem**](https://github.com/popdeuxrem/popdeuxrem) | `Brand Infrastructure` | ![SHIP](https://img.shields.io/badge/SHIP-d29922?style=flat-square) | 0 |
 
 </div>
 

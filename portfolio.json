@@ -1,26 +1,34 @@
 [
   {
     "name": "shadow-scripts",
-    "description": "Proxy meshes, DNS overlays, and stealth routing rehearsals.",
+    "description": "Advanced proxy meshes, DNS overlays, MITM orchestration, stealth routing layers, and fingerprint evasion frameworks for controlled SecOps environments.",
     "stars": 128,
-    "link": "https://github.com/Thugger069/shadow-scripts",
+    "link": "https://github.com/Popdeuxrem/shadow-scripts",
     "status": "SHIP",
     "domain": "SecOps"
   },
   {
-    "name": "smooth-operator",
-    "description": "Siri-driven reply engine with JSON state & compliance receipts.",
+    "name": "lysergic.systems",
+    "description": "High-precision digital systems architecture platform delivering modular web infrastructure, automation pipelines, AI integrations, and production-grade client deployments.",
     "stars": 245,
-    "link": "https://github.com/Thugger069/smooth-operator",
-    "status": "BETA",
-    "domain": "Automation"
+    "link": "https://github.com/popdeuxrem/lysergic.systems",
+    "status": "BUILD",
+    "domain": "Systems Architecture"
   },
   {
-    "name": "brand-terminal",
-    "description": "CLI-style UI skins wired to real-time telemetry surfaces.",
-    "stars": 89,
-    "link": "https://github.com/Thugger069/brand-terminal",
+    "name": "Photext",
+    "description": "Lightweight, free-resource text-to-image and typography engine inspired by PhoText; focused on composable pipelines, automation, and deterministic rendering workflows.",
+    "stars": 0,
+    "link": "https://github.com/popdeuxrem/Photext",
+    "status": "BUILD",
+    "domain": "Creative Automation"
+  },
+  {
+    "name": "popdeuxrem",
+    "description": "Profile repository powering dynamic README, animated SVG assets, automated terminal render scripts, and GitHub Actions-driven content regeneration.",
+    "stars": 0,
+    "link": "https://github.com/popdeuxrem/popdeuxrem",
     "status": "SHIP",
-    "domain": "Surface"
+    "domain": "Brand Infrastructure"
   }
 ]
