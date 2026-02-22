@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ═══════════════════════════════════════════════════════════════════════════
-# POPDEUXREM QUANTUM SURFACE v10.0 - UNIFIED BUILD & VERIFICATION SYSTEM
+# POPDEUXREM QUANTUM SURFACE v12.0 - UNIFIED BUILD & VERIFICATION SYSTEM
 # ═══════════════════════════════════════════════════════════════════════════
 
 set -euo pipefail
@@ -30,7 +30,7 @@ cd "$ROOT_DIR"
 # ═══════════════════════════════════════════════════════════════════════════
 log_section "◈ VALIDATING SCRIPTS"
 
-for script in build_readme.py discovery.py fetch_telemetry.py update_contrib.sh update_readme.sh vuln_scan.sh; do
+for script in build_readme.py update_readme.sh quantum_build.sh; do
     path="$SCRIPT_DIR/$script"
     if [[ -f "$path" ]]; then
         if [[ "$script" == *.py ]]; then
@@ -108,7 +108,7 @@ for file in README.md assets/hero_banner.svg assets/section_quote.svg scripts/bu
     [[ -f "$ROOT_DIR/$file" ]] && log_pass "Exists: $file" || log_fail "Missing: $file"
 done
 
-grep -q "v10.0" "$ROOT_DIR/README.md" 2>/dev/null && log_pass "Version marker: v10.0" || log_warn "Version marker not found"
+grep -q "v12.0" "$ROOT_DIR/README.md" 2>/dev/null && log_pass "Version marker: v12.0" || log_warn "Version marker not found"
 
 # ═══════════════════════════════════════════════════════════════════════════
 # SUMMARY

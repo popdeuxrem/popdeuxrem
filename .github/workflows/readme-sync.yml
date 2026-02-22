@@ -1,4 +1,4 @@
-name: Quantum Surface Sync v10.0
+name: Quantum Surface Sync v12.0
 
 on:
   schedule:
@@ -28,7 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: ⚙️ Run Quantum Build v10.0
+      - name: ⚙️ Run Quantum Build v12.0
         run: |
           chmod +x scripts/quantum_build.sh
           bash scripts/quantum_build.sh
@@ -49,7 +49,7 @@ jobs:
 
       - name: 📊 Summary
         run: |
-          echo "## Quantum Surface v10.0 Build" >> $GITHUB_STEP_SUMMARY
+          echo "## Quantum Surface v12.0 Build" >> $GITHUB_STEP_SUMMARY
           echo "- **Timestamp:** $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_STEP_SUMMARY
           echo "- **Status:** ✅ Complete" >> $GITHUB_STEP_SUMMARY
           echo "- **Build Log:**" >> $GITHUB_STEP_SUMMARY

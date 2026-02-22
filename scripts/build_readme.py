@@ -690,8 +690,17 @@ def build_readme(dry_run: bool = False, verbose: bool = False) -> str:
     write_svg("flow-line.svg", generate_flow_line_svg())
     write_svg("section_quote.svg", generate_quote_svg(quotes_list))
     
-    print("\n◈ Loading README template from tmp.txt ...")
-    readme_content = open(BASE_DIR / "tmp.txt", "r", encoding="utf-8").read()
+    # Check if tmp.txt exists, if not create from README.md
+    tmp_path = BASE_DIR / "tmp.txt"
+    if not tmp_path.exists():
+        print("◈ Creating tmp.txt from current README.md")
+        with open(BASE_DIR / "README.md", "r", encoding="utf-8") as f:
+            readme_content = f.read()
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            f.write(readme_content)
+    else:
+        print("◈ Loading README template from tmp.txt ...")
+        readme_content = open(tmp_path, "r", encoding="utf-8").read()
     
     print("\n◈ Updating timestamp and SHA ...")
     readme_content = readme_content.replace("2026-02-21T20:07:10Z", timestamp)

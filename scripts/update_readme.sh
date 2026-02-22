@@ -1,6 +1,6 @@
 #!/bin/bash
 # ═══════════════════════════════════════════════════════════════════════════
-# POPDEUXREM // QUANTUM SURFACE AUTO-UPDATER v10.0
+# POPDEUXREM // QUANTUM SURFACE AUTO-UPDATER v12.0
 # Daily cron job for telemetry sync and README regeneration
 # ═══════════════════════════════════════════════════════════════════════════
 
@@ -9,7 +9,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "◈ Quantum Surface Updater v10.0"
+echo "◈ Quantum Surface Updater v12.0"
 echo "────────────────────────────────"
 
 cd "$ROOT_DIR"
