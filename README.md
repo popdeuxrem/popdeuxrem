@@ -37,12 +37,20 @@
 <br/>
 
 <!-- ═══════════════════════════════════════════════════════════════════════════
-     NAVIGATION
+     RUNE-ETCHED NAVIGATION // ANCIENT SCRIPT v12.0
      ═══════════════════════════════════════════════════════════════════════════ -->
 
+<p align="center">
+
 <code>
-<a href="#about">ABOUT</a> · <a href="#terminal">TERMINAL</a> · <a href="#stack">STACK</a> · <a href="#stats">STATS</a> · <a href="#connect">CONNECT</a>
+<a href="#about">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</a> · 
+<a href="#terminal">𖢧𖤢𖦪𖢑ꛈꛘꛎꚳ</a> · 
+<a href="#stack">𖢧𖤢ꛕꛅ ꕷ𖢧ꛎꛕ𖢉</a> · 
+<a href="#stats">𖢧𖤢ꚳ𖤢𖢑𖤢𖢧𖦪ꚲ</a> · 
+<a href="#connect">ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢</a>
 </code>
+
+</p>
 
 <br/>
 
