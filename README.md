@@ -64,113 +64,115 @@
 
 <a name="about"></a>
 
-<div align="center">
+<p align="center">
+<img src="assets/flow-line.svg" width="90%" alt="Flow"/>
+</p>
 
-<img src="assets/flow-line.svg" width="1000" alt="Flow"/>
+<h3 align="center">◈ ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ◈</h3>
 
-</div>
+<p align="center">
+<code>◆ CRYSTALLINE CORE v12.0 ◇</code>
+</p>
 
-<br/>
-
-### ◈ ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ◈
-
-```
-╔═══════════════════════════════════════════════════════════════════════════════╗
-║  ◆ CRYSTALLINE CORE :: QUANTUM OPERATOR DEFINITION v12.0                    ║
-║  ◇ SYNC: 2026-02-22T06:40:43Z | SHA: b587f0e865551bd8                     ║
-╚═══════════════════════════════════════════════════════════════════════════════╝
-```
+<details open>
+<summary><b>◆ FACET I :: IDENTITY PRISM</b></summary>
 
 ```javascript
-const popdeuxrem = {
-  
-  // ─────────────────────────────────────────────────────────────────────────
-  // ◆ FACET I :: IDENTITY PRISM
-  // ─────────────────────────────────────────────────────────────────────────
-  identity: {
-    handle: "𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ",
-    alias: "@d3_glitch",
-    designation: "PRINCIPAL SYSTEMS ARCHITECT",
-    clearance: "QUANTUM_STEALTH"
-  },
-  
-  // ─────────────────────────────────────────────────────────────────────────
-  // ◆ FACET II :: CORE AXIOMS (CRYSTALLINE PRINCIPLES)
-  // ─────────────────────────────────────────────────────────────────────────
-  coreAxioms: [
-    "◆ Determinism first — every action must be traceable and reproducible",
-    "◆ Observability is currency — systems that can't speak are already broken",
-    "◆ iOS automation (Shortcuts/Scriptable/Data Jar) eliminates operational toil",
-    "◆ Proxy meshes + shadow routing for infrastructure hardening",
-    "◆ Every system is reversible, auditable, and composable by design",
-    "◆ Complexity is debt; simplicity is the ultimate sophistication"
-  ],
-  
-  // ─────────────────────────────────────────────────────────────────────────
-  // ◆ FACET III :: MISSION CRYSTAL
-  // ─────────────────────────────────────────────────────────────────────────
-  mission: {
-    primary: "Design and ship systems that prioritize determinism, observability, and long-term maintainability",
-    focus: "Architecture ∙ Automation ∙ Interface-level control",
-    philosophy: "Building quantum-grade infrastructure that fails gracefully, scales infinitely, and tells you when it's unhappy"
-  },
-  
-  // ─────────────────────────────────────────────────────────────────────────
-  // ◆ FACET IV :: SPECIALIZATION GEMS
-  // ─────────────────────────────────────────────────────────────────────────
-  specializations: [
-    { domain: "Systems Architecture", focus: "Composable, reversible designs that survive scale" },
-    { domain: "Automation Pipelines", focus: "Remove human fragility from critical workflows" },
-    { domain: "Product Infrastructure", focus: "Complex logic made operable and observable" },
-    { domain: "iOS Ecosystem", focus: "Shortcuts, Scriptable, Data Jar operators" },
-    { domain: "Infrastructure Hardening", focus: "Proxy meshes, DNS overlays, stealth routing" }
-  ],
-  
-  // ─────────────────────────────────────────────────────────────────────────
-  // ◆ FACET V :: STATUS MATRIX
-  // ─────────────────────────────────────────────────────────────────────────
-  status: {
-    operational: "ONLINE",
-    sync: "ACTIVE",
-    mode: "QUANTUM",
-    uptime: "∞",
-    lastPing: new Date().toISOString()
-  },
-  
-  // ─────────────────────────────────────────────────────────────────────────
-  // ◆ FACET VI :: UPLINK CHANNELS
-  // ─────────────────────────────────────────────────────────────────────────
-  uplink: {
-    github: "@popdeuxrem",
-    twitter: "@d3_glitch",
-    matrix: "@popdeuxrem:matrix.org",
-    email: "popdeuxrem@gateway.net",
-    protocol: "Send: context · constraints · ideal outcome"
-  },
-  
-  // ─────────────────────────────────────────────────────────────────────────
-  // ◆ FACET VII :: DIRECTIVE SEAL
-  // ─────────────────────────────────────────────────────────────────────────
-  directive: "ꛤ𖦪ꛈ𖢑ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ ∙ ꕷ𖤢ꛕ𖣠ꛘ𖤀ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ ∙ 𖢧𖤢𖦪𖢧ꛈꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ"
-  
-};
+identity: {
+  handle: "𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ",
+  alias: "@d3_glitch",
+  designation: "PRINCIPAL SYSTEMS ARCHITECT",
+  clearance: "QUANTUM_STEALTH"
+}
+```
+</details>
 
+<details open>
+<summary><b>◆ FACET II :: CORE AXIOMS</b></summary>
+
+```javascript
+coreAxioms: [
+  "◆ Determinism first — traceable and reproducible",
+  "◆ Observability is currency — systems must speak",
+  "◆ iOS automation eliminates operational toil",
+  "◆ Proxy meshes + shadow routing for hardening",
+  "◆ Every system reversible, auditable, composable",
+  "◆ Complexity is debt; simplicity is sophistication"
+]
+```
+</details>
+
+<details open>
+<summary><b>◆ FACET III :: MISSION CRYSTAL</b></summary>
+
+```javascript
+mission: {
+  primary: "Design systems prioritizing determinism, observability, maintainability",
+  focus: "Architecture ∙ Automation ∙ Interface-level control",
+  philosophy: "Quantum-grade infrastructure that fails gracefully, scales infinitely"
+}
+```
+</details>
+
+<details>
+<summary><b>◆ FACET IV :: SPECIALIZATION GEMS</b></summary>
+
+```javascript
+specializations: [
+  { domain: "Systems Architecture", focus: "Composable, reversible designs" },
+  { domain: "Automation Pipelines", focus: "Remove human fragility" },
+  { domain: "Product Infrastructure", focus: "Operable and observable logic" },
+  { domain: "iOS Ecosystem", focus: "Shortcuts, Scriptable, Data Jar" },
+  { domain: "Infra Hardening", focus: "Proxy meshes, DNS overlays, stealth routing" }
+]
+```
+</details>
+
+<details>
+<summary><b>◆ FACET V :: STATUS MATRIX</b></summary>
+
+```javascript
+status: {
+  operational: "ONLINE",
+  sync: "ACTIVE",
+  mode: "QUANTUM",
+  uptime: "∞",
+  lastPing: new Date().toISOString()
+}
+```
+</details>
+
+<details>
+<summary><b>◆ FACET VI :: UPLINK CHANNELS</b></summary>
+
+```javascript
+uplink: {
+  github: "@popdeuxrem",
+  twitter: "@d3_glitch",
+  matrix: "@popdeuxrem:matrix.org",
+  email: "popdeuxrem@gateway.net",
+  protocol: "context · constraints · ideal outcome"
+}
+```
+</details>
+
+<details open>
+<summary><b>◆ FACET VII :: DIRECTIVE SEAL</b></summary>
+
+<p align="center">
+
+<code>ꛤ𖦪ꛈ𖢑ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</code>
+
+<code>ꕷ𖤢ꛕ𖣠ꛘ𖤀ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</code>
+
+<code>𖢧𖤢𖦪𖢧ꛈꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</code>
+
+</p>
+
+```javascript
 export default popdeuxrem; // ◈ Crystalline. Faceted. Quantum.
 ```
-
-<br/>
-
-<img src="assets/divider_circuit.svg" width="1000" alt="Divider"/>
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════════════════════════════
-     TERMINAL v12.0 // DYNAMIC SVG WITH LIVE PARTICLES
-     ═══════════════════════════════════════════════════════════════════════════ -->
-
-<a name="terminal"></a>
-
-### ◈ 𖢧𖤢𖦪𖢑ꛈꛘꛎꚳ ◈
+</details>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
