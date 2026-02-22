@@ -71,7 +71,6 @@
 <h3 align="center">◈ ꛎꔪ𖣠ꚶ𖢧 𖢑𖤢 ◈</h3>
 
 <p align="center">
-<code>◆ CRYSTALLINE CORE v12.0 ◇</code>
 </p>
 
 <details open>
@@ -142,37 +141,6 @@ status: {
 ```
 </details>
 
-<details>
-<summary><b>◆ FACET VI :: UPLINK CHANNELS</b></summary>
-
-```javascript
-uplink: {
-  github: "@popdeuxrem",
-  twitter: "@d3_glitch",
-  matrix: "@popdeuxrem:matrix.org",
-  email: "popdeuxrem@gateway.net",
-  protocol: "context · constraints · ideal outcome"
-}
-```
-</details>
-
-<details open>
-<summary><b>◆ FACET VII :: DIRECTIVE SEAL</b></summary>
-
-<p align="center">
-
-<code>ꛤ𖦪ꛈ𖢑ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</code>
-
-<code>ꕷ𖤢ꛕ𖣠ꛘ𖤀ꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</code>
-
-<code>𖢧𖤢𖦪𖢧ꛈꛎ𖦪ꚲ 𖢧𖤢ꛕꛅꛘ𖣠ꚳ𖣠ꚽꚲ</code>
-
-</p>
-
-```javascript
-export default popdeuxrem; // ◈ Crystalline. Faceted. Quantum.
-```
-</details>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dynamic.svg">
