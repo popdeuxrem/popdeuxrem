@@ -495,12 +495,24 @@ context · constraints · ideal_outcome
 
 ### Orchestrator
 ```json
-{}
+{
+  "status": "healthy",
+  "repos_synced": 2,
+  "failures": 0,
+  "last_sync": "2026-04-02T18:35:55+00:00",
+  "github_auth": true
+}
 ```
 
 ### Aggregate Metrics
 ```json
-{}
+{
+  "repos_synced": 2,
+  "total_stars": 0,
+  "total_watchers": 0,
+  "total_forks": 0,
+  "timestamp": "2026-04-02T18:35:55+00:00"
+}
 ```
 
 <!-- AUTO-GENERATED:END -->
