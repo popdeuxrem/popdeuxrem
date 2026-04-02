@@ -209,8 +209,8 @@ sync_repository() {
 aggregate_metrics() {
     local output_file="${METRICS_DIR}/aggregate.json"
     local total_stars=0
-    total_watchers=0
-    total_forks=0
+    local total_watchers=0
+    local total_forks=0
     local repo_count=0
 
     for f in "${METRICS_DIR}"/*.json; do
@@ -221,7 +221,7 @@ aggregate_metrics() {
             total_stars=$(( total_stars + $(jq -r '.stargazers // 0' "$f") ))
             total_watchers=$(( total_watchers + $(jq -r '.watchers // 0' "$f") ))
             total_forks=$(( total_forks + $(jq -r '.forks // 0' "$f") ))
-            ((repo_count++))
+            repo_count=$(( repo_count + 1 ))
         fi
     done
 
@@ -272,7 +272,7 @@ main() {
 
     local synced=0
     for f in "${METRICS_DIR}"/*.json; do
-        [[ -f "$f" ]] && [[ "$f" != *aggregate* ]] && ((synced++))
+        [[ -f "$f" ]] && [[ "$f" != *aggregate* ]] && synced=$((synced + 1))
     done
 
     if [[ $failed -gt 0 ]]; then
