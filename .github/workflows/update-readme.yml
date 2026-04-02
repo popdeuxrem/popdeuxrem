@@ -1,0 +1,72 @@
+name: Auto Update README
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [orchestrator, metrics, health]
+  push:
+    branches:
+      - main
+      - systems/**
+  pull_request:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' || github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'repository_dispatch'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate Metrics
+        run: bash systems/scripts/generate_metrics.sh
+
+      - name: Bootstrap System
+        run: bash systems/automation/bootstrap.sh
+
+      - name: Generate System Health
+        run: bash systems/scripts/system_health.sh
+
+      - name: Generate README
+        run: bash systems/scripts/generate_readme.sh
+
+      - name: Commit Changes
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "auto-bot"
+          git config user.email "bot@local"
+          git add .
+          git diff --quiet || git commit -m "auto: update system state"
+          git push
+
+  health-check:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'repository_dispatch'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Health Check
+        run: make verify
+
+      - name: Generate System Health
+        run: bash systems/scripts/system_health.sh
+
+  orchestrator:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'repository_dispatch'
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Orchestrator Sync
+        run: bash systems/orchestrator/sync.sh
+
+      - name: Update Dashboard
+        if: success()
+        run: bash systems/orchestrator/dispatch.sh dashboard

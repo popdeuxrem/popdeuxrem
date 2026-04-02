@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-04-02T18:18:54+00:00",
+  "uptime": "up 38 minutes",
+  "components": {
+    "automation": {"name":"automation","status":"ok","size":70,"modified":"2026-04-02 18:18:54"},
+    "orchestrator": {"name":"orchestrator","status":"missing","size":0,"modified":null},
+    "metrics": {"name":"metrics","status":"ok","files":1},
+    "identity": {"name":"repos_registry","status":"ok","size":792,"modified":"2026-04-02 18:17:54"},
+    "scripts": {"status":"ok","errors":0},
+    "logs": {"size":2387,"errors":0}
+  },
+  "system": {
+    "git_branch": "main",
+    "commit_count": 166,
+    "uncommitted_changes": 6
+  }
+}

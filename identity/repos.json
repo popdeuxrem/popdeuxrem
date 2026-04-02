@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-02T00:00:00Z",
+  "repositories": [
+    {
+      "name": "dashboard",
+      "owner": "YOUR_ORG",
+      "url": "https://github.com/YOUR_ORG/dashboard",
+      "type": "dashboard",
+      "enabled": true,
+      "priority": "high"
+    },
+    {
+      "name": "repo-a",
+      "owner": "YOUR_ORG",
+      "url": "https://github.com/YOUR_ORG/repo-a",
+      "type": "service",
+      "enabled": true,
+      "priority": "medium"
+    },
+    {
+      "name": "repo-b",
+      "owner": "YOUR_ORG",
+      "url": "https://github.com/YOUR_ORG/repo-b",
+      "type": "service",
+      "enabled": false,
+      "priority": "low"
+    }
+  ],
+  "sync_settings": {
+    "interval_minutes": 30,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 5,
+    "timeout_seconds": 60
+  }
+}
