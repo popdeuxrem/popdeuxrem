@@ -357,6 +357,7 @@ High-precision digital systems architecture platform delivering modular web infr
 
 **Domain:** `Creative Automation` &nbsp; **Status:** ![BUILD](https://img.shields.io/badge/BUILD-FFA500?style=flat-square) &nbsp; **Stars:** 0
 
+Lightweight, free-resource text-to-image and typography engine inspired by PhoText; focused on composable pipelines, automation, and deterministic rendering workflows.
 
 [Repository →](https://github.com/popdeuxrem/Photext)
 
@@ -366,6 +367,7 @@ High-precision digital systems architecture platform delivering modular web infr
 
 **Domain:** `Brand Infrastructure` &nbsp; **Status:** ![SHIP](https://img.shields.io/badge/SHIP-brightgreen?style=flat-square) &nbsp; **Stars:** 0
 
+Profile repository powering dynamic README, animated SVG assets, automated terminal render scripts, and GitHub Actions-driven content regeneration.
 
 [Repository →](https://github.com/popdeuxrem/popdeuxrem)
 
@@ -459,60 +461,7 @@ context · constraints · ideal_outcome
 </p>
 
 <p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" alt="Footer Wave"/>
 </p>
 
 </div>
-
-<!-- AUTO-GENERATED:START -->
-<!-- AUTO-GENERATED:END -->
-
-
-
-<!-- AUTO-GENERATED:START -->
-
-## ⚙️ System Telemetry
-
-### System Health
-```json
-{
-  "timestamp": "2026-04-02T18:18:54+00:00",
-  "uptime": "up 38 minutes",
-  "components": {
-    "automation": {"name":"automation","status":"ok","size":70,"modified":"2026-04-02 18:18:54"},
-    "orchestrator": {"name":"orchestrator","status":"missing","size":0,"modified":null},
-    "metrics": {"name":"metrics","status":"ok","files":1},
-    "identity": {"name":"repos_registry","status":"ok","size":792,"modified":"2026-04-02 18:17:54"},
-    "scripts": {"status":"ok","errors":0},
-    "logs": {"size":2387,"errors":0}
-  },
-  "system": {
-    "git_branch": "main",
-    "commit_count": 166,
-    "uncommitted_changes": 6
-  }
-}
-```
-
-### Orchestrator
-```json
-{
-  "status": "healthy",
-  "repos_synced": 2,
-  "failures": 0,
-  "last_sync": "2026-04-02T18:35:55+00:00",
-  "github_auth": true
-}
-```
-
-### Aggregate Metrics
-```json
-{
-  "repos_synced": 2,
-  "total_stars": 0,
-  "total_watchers": 0,
-  "total_forks": 0,
-  "timestamp": "2026-04-02T18:35:55+00:00"
-}
-```
-
-<!-- AUTO-GENERATED:END -->
