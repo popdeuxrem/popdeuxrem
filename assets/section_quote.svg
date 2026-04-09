@@ -48,13 +48,13 @@
   
   <g filter="url(#quote-glow)">
     <text class="quote-text" x="400" y="60" text-anchor="middle">
-      <tspan>"Enforce invariants at the edge."</tspan>
+      <tspan>"Latency is the enemy of architecture."</tspan>
     </text>
   </g>
   
   <line class="pulse-line" x1="300" y1="80" x2="500" y2="80"/>
   
-  <text class="quote-author" x="400" y="100" text-anchor="middle">— 𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ ∙ Security</text>
+  <text class="quote-author" x="400" y="100" text-anchor="middle">— 𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ ∙ Systems</text>
   
   <text class="quote-glyph" x="400" y="125" text-anchor="middle">ꚽꛈ𖢧ꛅꚶꔪ ꕷ𖢧ꛎ𖢧ꛈꕷ𖢧ꛈꛕꕷ ∙ ◈ ∙ AXIOM</text>
   
