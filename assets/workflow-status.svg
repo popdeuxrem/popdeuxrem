@@ -19,7 +19,7 @@
 
   <text x="44" y="36" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="700">WORKFLOW CONTROL</text>
   <circle cx="450" cy="31" r="7" fill="#d29922" filter="url(#glow)"/>
-  <text x="44" y="342" fill="#484f58" font-family="monospace" font-size="10">trace:07ca277d22f4 · source:4dea18bf8e42ac0a</text>
+  <text x="44" y="342" fill="#484f58" font-family="monospace" font-size="10">trace:6900e1ce08f3 · source:51fdfc28ad62c8f8</text>
 
   <text x="44" y="70" fill="#8b949e" font-family="monospace" font-size="12">WORKFLOW</text><circle cx="250" cy="66" r="5" fill="#00ff9d"/><text x="268" y="70" fill="#00ff9d" font-family="monospace" font-size="12">PRESENT</text>
   <text x="44" y="96" fill="#8b949e" font-family="monospace" font-size="12">DISPATCH</text><circle cx="250" cy="92" r="5" fill="#00ff9d"/><text x="268" y="96" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
