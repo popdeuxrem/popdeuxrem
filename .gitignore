@@ -61,3 +61,5 @@ service-account.json
 !assets/*.svg
 .backups/
 docs/STEP_*_OUTPUT.txt
+!dist/
+!dist/build-manifest.json
