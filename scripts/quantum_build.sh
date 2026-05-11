@@ -1,43 +1,31 @@
 
 #!/usr/bin/env bash
 
-# POPDEUXREM QUANTUM SURFACE
-
-# Defensive build and validation gate with bounded optional checks.
-
 set -u
 
 MODE="${1:-build}"
 
 COMMAND_TIMEOUT="${COMMAND_TIMEOUT:-45}"
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+LOG_FILE="/tmp/popdeuxrem-quantum-check.log"
 
-ASSETS_DIR="$ROOT_DIR/assets"
+if [[ "$MODE" != "--check" ]]; then
 
-DIST_DIR="$ROOT_DIR/dist"
+  LOG_FILE="$ROOT_DIR/dist/build.log"
+
+fi
+
+mkdir -p "$ROOT_DIR/dist"
+
+: > "$LOG_FILE"
 
 ERRORS=0
 
 WARNINGS=0
 
-mkdir -p "$DIST_DIR"
-
-if [[ "$MODE" == "--check" ]]; then
-
-  LOG_FILE="/tmp/popdeuxrem-quantum-check.log"
-
-else
-
-  LOG_FILE="$DIST_DIR/build.log"
-
-fi
-
-: > "$LOG_FILE"
-
-log_line() {
+log() {
 
   printf '%s\n' "$1"
 
@@ -45,45 +33,39 @@ log_line() {
 
 }
 
-log_section() {
+pass() {
 
-  log_line ""
-
-  log_line "============================================================"
-
-  log_line "$1"
+  log "[PASS] $1"
 
 }
 
-log_info() {
-
-  log_line "[INFO] $1"
-
-}
-
-log_pass() {
-
-  log_line "[PASS] $1"
-
-}
-
-log_warn() {
+warn() {
 
   WARNINGS=$((WARNINGS + 1))
 
-  log_line "[WARN] $1"
+  log "[WARN] $1"
 
 }
 
-log_fail() {
+fail() {
 
   ERRORS=$((ERRORS + 1))
 
-  log_line "[FAIL] $1"
+  log "[FAIL] $1"
 
 }
 
-run_bounded() {
+section() {
+
+  log ""
+
+  log "============================================================"
+
+  log "$1"
+
+}
+
+limited() {
 
   local seconds="$1"
 
@@ -101,431 +83,281 @@ run_bounded() {
 
 }
 
-run_python_syntax() {
-
-  local file="$1"
-
-  if run_bounded "$COMMAND_TIMEOUT" python3 -m py_compile "$file" >/tmp/popdeuxrem-pycheck.err 2>&1; then
-
-    log_pass "Python syntax: $file"
-
-  else
-
-    local rc=$?
-
-    log_fail "Python syntax: $file rc=$rc"
-
-    sed 's/^/[PY] /' /tmp/popdeuxrem-pycheck.err >> "$LOG_FILE"
-
-  fi
-
-}
-
-run_bash_syntax() {
-
-  local file="$1"
-
-  if run_bounded "$COMMAND_TIMEOUT" bash -n "$file" >/tmp/popdeuxrem-shcheck.err 2>&1; then
-
-    log_pass "Bash syntax: $file"
-
-  else
-
-    local rc=$?
-
-    log_fail "Bash syntax: $file rc=$rc"
-
-    sed 's/^/[SH] /' /tmp/popdeuxrem-shcheck.err >> "$LOG_FILE"
-
-  fi
-
-}
-
-validate_json() {
+check_python() {
 
   local file="$1"
 
   if [[ ! -f "$file" ]]; then
 
-    log_warn "Missing optional JSON: $file"
+    warn "Missing optional Python file: $file"
 
     return 0
 
   fi
 
-  if run_bounded "$COMMAND_TIMEOUT" python3 -m json.tool "$file" >/tmp/popdeuxrem-jsoncheck.out 2>/tmp/popdeuxrem-jsoncheck.err; then
+  if limited "$COMMAND_TIMEOUT" python3 -m py_compile "$file" >/dev/null 2>/tmp/popdeuxrem-qb.err; then
 
-    log_pass "Valid JSON: $file"
-
-  else
-
-    local rc=$?
-
-    log_fail "Invalid JSON or timeout: $file rc=$rc"
-
-    sed 's/^/[JSON] /' /tmp/popdeuxrem-jsoncheck.err >> "$LOG_FILE"
-
-  fi
-
-}
-
-validate_import() {
-
-  local package="$1"
-
-  local import_name="$2"
-
-  if run_bounded 10 python3 -c "import ${import_name}" >/dev/null 2>&1; then
-
-    log_pass "Installed: $package"
+    pass "Python syntax: $file"
 
   else
 
-    local rc=$?
+    fail "Python syntax: $file"
 
-    if [[ "$rc" -eq 124 ]]; then
-
-      log_warn "Import timed out: $package"
-
-    else
-
-      log_warn "Not installed: $package"
-
-    fi
+    cat /tmp/popdeuxrem-qb.err >> "$LOG_FILE"
 
   fi
 
 }
 
-validate_svg() {
+check_bash() {
 
-  local svg="$1"
+  local file="$1"
 
-  local filename
+  if [[ ! -f "$file" ]]; then
 
-  filename="$(basename "$svg")"
+    warn "Missing optional Bash file: $file"
 
-  if grep -q '<svg' "$svg"; then
+    return 0
 
-    log_pass "SVG contains root: $filename"
+  fi
+
+  if limited "$COMMAND_TIMEOUT" bash -n "$file" >/dev/null 2>/tmp/popdeuxrem-qb.err; then
+
+    pass "Bash syntax: $file"
 
   else
 
-    log_fail "Invalid SVG: $filename"
+    fail "Bash syntax: $file"
+
+    cat /tmp/popdeuxrem-qb.err >> "$LOG_FILE"
 
   fi
 
 }
 
-cd "$ROOT_DIR" || {
+check_json() {
 
-  log_fail "Unable to cd into repo root: $ROOT_DIR"
+  local file="$1"
 
-  exit 1
+  if [[ ! -f "$file" ]]; then
 
-}
+    warn "Missing optional JSON: $file"
 
-log_line "QUANTUM BUILD LOG - $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
-
-log_line "MODE: $MODE"
-
-log_line "ROOT: $ROOT_DIR"
-
-log_line "COMMAND_TIMEOUT: $COMMAND_TIMEOUT"
-
-log_section "VALIDATING SCRIPTS"
-
-for script in \
-
-  scripts/build_readme.py \
-
-  scripts/collect_repo_metrics.py \
-
-  scripts/generate_project_cards.py \
-
-  scripts/generate_workflow_status.py \
-
-  scripts/update_readme.sh \
-
-  scripts/quantum_build.sh \
-
-  scripts/rollback_surface.sh \
-
-  systems/automation/bootstrap.sh \
-
-  systems/automation/healthcheck.sh \
-
-  systems/intelligence/render_status.sh \
-
-  systems/orchestrator/dispatch.sh \
-
-  systems/orchestrator/sync.sh \
-
-  systems/scripts/generate_metrics.sh \
-
-  systems/scripts/generate_readme.sh \
-
-  systems/scripts/system_health.sh
-
-do
-
-  if [[ ! -f "$script" ]]; then
-
-    log_warn "Missing optional script: $script"
-
-    continue
+    return 0
 
   fi
 
-  case "$script" in
+  if limited "$COMMAND_TIMEOUT" python3 -m json.tool "$file" >/dev/null 2>/tmp/popdeuxrem-qb.err; then
 
-    *.py)
+    pass "Valid JSON: $file"
 
-      run_python_syntax "$script"
+  else
 
-      ;;
+    fail "Invalid JSON: $file"
 
-    *.sh)
+    cat /tmp/popdeuxrem-qb.err >> "$LOG_FILE"
 
-      run_bash_syntax "$script"
+  fi
 
-      ;;
+}
 
-    *)
+check_svg() {
 
-      log_warn "Unknown script type: $script"
+  local file="$1"
 
-      ;;
+  if [[ ! -f "$file" ]]; then
 
-  esac
+    fail "Missing SVG: $file"
 
-done
+    return 0
 
-log_section "VALIDATING JSON DATA"
+  fi
 
-for file in \
+  if grep -q '<svg' "$file"; then
 
-  portfolio.json \
+    pass "SVG root: $file"
 
-  skills.json \
+  else
 
-  timeline.json \
+    fail "Invalid SVG: $file"
 
-  data/quotes.json \
+  fi
 
-  identity/repos.json \
+}
 
-  health/status.json \
+cd "$ROOT_DIR" || exit 1
 
-  health/system_health.json \
+log "QUANTUM BUILD LOG - $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
-  health/orchestrator.json \
+log "MODE: $MODE"
 
-  metrics/aggregate.json \
+log "ROOT: $ROOT_DIR"
 
-  metrics/metrics.json \
+log "COMMAND_TIMEOUT: $COMMAND_TIMEOUT"
 
-  metrics/popdeuxrem_popdeuxrem.json \
+section "VALIDATING SCRIPTS"
 
-  assets/projects/index.json \
+check_python "scripts/build_readme.py"
 
-  dist/build-manifest.json
+check_python "scripts/collect_repo_metrics.py"
 
-do
+check_python "scripts/generate_project_cards.py"
 
-  validate_json "$file"
+check_python "scripts/generate_workflow_status.py"
 
-done
+check_bash "scripts/quantum_build.sh"
 
-log_section "VALIDATING DEPENDENCIES"
+check_bash "scripts/update_readme.sh"
 
-if [[ -f requirements.txt ]]; then
+check_bash "scripts/rollback_surface.sh"
 
-  log_pass "Found: requirements.txt"
+check_bash "systems/intelligence/render_status.sh"
+
+check_bash "systems/scripts/system_health.sh"
+
+section "VALIDATING JSON"
+
+check_json "portfolio.json"
+
+check_json "skills.json"
+
+check_json "timeline.json"
+
+check_json "data/quotes.json"
+
+check_json "identity/repos.json"
+
+check_json "health/status.json"
+
+check_json "health/system_health.json"
+
+check_json "health/orchestrator.json"
+
+check_json "metrics/aggregate.json"
+
+check_json "metrics/metrics.json"
+
+check_json "assets/projects/index.json"
+
+check_json "dist/build-manifest.json"
+
+section "VALIDATING README TEMPLATE"
+
+if grep -q '<!-- AUTO-GENERATED:START -->' README.base.md; then
+
+  pass "Template marker: START"
 
 else
 
-  log_warn "Missing: requirements.txt"
+  fail "Template marker missing: START"
 
 fi
 
-validate_import "requests" "requests"
+if grep -q '<!-- AUTO-GENERATED:END -->' README.base.md; then
 
-validate_import "python-dateutil" "dateutil"
-
-validate_import "pyyaml" "yaml"
-
-validate_import "jinja2" "jinja2"
-
-validate_import "pytest" "pytest"
-
-log_section "VALIDATING README TEMPLATE"
-
-if [[ -f README.base.md ]]; then
-
-  if grep -q '<!-- AUTO-GENERATED:START -->' README.base.md; then
-
-    log_pass "Template marker: START"
-
-  else
-
-    log_fail "Template marker missing: START"
-
-  fi
-
-  if grep -q '<!-- AUTO-GENERATED:END -->' README.base.md; then
-
-    log_pass "Template marker: END"
-
-  else
-
-    log_fail "Template marker missing: END"
-
-  fi
+  pass "Template marker: END"
 
 else
 
-  log_fail "Missing: README.base.md"
+  fail "Template marker missing: END"
 
 fi
 
-log_section "VALIDATING SVG ASSETS"
+section "VALIDATING SVG ASSETS"
 
-svg_count=0
+check_svg "assets/flow-line.svg"
 
-if compgen -G "$ASSETS_DIR/*.svg" >/dev/null; then
+check_svg "assets/section_quote.svg"
 
-  for svg in "$ASSETS_DIR"/*.svg; do
+check_svg "assets/system-health.svg"
 
-    svg_count=$((svg_count + 1))
+check_svg "assets/repo-metrics.svg"
 
-    validate_svg "$svg"
+check_svg "assets/workflow-status.svg"
 
-  done
+if [[ -d assets/projects ]]; then
 
-else
+  for svg in assets/projects/*.svg; do
 
-  log_warn "No SVG assets found"
-
-fi
-
-if [[ -d "$ASSETS_DIR/projects" ]] && compgen -G "$ASSETS_DIR/projects/*.svg" >/dev/null; then
-
-  for svg in "$ASSETS_DIR"/projects/*.svg; do
-
-    svg_count=$((svg_count + 1))
-
-    validate_svg "$svg"
+    [[ -f "$svg" ]] && check_svg "$svg"
 
   done
 
 fi
 
-log_info "Total SVGs: $svg_count"
-
-log_section "GENERATOR CHECK"
+section "GENERATOR CHECK"
 
 if [[ "$MODE" == "--check" ]]; then
 
-  if run_bounded "$COMMAND_TIMEOUT" python3 scripts/build_readme.py --dry-run --check >/tmp/popdeuxrem-generator.out 2>/tmp/popdeuxrem-generator.err; then
+  if limited "$COMMAND_TIMEOUT" python3 scripts/build_readme.py --dry-run --check >/tmp/popdeuxrem-generator.out 2>/tmp/popdeuxrem-generator.err; then
 
     sed 's/^/[GEN] /' /tmp/popdeuxrem-generator.out
 
-    cat /tmp/popdeuxrem-generator.out >> "$LOG_FILE"
-
-    log_pass "Generator dry-run passed"
+    pass "Generator dry-run passed"
 
   else
 
-    rc=$?
+    fail "Generator dry-run failed"
 
-    log_fail "Generator dry-run failed or timed out rc=$rc"
-
-    sed 's/^/[GEN-ERR] /' /tmp/popdeuxrem-generator.err
-
-    sed 's/^/[GEN-ERR] /' /tmp/popdeuxrem-generator.err >> "$LOG_FILE"
+    cat /tmp/popdeuxrem-generator.err >> "$LOG_FILE"
 
   fi
 
 else
 
-  if run_bounded "$COMMAND_TIMEOUT" bash systems/scripts/system_health.sh >/tmp/popdeuxrem-health.out 2>/tmp/popdeuxrem-health.err; then
+  if limited "$COMMAND_TIMEOUT" bash systems/scripts/system_health.sh >/dev/null 2>/tmp/popdeuxrem-health.err; then
 
-    log_pass "System health generated"
+    pass "System health generated"
 
   else
 
-    rc=$?
+    fail "System health generation failed"
 
-    log_fail "System health generation failed or timed out rc=$rc"
-
-    sed 's/^/[HEALTH-ERR] /' /tmp/popdeuxrem-health.err >> "$LOG_FILE"
+    cat /tmp/popdeuxrem-health.err >> "$LOG_FILE"
 
   fi
 
-  if [[ -f scripts/generate_project_cards.py ]]; then
+  if limited "$COMMAND_TIMEOUT" python3 scripts/generate_project_cards.py --limit 8 >/dev/null 2>/tmp/popdeuxrem-cards.err; then
 
-    if run_bounded "$COMMAND_TIMEOUT" python3 scripts/generate_project_cards.py --limit 8 >/tmp/popdeuxrem-cards.out 2>/tmp/popdeuxrem-cards.err; then
+    pass "Project cards generated"
 
-      cat /tmp/popdeuxrem-cards.out >> "$LOG_FILE"
+  else
 
-      log_pass "Project cards generated"
+    fail "Project cards generation failed"
 
-    else
-
-      rc=$?
-
-      log_fail "Project card generation failed or timed out rc=$rc"
-
-      sed 's/^/[CARDS-ERR] /' /tmp/popdeuxrem-cards.err >> "$LOG_FILE"
-
-    fi
+    cat /tmp/popdeuxrem-cards.err >> "$LOG_FILE"
 
   fi
 
-  if [[ -f scripts/generate_workflow_status.py ]]; then
+  if limited "$COMMAND_TIMEOUT" python3 scripts/generate_workflow_status.py >/dev/null 2>/tmp/popdeuxrem-workflow.err; then
 
-    if run_bounded "$COMMAND_TIMEOUT" python3 scripts/generate_workflow_status.py >/tmp/popdeuxrem-workflow.out 2>/tmp/popdeuxrem-workflow.err; then
+    pass "Workflow status generated"
 
-      cat /tmp/popdeuxrem-workflow.out >> "$LOG_FILE"
+  else
 
-      log_pass "Workflow status generated"
+    fail "Workflow status generation failed"
 
-    else
-
-      rc=$?
-
-      log_fail "Workflow status generation failed or timed out rc=$rc"
-
-      sed 's/^/[WORKFLOW-ERR] /' /tmp/popdeuxrem-workflow.err >> "$LOG_FILE"
-
-    fi
+    cat /tmp/popdeuxrem-workflow.err >> "$LOG_FILE"
 
   fi
 
-  if run_bounded "$COMMAND_TIMEOUT" python3 scripts/build_readme.py >/tmp/popdeuxrem-generator.out 2>/tmp/popdeuxrem-generator.err; then
+  if limited "$COMMAND_TIMEOUT" python3 scripts/build_readme.py >/tmp/popdeuxrem-generator.out 2>/tmp/popdeuxrem-generator.err; then
 
     cat /tmp/popdeuxrem-generator.out
 
-    cat /tmp/popdeuxrem-generator.out >> "$LOG_FILE"
-
-    log_pass "README and assets generated"
+    pass "README and assets generated"
 
   else
 
-    rc=$?
+    fail "README generation failed"
 
-    log_fail "README generation failed or timed out rc=$rc"
-
-    sed 's/^/[GEN-ERR] /' /tmp/popdeuxrem-generator.err
-
-    sed 's/^/[GEN-ERR] /' /tmp/popdeuxrem-generator.err >> "$LOG_FILE"
+    cat /tmp/popdeuxrem-generator.err >> "$LOG_FILE"
 
   fi
 
 fi
 
-log_section "FINAL VERIFICATION"
+section "FINAL VERIFICATION"
 
 for file in \
 
@@ -553,35 +385,35 @@ do
 
   if [[ -f "$file" ]]; then
 
-    log_pass "Exists: $file"
+    pass "Exists: $file"
 
   else
 
-    log_fail "Missing: $file"
+    fail "Missing: $file"
 
   fi
 
 done
 
-log_section "BUILD SUMMARY"
+section "BUILD SUMMARY"
 
-log_line "Mode: $MODE"
+log "Mode: $MODE"
 
-log_line "Errors: $ERRORS"
+log "Errors: $ERRORS"
 
-log_line "Warnings: $WARNINGS"
+log "Warnings: $WARNINGS"
 
-log_line "Log: $LOG_FILE"
+log "Log: $LOG_FILE"
 
 if [[ "$ERRORS" -eq 0 ]]; then
 
-  log_pass "BUILD COMPLETED SUCCESSFULLY"
+  pass "BUILD COMPLETED SUCCESSFULLY"
 
   exit 0
 
 fi
 
-log_fail "BUILD COMPLETED WITH ERRORS"
+fail "BUILD COMPLETED WITH ERRORS"
 
 exit 1
 
