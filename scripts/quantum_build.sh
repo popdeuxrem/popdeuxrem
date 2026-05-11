@@ -185,6 +185,22 @@ check_svg() {
 
 }
 
+check_exists() {
+
+  local file="$1"
+
+  if [[ -f "$file" ]]; then
+
+    pass "Exists: $file"
+
+  else
+
+    fail "Missing: $file"
+
+  fi
+
+}
+
 cd "$ROOT_DIR" || exit 1
 
 log "QUANTUM BUILD LOG - $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
@@ -197,49 +213,79 @@ log "COMMAND_TIMEOUT: $COMMAND_TIMEOUT"
 
 section "VALIDATING SCRIPTS"
 
-check_python "scripts/build_readme.py"
+PYTHON_FILES=(
 
-check_python "scripts/collect_repo_metrics.py"
+  "scripts/build_readme.py"
 
-check_python "scripts/generate_project_cards.py"
+  "scripts/collect_repo_metrics.py"
 
-check_python "scripts/generate_workflow_status.py"
+  "scripts/generate_project_cards.py"
 
-check_bash "scripts/quantum_build.sh"
+  "scripts/generate_workflow_status.py"
 
-check_bash "scripts/update_readme.sh"
+)
 
-check_bash "scripts/rollback_surface.sh"
+BASH_FILES=(
 
-check_bash "systems/intelligence/render_status.sh"
+  "scripts/quantum_build.sh"
 
-check_bash "systems/scripts/system_health.sh"
+  "scripts/update_readme.sh"
+
+  "scripts/rollback_surface.sh"
+
+  "systems/intelligence/render_status.sh"
+
+  "systems/scripts/system_health.sh"
+
+)
+
+for file in "${PYTHON_FILES[@]}"; do
+
+  check_python "$file"
+
+done
+
+for file in "${BASH_FILES[@]}"; do
+
+  check_bash "$file"
+
+done
 
 section "VALIDATING JSON"
 
-check_json "portfolio.json"
+JSON_FILES=(
 
-check_json "skills.json"
+  "portfolio.json"
 
-check_json "timeline.json"
+  "skills.json"
 
-check_json "data/quotes.json"
+  "timeline.json"
 
-check_json "identity/repos.json"
+  "data/quotes.json"
 
-check_json "health/status.json"
+  "identity/repos.json"
 
-check_json "health/system_health.json"
+  "health/status.json"
 
-check_json "health/orchestrator.json"
+  "health/system_health.json"
 
-check_json "metrics/aggregate.json"
+  "health/orchestrator.json"
 
-check_json "metrics/metrics.json"
+  "metrics/aggregate.json"
 
-check_json "assets/projects/index.json"
+  "metrics/metrics.json"
 
-check_json "dist/build-manifest.json"
+  "assets/projects/index.json"
+
+  "dist/build-manifest.json"
+
+)
+
+for file in "${JSON_FILES[@]}"; do
+
+  check_json "$file"
+
+done
 
 section "VALIDATING README TEMPLATE"
 
@@ -265,21 +311,37 @@ fi
 
 section "VALIDATING SVG ASSETS"
 
-check_svg "assets/flow-line.svg"
+SVG_FILES=(
 
-check_svg "assets/section_quote.svg"
+  "assets/flow-line.svg"
 
-check_svg "assets/system-health.svg"
+  "assets/section_quote.svg"
 
-check_svg "assets/repo-metrics.svg"
+  "assets/system-health.svg"
 
-check_svg "assets/workflow-status.svg"
+  "assets/repo-metrics.svg"
+
+  "assets/workflow-status.svg"
+
+)
+
+for file in "${SVG_FILES[@]}"; do
+
+  check_svg "$file"
+
+done
 
 if [[ -d assets/projects ]]; then
 
-  for svg in assets/projects/*.svg; do
+  shopt -s nullglob
 
-    [[ -f "$svg" ]] && check_svg "$svg"
+  PROJECT_SVGS=(assets/projects/*.svg)
+
+  shopt -u nullglob
+
+  for file in "${PROJECT_SVGS[@]}"; do
+
+    check_svg "$file"
 
   done
 
@@ -359,39 +421,33 @@ fi
 
 section "FINAL VERIFICATION"
 
-for file in \
+REQUIRED_FILES=(
 
-  README.md \
+  "README.md"
 
-  README.base.md \
+  "README.base.md"
 
-  assets/flow-line.svg \
+  "assets/flow-line.svg"
 
-  assets/section_quote.svg \
+  "assets/section_quote.svg"
 
-  assets/system-health.svg \
+  "assets/system-health.svg"
 
-  assets/repo-metrics.svg \
+  "assets/repo-metrics.svg"
 
-  assets/workflow-status.svg \
+  "assets/workflow-status.svg"
 
-  assets/projects/index.json \
+  "assets/projects/index.json"
 
-  dist/build-manifest.json \
+  "dist/build-manifest.json"
 
-  scripts/build_readme.py
+  "scripts/build_readme.py"
 
-do
+)
 
-  if [[ -f "$file" ]]; then
+for file in "${REQUIRED_FILES[@]}"; do
 
-    pass "Exists: $file"
-
-  else
-
-    fail "Missing: $file"
-
-  fi
+  check_exists "$file"
 
 done
 
