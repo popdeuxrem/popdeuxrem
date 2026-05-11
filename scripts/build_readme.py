@@ -658,6 +658,61 @@ def generated_readme_block(
 
     return "\n".join(lines)
 
+def project_cards_manifest() -> dict[str, Any]:
+    index_path = ROOT / "assets" / "projects" / "index.json"
+    payload = load_json(index_path, {})
+
+    if not isinstance(payload, dict):
+        return {
+            "index": "assets/projects/index.json",
+            "count": 0,
+            "cards": [],
+        }
+
+    cards = payload.get("cards", [])
+
+    if not isinstance(cards, list):
+        cards = []
+
+    normalized: list[dict[str, Any]] = []
+
+    for item in cards:
+        if not isinstance(item, dict):
+            continue
+
+        path = str(item.get("path") or "").strip()
+        full_name = str(item.get("full_name") or item.get("name") or "unknown").strip()
+        name = str(item.get("name") or full_name.split("/")[-1] or "unknown").strip()
+
+        if not path:
+            continue
+
+        exists = (ROOT / path).exists()
+
+        normalized.append(
+            {
+                "full_name": full_name,
+                "name": name,
+                "path": path,
+                "exists": exists,
+                "html_url": str(item.get("html_url") or ""),
+                "status": str(item.get("status") or "unknown"),
+                "language": str(item.get("language") or "Unknown"),
+                "stars": item.get("stars") or 0,
+                "forks": item.get("forks") or 0,
+                "open_issues": item.get("open_issues") or 0,
+            }
+        )
+
+    normalized = sorted(normalized, key=lambda item: str(item.get("full_name", "")).lower())
+
+    return {
+        "index": "assets/projects/index.json",
+        "count": len(normalized),
+        "cards": normalized,
+    }
+
+
 def write_file(path: Path, content: str, dry_run: bool, outputs: list[str]) -> None:
     rel = str(path.relative_to(ROOT))
     outputs.append(rel)
@@ -704,6 +759,9 @@ def build(dry_run: bool = False, check: bool = False) -> int:
         "source_hash": shash,
         "short_sha": shash[:16],
         "outputs": outputs,
+        "project_cards_index": "assets/projects/index.json",
+        "project_cards_count": project_cards_manifest()["count"],
+        "project_cards": project_cards_manifest()["cards"],
         "source_files": source_state,
         "status": "success",
     }
