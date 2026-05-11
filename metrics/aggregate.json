@@ -1,7 +1,25 @@
 {
-  "repos_synced": 2,
-  "total_stars": 0,
-  "total_watchers": 0,
+  "generated_at": "2026-05-11T07:12:05Z",
+  "languages": {
+    "Shell": 1
+  },
+  "registry": "identity/repos.json",
+  "repo_count": 1,
+  "source": "scripts/collect_repo_metrics.py",
+  "top_repos": [
+    {
+      "forks": 0,
+      "full_name": "popdeuxrem/popdeuxrem",
+      "html_url": "https://github.com/popdeuxrem/popdeuxrem",
+      "language": "Shell",
+      "name": "popdeuxrem",
+      "stars": 0,
+      "status": "tracked"
+    }
+  ],
   "total_forks": 0,
-  "timestamp": "2026-04-02T18:35:55+00:00"
+  "total_open_issues": 0,
+  "total_stars": 0,
+  "tracked_count": 1,
+  "unavailable_count": 0
 }
