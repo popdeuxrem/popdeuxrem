@@ -1,0 +1,17 @@
+{
+  "cards": [
+    {
+      "forks": 0,
+      "full_name": "popdeuxrem/popdeuxrem",
+      "html_url": "https://github.com/popdeuxrem/popdeuxrem",
+      "language": "Shell",
+      "name": "popdeuxrem",
+      "open_issues": 0,
+      "path": "assets/projects/popdeuxrem__popdeuxrem.svg",
+      "stars": 0,
+      "status": "tracked"
+    }
+  ],
+  "count": 1,
+  "source": "scripts/generate_project_cards.py"
+}

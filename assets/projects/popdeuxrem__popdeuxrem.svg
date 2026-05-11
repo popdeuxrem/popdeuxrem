@@ -1,0 +1,42 @@
+<svg width="760" height="240" viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="popdeuxrem/popdeuxrem project card">
+  <defs>
+    <linearGradient id="border" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="48%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#00ff9d"/>
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="760" height="240" rx="18" fill="#0d1117"/>
+  <rect x="1" y="1" width="758" height="238" rx="18" fill="none" stroke="url(#border)" stroke-width="1.5" opacity="0.8"/>
+
+  <circle cx="42" cy="42" r="8" fill="#00ff9d" filter="url(#softGlow)"/>
+  <text x="62" y="47" fill="#8b949e" font-family="monospace" font-size="13">PROJECT SIGNAL</text>
+
+  <text x="42" y="88" fill="#c9d1d9" font-family="monospace" font-size="24" font-weight="700">popdeuxrem</text>
+  <text x="42" y="116" fill="#8b949e" font-family="monospace" font-size="13">popdeuxrem/popdeuxrem</text>
+
+  <text x="42" y="150" fill="#c9d1d9" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="15">𝒫𝑜𝓅𝒟𝑒𝓊𝓍𝑅𝑒𝓂</text>
+
+  <rect x="42" y="176" width="118" height="28" rx="14" fill="#161b22" stroke="#7aa2ff" opacity="0.95"/>
+  <circle cx="60" cy="190" r="5" fill="#7aa2ff"/>
+  <text x="74" y="195" fill="#c9d1d9" font-family="monospace" font-size="12">Shell</text>
+
+  <text x="190" y="195" fill="#8b949e" font-family="monospace" font-size="12">stars</text>
+  <text x="240" y="195" fill="#00f3ff" font-family="monospace" font-size="12">0</text>
+
+  <text x="300" y="195" fill="#8b949e" font-family="monospace" font-size="12">forks</text>
+  <text x="346" y="195" fill="#bc8cff" font-family="monospace" font-size="12">0</text>
+
+  <text x="402" y="195" fill="#8b949e" font-family="monospace" font-size="12">issues</text>
+  <text x="456" y="195" fill="#00ff9d" font-family="monospace" font-size="12">0</text>
+
+  <text x="42" y="222" fill="#484f58" font-family="monospace" font-size="10">trace:00178fba03f4 · status:tracked · updated:2026-05-11T07:08:24Z</text>
+</svg>
