@@ -14,7 +14,7 @@
     },
     "logs": {
       "errors": 0,
-      "size": 5347
+      "size": 11485
     },
     "metrics": {
       "files": 3,
@@ -34,10 +34,10 @@
   },
   "status": "watch",
   "system": {
-    "commit_count": 201,
+    "commit_count": 205,
     "git_branch": "main",
-    "uncommitted_changes": 18
+    "uncommitted_changes": 6
   },
-  "timestamp": "2026-05-11T06:46:34+00:00",
-  "uptime": "up 1 hour, 6 minutes"
+  "timestamp": "2026-05-11T07:23:59+00:00",
+  "uptime": "up 1 hour, 43 minutes"
 }
