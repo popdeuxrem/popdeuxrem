@@ -1,0 +1,34 @@
+<svg width="520" height="370" viewBox="0 0 520 370" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow status panel">
+  <defs>
+    <linearGradient id="border" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="50%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#00ff9d"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="520" height="370" rx="18" fill="#0d1117"/>
+  <rect x="1" y="1" width="518" height="368" rx="18" fill="none" stroke="url(#border)" stroke-width="1.5" opacity="0.78"/>
+
+  <text x="44" y="36" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="700">WORKFLOW CONTROL</text>
+  <circle cx="450" cy="31" r="7" fill="#d29922" filter="url(#glow)"/>
+  <text x="44" y="342" fill="#484f58" font-family="monospace" font-size="10">trace:07ca277d22f4 · source:4dea18bf8e42ac0a</text>
+
+  <text x="44" y="70" fill="#8b949e" font-family="monospace" font-size="12">WORKFLOW</text><circle cx="250" cy="66" r="5" fill="#00ff9d"/><text x="268" y="70" fill="#00ff9d" font-family="monospace" font-size="12">PRESENT</text>
+  <text x="44" y="96" fill="#8b949e" font-family="monospace" font-size="12">DISPATCH</text><circle cx="250" cy="92" r="5" fill="#00ff9d"/><text x="268" y="96" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
+  <text x="44" y="122" fill="#8b949e" font-family="monospace" font-size="12">SCHEDULE</text><circle cx="250" cy="118" r="5" fill="#00ff9d"/><text x="268" y="122" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
+  <text x="44" y="148" fill="#8b949e" font-family="monospace" font-size="12">PERMISSIONS</text><circle cx="250" cy="144" r="5" fill="#00ff9d"/><text x="268" y="148" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
+  <text x="44" y="174" fill="#8b949e" font-family="monospace" font-size="12">CONCURRENCY</text><circle cx="250" cy="170" r="5" fill="#00ff9d"/><text x="268" y="174" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
+  <text x="44" y="200" fill="#8b949e" font-family="monospace" font-size="12">NO GIT ADD .</text><circle cx="250" cy="196" r="5" fill="#00ff9d"/><text x="268" y="200" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
+  <text x="44" y="226" fill="#8b949e" font-family="monospace" font-size="12">VALIDATE</text><circle cx="250" cy="222" r="5" fill="#00ff9d"/><text x="268" y="226" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
+  <text x="44" y="252" fill="#8b949e" font-family="monospace" font-size="12">BUILD</text><circle cx="250" cy="248" r="5" fill="#00ff9d"/><text x="268" y="252" fill="#00ff9d" font-family="monospace" font-size="12">OK</text>
+  <text x="44" y="278" fill="#8b949e" font-family="monospace" font-size="12">MANIFEST</text><circle cx="250" cy="274" r="5" fill="#00ff9d"/><text x="268" y="278" fill="#00ff9d" font-family="monospace" font-size="12">PRESENT</text>
+  <text x="44" y="304" fill="#8b949e" font-family="monospace" font-size="12">HEALTH</text><circle cx="250" cy="300" r="5" fill="#d29922"/><text x="268" y="304" fill="#d29922" font-family="monospace" font-size="12">WATCH</text>
+</svg>
