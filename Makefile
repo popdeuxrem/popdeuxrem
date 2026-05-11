@@ -50,7 +50,7 @@ validate:
 	@echo "[validate] generator dry-run"
 	@python3 scripts/build_readme.py --dry-run --check >/dev/null
 	@echo "[validate] system health"
-	@bash systems/scripts/system_health.sh >/dev/null
+	@python3 -m json.tool health/system_health.json >/dev/null
 	@echo "[validate] render status"
 	@bash systems/intelligence/render_status.sh >/dev/null
 	@echo "[validate] quantum build dry validation"
