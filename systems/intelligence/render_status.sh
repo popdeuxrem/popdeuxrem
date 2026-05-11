@@ -2,22 +2,51 @@
 set -euo pipefail
 
 HEALTH_FILE="health/system_health.json"
+ORCHESTRATOR_FILE="health/orchestrator.json"
 
 if [[ ! -f "$HEALTH_FILE" ]]; then
-  echo '{"status":"unknown","severity":"unknown"}'
+  cat <<JSON
+{
+  "status": "unknown",
+  "severity": "unknown",
+  "repos_online": 0
+}
+JSON
   exit 0
 fi
 
-STATUS=$(jq -r '.status // "unknown"' "$HEALTH_FILE")
-REPOS=$(jq -r '.repos_synced // 0' health/orchestrator.json 2>/dev/null || echo "0")
-
-if [[ "$STATUS" == "healthy" ]]; then
-  SEVERITY="low"
-elif [[ "$STATUS" == "degraded" ]]; then
-  SEVERITY="medium"
+if command -v jq >/dev/null 2>&1; then
+  STATUS="$(jq -r '.status // "unknown"' "$HEALTH_FILE")"
+  REPOS="$(jq -r '.repos_synced // 0' "$ORCHESTRATOR_FILE" 2>/dev/null || echo "0")"
 else
-  SEVERITY="high"
+  STATUS="$(python3 - "$HEALTH_FILE" << 'PY'
+import json, sys
+with open(sys.argv[1], "r", encoding="utf-8") as f:
+    print(json.load(f).get("status", "unknown"))
+PY
+)"
+  REPOS="$(python3 - "$ORCHESTRATOR_FILE" << 'PY' 2>/dev/null || echo "0"
+import json, sys
+with open(sys.argv[1], "r", encoding="utf-8") as f:
+    print(json.load(f).get("repos_synced", 0))
+PY
+)"
 fi
+
+case "$STATUS" in
+  healthy)
+    SEVERITY="low"
+    ;;
+  watch)
+    SEVERITY="medium"
+    ;;
+  degraded)
+    SEVERITY="high"
+    ;;
+  *)
+    SEVERITY="unknown"
+    ;;
+esac
 
 cat <<JSON
 {

@@ -59,3 +59,5 @@ service-account.json
 # Keep these directories
 !dist/*.svg
 !assets/*.svg
+.backups/
+docs/STEP_*_OUTPUT.txt

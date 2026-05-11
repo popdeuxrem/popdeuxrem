@@ -1,56 +1,90 @@
-name: Quantum Surface Sync v12.0
+name: README Surface Sync
 
 on:
-  schedule:
-    - cron: '0 6 * * *'
   workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-surface-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   sync:
+    name: Validate and regenerate README surface
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    
+    timeout-minutes: 10
+
     steps:
-      - name: 🛰 Checkout Surface
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: 🐍 Initialize Runtime
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-          cache: 'pip'
+          python-version: "3.11"
 
-      - name: 📦 Install Dependencies
+      - name: Install Python dependencies
+        shell: bash
         run: |
+          set -euo pipefail
+
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
 
-      - name: ⚙️ Run Quantum Build v12.0
-        run: |
-          chmod +x scripts/quantum_build.sh
-          bash scripts/quantum_build.sh
-
-      - name: 📡 Push Changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          git add README.md assets/*.svg dist/*.svg
-          
-          if ! git diff --cached --quiet; then
-            git commit -m "sys: quantum surface v10 sync [skip ci]"
-            git push origin main
-          else
-            echo "◈ No changes detected - Surface is current"
+          if [ -f requirements.txt ]; then
+            python -m pip install -r requirements.txt
           fi
 
-      - name: 📊 Summary
+      - name: Preflight validation
+        shell: bash
         run: |
-          echo "## Quantum Surface v12.0 Build" >> $GITHUB_STEP_SUMMARY
-          echo "- **Timestamp:** $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_STEP_SUMMARY
-          echo "- **Status:** ✅ Complete" >> $GITHUB_STEP_SUMMARY
-          echo "- **Build Log:**" >> $GITHUB_STEP_SUMMARY
-          cat dist/build.log >> $GITHUB_STEP_SUMMARY || echo "No log available" >> $GITHUB_STEP_SUMMARY
+          set -euo pipefail
+          make validate
+
+      - name: Generate README surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          make build
+
+      - name: Show generated diff
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git status --short
+          git diff -- README.md README.base.md assets dist health metrics | sed -n '1,220p' || true
+
+      - name: Commit generated surface changes
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add \
+            README.md \
+            README.base.md \
+            assets/flow-line.svg \
+            assets/section_quote.svg \
+            assets/system-health.svg \
+            assets/repo-metrics.svg \
+            dist/build-manifest.json \
+            health/system_health.json \
+            metrics/aggregate.json \
+            metrics/metrics.json \
+            metrics/popdeuxrem_popdeuxrem.json
+
+          if git diff --cached --quiet; then
+            echo "No generated surface changes to commit."
+            exit 0
+          fi
+
+          git commit -m "chore: sync deterministic README surface"
+          git push
