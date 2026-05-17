@@ -1,0 +1,168 @@
+{
+  "collector_backend": "gh",
+  "collector_status": "ok",
+  "error": null,
+  "generated_at": "2026-05-17T01:44:49Z",
+  "repo": "popdeuxrem/popdeuxrem",
+  "runs": [
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-16T19:35:55Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25970997209,
+      "sha": "4316eac71fe0",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-16T19:36:17Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25970997209",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-16T14:01:53Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25963851046,
+      "sha": "66567817e314",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-16T14:02:13Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25963851046",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-16T08:20:30Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25957175147,
+      "sha": "9d5da95e8c84",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-16T08:20:46Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25957175147",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-16T04:05:28Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25952309342,
+      "sha": "091954e13db4",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-16T04:05:49Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25952309342",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-15T19:56:07Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25938421400,
+      "sha": "ad3bcf30c1ee",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-15T19:56:30Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25938421400",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-15T14:39:24Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25923818726,
+      "sha": "8edeb9e939e5",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-15T14:39:45Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25923818726",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-15T09:25:19Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25910471503,
+      "sha": "f7a454bfb366",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-15T09:25:40Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25910471503",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-15T04:30:42Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25900316941,
+      "sha": "7e82d2b47819",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-15T04:31:02Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25900316941",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-14T20:04:48Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25882680998,
+      "sha": "4b693e2c712d",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-14T20:05:16Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25882680998",
+      "workflow_name": "README Surface Sync"
+    },
+    {
+      "branch": "main",
+      "conclusion": "success",
+      "created_at": "2026-05-14T14:46:15Z",
+      "display_title": "README Surface Sync",
+      "event": "schedule",
+      "id": 25866664949,
+      "sha": "48833f8833a2",
+      "source": "gh",
+      "status": "completed",
+      "updated_at": "2026-05-14T14:46:37Z",
+      "url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25866664949",
+      "workflow_name": "README Surface Sync"
+    }
+  ],
+  "source": "scripts/collect_workflow_runs.py",
+  "summary": {
+    "counts": {
+      "success": 10
+    },
+    "latest_branch": "main",
+    "latest_conclusion": "success",
+    "latest_sha": "4316eac71fe0",
+    "latest_status": "completed",
+    "latest_url": "https://github.com/popdeuxrem/popdeuxrem/actions/runs/25970997209",
+    "latest_workflow": "README Surface Sync",
+    "run_count": 10
+  },
+  "workflow_files": [
+    {
+      "name": "readme-sync",
+      "path": ".github/workflows/readme-sync.yml"
+    }
+  ]
+}

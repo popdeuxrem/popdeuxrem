@@ -108,3 +108,16 @@ clean:
 
 	@rm -f dist/build.log
 
+
+.PHONY: workflow-telemetry workflow-panel workflow-sync
+
+workflow-telemetry:
+	@python3 scripts/collect_workflow_runs.py
+
+workflow-panel:
+	@python3 scripts/generate_workflow_status.py
+
+workflow-sync:
+	@python3 scripts/collect_workflow_runs.py
+	@python3 scripts/generate_workflow_status.py
+	@python3 scripts/build_readme.py
