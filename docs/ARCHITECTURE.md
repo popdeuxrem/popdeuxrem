@@ -8,7 +8,7 @@ The system follows a synchronous build-and-inject pattern:
 1. **Discovery**: `discovery.py` polls GitHub GraphQL/REST APIs.
 2. **Security**: `vuln_scan.sh` performs static analysis on the repo.
 3. **Generation**: Sub-generators (`generate_*.py`) create SVG assets in `assets/`.
-4. **Hydration**: `update_readme.py` maps data to `config/README.template.md`.
+4. **Hydration**: `update_readme.py` maps data to `removed legacy README template artifact`.
 5. **Deployment**: GitHub Actions pushes the reconciled `README.md`.
 
 ## 3. Component Manifest

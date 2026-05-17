@@ -10,7 +10,7 @@
 ARCHITECTURE NOTE:
 README.base.md is the canonical template.
 README.md is generated output.
-tmp.txt is deprecated and must not be used as a source of truth.
+removed legacy tmp README artifact is deprecated and must not be used as a source of truth.
 -->
 
 <div align="center">

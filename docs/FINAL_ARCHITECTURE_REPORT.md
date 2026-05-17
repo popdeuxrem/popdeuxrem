@@ -32,7 +32,7 @@ make validate / make build
 | health/*.json | Health state |
 | metrics/*.json | Metrics state |
 | dist/build-manifest.json | Build attestation |
-| tmp.txt | Deprecated; not used as source of truth |
+| removed legacy tmp README artifact | Deprecated; not used as source of truth |
 
 ## Validation Commands
 
@@ -166,7 +166,7 @@ dry_run   : side-effect free
 ```txt
 README.base.md  -> canonical human-authored template
 README.md       -> generated output
-tmp.txt         -> deprecated; not used as source of truth
+removed legacy tmp README artifact         -> deprecated; not used as source of truth
 ```
 <!-- AUTO-GENERATED:END -->
 ```

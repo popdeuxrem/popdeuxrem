@@ -7,7 +7,7 @@ Canonical deterministic README/profile surface generator.
 Rules:
 - README.base.md is canonical.
 - README.md is generated.
-- tmp.txt is deprecated.
+- removed legacy tmp README artifact is deprecated.
 - --dry-run writes nothing.
 """
 
@@ -651,7 +651,7 @@ def generated_readme_block(
         "README.md                -> generated output",
         "assets/projects/*.svg    -> deterministic project cards",
         "assets/workflow-status.svg -> deterministic workflow control panel",
-        "tmp.txt                  -> deprecated; not used as source of truth",
+        "removed legacy tmp README artifact                  -> deprecated; not used as source of truth",
         "```",
         "",
     ]

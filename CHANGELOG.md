@@ -122,7 +122,7 @@ Existing Surface
 
 Deprecated
 
-* tmp.txt as README source of truth.
+* removed legacy tmp README artifact as README source of truth.
 * Competing README workflow architecture.
 * Broad workflow staging through git add ..
 

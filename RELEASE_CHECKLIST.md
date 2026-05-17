@@ -121,9 +121,9 @@ assets/system-health.svg   generated output
 assets/repo-metrics.svg    generated output
 dist/build-manifest.json   generated output
 health/system_health.json  generated health state
-tmp.txt                    deprecated; not a source of truth
+removed legacy tmp README artifact                    deprecated; not a source of truth
 
-Do not restore tmp.txt as a README generation source.
+Do not restore removed legacy tmp README artifact as a README generation source.
 
 ⸻
 

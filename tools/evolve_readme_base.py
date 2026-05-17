@@ -115,15 +115,15 @@ def main() -> int:
     if "LIVE SURFACE CONSOLE // GENERATED OPERATIONAL STATE v13.0" not in content:
         content = content.replace(AUTO_START, notice + AUTO_START, 1)
 
-    # Ensure tmp.txt is explicitly deprecated somewhere in the template.
+    # Ensure removed legacy tmp README artifact is explicitly deprecated somewhere in the template.
     deprecation = """<!--
 ARCHITECTURE NOTE:
 README.base.md is the canonical template.
 README.md is generated output.
-tmp.txt is deprecated and must not be used as a source of truth.
+removed legacy tmp README artifact is deprecated and must not be used as a source of truth.
 -->
 """
-    if "tmp.txt is deprecated and must not be used as a source of truth" not in content:
+    if "removed legacy tmp README artifact is deprecated and must not be used as a source of truth" not in content:
         content = content.replace("-->\n\n<div align=\"center\">", "-->\n\n" + deprecation + "\n<div align=\"center\">", 1)
 
     if content != original:
