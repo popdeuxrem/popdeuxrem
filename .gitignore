@@ -63,3 +63,4 @@ service-account.json
 docs/STEP_*_OUTPUT.txt
 !dist/
 !dist/build-manifest.json
+.kilo/
