@@ -1,5 +1,26 @@
 # Changelog
-All notable changes to this repository are documented here.
+
+## v13.2.0 — Workflow Telemetry Surface
+
+Added
+
+* Added live GitHub Actions workflow telemetry ingestion.
+* Added telemetry/workflows.json as the run-state source for workflow panels.
+* Added telemetry-aware workflow status SVG rendering.
+* Added workflow telemetry documentation.
+
+Changed
+
+* Updated scripts/generate_workflow_status.py to read local telemetry state.
+* Updated README surface artifacts with workflow telemetry rendering.
+* Preserved the network boundary: telemetry collection is separate from README generation.
+
+Validation
+
+* make validate passes.
+* Offline telemetry fallback path is supported.
+* Live telemetry collection succeeds when gh or GitHub API access is available.
+
 This repo follows an operational release model:
 ```txt
 plan -> patch -> validate -> diff -> commit -> push -> observe -> rollback
