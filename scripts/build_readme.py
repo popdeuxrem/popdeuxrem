@@ -264,7 +264,7 @@ def load_quotes() -> list[str]:
             author = item.get("author")
 
             if quote and author:
-                quotes.append("{} — {}".format(quote, author))
+                quotes.append("{} -- {}".format(quote, author))
             elif quote:
                 quotes.append(str(quote))
 
@@ -292,6 +292,11 @@ def load_quotes() -> list[str]:
 def deterministic_quote(quotes: list[str], seed: str) -> str:
     index = int(hashlib.sha256(seed.encode("utf-8")).hexdigest(), 16) % len(quotes)
     return quotes[index]
+
+
+def seed_int(seed: str, namespace: str, modulo: int, offset: int = 0) -> int:
+    digest = hashlib.sha256("{}::{}".format(seed, namespace).encode("utf-8")).hexdigest()
+    return (int(digest[:12], 16) % modulo) + offset
 
 
 def svg_shell(width: int, height: int, body: str) -> str:
@@ -393,6 +398,75 @@ def generate_health_svg(health: dict[str, str]) -> str:
     return svg_shell(430, 240, body)
 
 
+def generate_system_matrix_svg(seed: str) -> str:
+    cpu = seed_int(seed, "system-matrix.cpu", 72, 8)
+    ram = seed_int(seed, "system-matrix.ram", 58, 24)
+    io = seed_int(seed, "system-matrix.io", 82, 7)
+    latency = seed_int(seed, "system-matrix.latency", 34, 9)
+    packets = seed_int(seed, "system-matrix.packets", 900, 100)
+    trace = hashlib.sha256(("system-matrix::" + seed).encode("utf-8")).hexdigest()[:12]
+
+    cpu_width = max(12, int(cpu * 2.35))
+    ram_width = max(12, int(ram * 2.35))
+    io_width = max(12, int(io * 2.35))
+
+    net_state = "SECURE"
+    drift_state = "LOCKED"
+    policy_state = "STRICT"
+
+    body = """
+  <text x="42" y="34" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="700">SYSTEM STATUS MATRIX</text>
+  <text x="328" y="34" fill="#8b949e" font-family="monospace" font-size="10">TRACE {trace}</text>
+
+  <text x="42" y="70" fill="#8b949e" font-family="monospace" font-size="12">CPU</text>
+  <rect x="104" y="58" width="235" height="12" rx="6" fill="#161b22"/>
+  <rect x="104" y="58" width="{cpu_width}" height="12" rx="6" fill="#00f3ff" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="70" fill="#00f3ff" font-family="monospace" font-size="12">{cpu}%</text>
+
+  <text x="42" y="104" fill="#8b949e" font-family="monospace" font-size="12">RAM</text>
+  <rect x="104" y="92" width="235" height="12" rx="6" fill="#161b22"/>
+  <rect x="104" y="92" width="{ram_width}" height="12" rx="6" fill="#bc8cff" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="104" fill="#bc8cff" font-family="monospace" font-size="12">{ram}%</text>
+
+  <text x="42" y="138" fill="#8b949e" font-family="monospace" font-size="12">I/O</text>
+  <rect x="104" y="126" width="235" height="12" rx="6" fill="#161b22"/>
+  <rect x="104" y="126" width="{io_width}" height="12" rx="6" fill="#00ff9d" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="138" fill="#00ff9d" font-family="monospace" font-size="12">{io}%</text>
+
+  <line x1="42" y1="160" x2="440" y2="160" stroke="#30363d" stroke-width="1"/>
+
+  <text x="42" y="188" fill="#8b949e" font-family="monospace" font-size="12">NET</text>
+  <circle cx="106" cy="184" r="5" fill="#00ff9d" filter="url(#glow)"/>
+  <text x="122" y="188" fill="#00ff9d" font-family="monospace" font-size="12">{net_state}</text>
+
+  <text x="230" y="188" fill="#8b949e" font-family="monospace" font-size="12">RTT</text>
+  <text x="278" y="188" fill="#00f3ff" font-family="monospace" font-size="12">{latency}ms</text>
+
+  <text x="42" y="218" fill="#8b949e" font-family="monospace" font-size="12">POLICY</text>
+  <text x="122" y="218" fill="#bc8cff" font-family="monospace" font-size="12">{policy_state}</text>
+
+  <text x="230" y="218" fill="#8b949e" font-family="monospace" font-size="12">DRIFT</text>
+  <text x="292" y="218" fill="#00ff9d" font-family="monospace" font-size="12">{drift_state}</text>
+
+  <text x="42" y="246" fill="#8b949e" font-family="monospace" font-size="10">packets:{packets}/s · deterministic mock telemetry from source hash</text>
+""".format(
+        trace=esc(trace),
+        cpu_width=cpu_width,
+        ram_width=ram_width,
+        io_width=io_width,
+        cpu=cpu,
+        ram=ram,
+        io=io,
+        net_state=esc(net_state),
+        latency=latency,
+        policy_state=esc(policy_state),
+        drift_state=esc(drift_state),
+        packets=packets,
+    )
+
+    return svg_shell(480, 270, body)
+
+
 def generate_metrics_svg(repos: list[dict[str, Any]]) -> str:
     if not repos:
         repos = [{"name": "popdeuxrem", "status": "tracked"}]
@@ -481,7 +555,7 @@ def workflow_panel_markdown() -> str:
     if not (ROOT / path).exists():
         return ""
 
-    return '<td width="33%"><img src="{}" alt="Workflow control panel"/></td>'.format(path)
+    return '<td width="50%"><img src="{}" alt="Workflow control panel"/></td>'.format(path)
 
 
 def project_cards_markdown(cards: list[dict[str, Any]]) -> str:
@@ -535,10 +609,10 @@ def generated_readme_block(
     for repo in repos[:5]:
         name = repo_name(repo)
         url = repo.get("url") or repo.get("html_url") or "https://github.com/popdeuxrem/{}".format(name)
-        repo_lines.append("- [`{}`]({}) — `{}`".format(esc(name), esc(url), esc(repo.get("status") or "tracked")))
+        repo_lines.append("- [`{}`]({}) -- `{}`".format(esc(name), esc(url), esc(repo.get("status") or "tracked")))
 
     if not repo_lines:
-        repo_lines.append("- `popdeuxrem` — `tracked`")
+        repo_lines.append("- `popdeuxrem` -- `tracked`")
 
     health_rows = []
     for label, status in health.items():
@@ -577,26 +651,37 @@ def generated_readme_block(
 
     workflow_cell = workflow_panel_markdown()
 
+    top_row = "\n".join(
+        [
+            '<tr>',
+            '<td width="33%"><img src="assets/system-health.svg" alt="System health panel"/></td>',
+            '<td width="33%"><img src="assets/system-matrix.svg" alt="System status matrix panel"/></td>',
+            '<td width="33%"><img src="assets/repo-metrics.svg" alt="Repository telemetry panel"/></td>',
+            '</tr>',
+        ]
+    )
+
     if workflow_cell:
         console_table = "\n".join(
             [
                 '<table>',
+                top_row,
                 '<tr>',
-                '<td width="33%"><img src="assets/system-health.svg" alt="System health panel"/></td>',
-                '<td width="33%"><img src="assets/repo-metrics.svg" alt="Repository telemetry panel"/></td>',
                 workflow_cell,
+                '<td width="50%" colspan="2">',
+                '<code>surface=v14.0</code><br/>',
+                '<code>matrix=deterministic</code><br/>',
+                '<code>source_hash={}</code>',
+                '</td>',
                 '</tr>',
                 '</table>',
             ]
-        )
+        ).format(esc(build_hash_value[:16]))
     else:
         console_table = "\n".join(
             [
                 '<table>',
-                '<tr>',
-                '<td width="50%"><img src="assets/system-health.svg" alt="System health panel"/></td>',
-                '<td width="50%"><img src="assets/repo-metrics.svg" alt="Repository telemetry panel"/></td>',
-                '</tr>',
+                top_row,
                 '</table>',
             ]
         )
@@ -647,9 +732,12 @@ def generated_readme_block(
         "### Architecture Rule",
         "",
         "```txt",
-        "README.base.md           -> canonical human-authored template",
-        "README.md                -> generated output",
-        "assets/projects/*.svg    -> deterministic project cards",
+        "README.base.md             -> canonical human-authored template",
+        "README.md                  -> generated output",
+        "assets/projects/*.svg      -> deterministic project cards",
+        "assets/system-health.svg   -> deterministic health panel",
+        "assets/system-matrix.svg   -> deterministic mock telemetry matrix",
+        "assets/repo-metrics.svg    -> deterministic repository telemetry panel",
         "assets/workflow-status.svg -> deterministic workflow control panel",
         "removed legacy tmp README artifact                  -> deprecated; not used as source of truth",
         "```",
@@ -657,6 +745,7 @@ def generated_readme_block(
     ]
 
     return "\n".join(lines)
+
 
 def project_cards_manifest() -> dict[str, Any]:
     index_path = ROOT / "assets" / "projects" / "index.json"
@@ -748,8 +837,11 @@ def build(dry_run: bool = False, check: bool = False) -> int:
     write_file(ASSETS / "flow-line.svg", generate_flow_line_svg(shash), dry_run, outputs)
     write_file(ASSETS / "section_quote.svg", generate_quote_svg(quote), dry_run, outputs)
     write_file(ASSETS / "system-health.svg", generate_health_svg(health), dry_run, outputs)
+    write_file(ASSETS / "system-matrix.svg", generate_system_matrix_svg(shash), dry_run, outputs)
     write_file(ASSETS / "repo-metrics.svg", generate_metrics_svg(repos), dry_run, outputs)
     write_file(README_OUT, readme, dry_run, outputs)
+
+    cards_manifest = project_cards_manifest()
 
     manifest = {
         "engine": "Lysergic GitHub Surface Engine",
@@ -760,8 +852,8 @@ def build(dry_run: bool = False, check: bool = False) -> int:
         "short_sha": shash[:16],
         "outputs": outputs,
         "project_cards_index": "assets/projects/index.json",
-        "project_cards_count": project_cards_manifest()["count"],
-        "project_cards": project_cards_manifest()["cards"],
+        "project_cards_count": cards_manifest["count"],
+        "project_cards": cards_manifest["cards"],
         "source_files": source_state,
         "status": "success",
     }
