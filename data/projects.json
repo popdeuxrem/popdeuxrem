@@ -1,75 +1,29 @@
-{
-  "version": "v15.0",
-  "projects": [
-    {
-      "id": "popdeuxrem",
-      "name": "popdeuxrem",
-      "domain": "Brand Infrastructure",
-      "status": "SHIP",
-      "stars": 0,
-      "description": "Profile repository powering dynamic README, animated SVG assets, automated terminal render scripts, and GitHub Actions-driven content regeneration.",
-      "repo": "https://github.com/popdeuxrem/popdeuxrem",
-      "telemetry": {
-        "health": "ONLINE",
-        "drift": "CONTAINED",
-        "surface": "ACTIVE"
-      }
-    },
-    {
-      "id": "shadow-scripts",
-      "name": "shadow-scripts",
-      "domain": "SecOps",
-      "status": "SHIP",
-      "stars": 128,
-      "description": "Advanced proxy meshes, DNS overlays, MITM orchestration, stealth routing layers, and fingerprint evasion frameworks for controlled SecOps environments.",
-      "repo": "https://github.com/popdeuxrem/shadow-scripts",
-      "telemetry": {
-        "health": "ONLINE",
-        "drift": "CONTAINED",
-        "surface": "ACTIVE"
-      }
-    },
-    {
-      "id": "Photext",
-      "name": "Photext",
-      "domain": "Creative Automation",
-      "status": "BUILD",
-      "stars": 0,
-      "description": "Lightweight, free-resource text-to-image and typography engine inspired by PhoText; focused on composable pipelines, automation, and deterministic rendering workflows.",
-      "repo": "https://github.com/popdeuxrem/Photext",
-      "telemetry": {
-        "health": "WARM",
-        "drift": "CONTAINED",
-        "surface": "BUILDING"
-      }
-    },
-    {
-      "id": "zero-trust-agentic-orchestrator",
-      "name": "Zero-Trust Agentic Orchestrator",
-      "domain": "Agentic Infrastructure",
-      "status": "DESIGN",
-      "stars": 0,
-      "description": "Policy-gated autonomous workflow control plane for bounded agents, tool permissions, execution receipts, rollback contracts, and telemetry-first orchestration across GitHub Actions, APIs, and server-side automation surfaces.",
-      "repo": "https://github.com/popdeuxrem/zero-trust-agentic-orchestrator",
-      "telemetry": {
-        "health": "DESIGN",
-        "drift": "CONTAINED",
-        "surface": "PENDING"
-      }
-    },
-    {
-      "id": "lysergic-systems",
-      "name": "lysergic.systems",
-      "domain": "Systems Architecture",
-      "status": "BUILD",
-      "stars": 245,
-      "description": "High-precision digital systems architecture platform delivering modular web infrastructure, automation pipelines, AI integrations, and production-grade client deployments.",
-      "repo": "https://github.com/popdeuxrem/lysergic.systems",
-      "telemetry": {
-        "health": "ONLINE",
-        "drift": "WATCH",
-        "surface": "ACTIVE"
-      }
-    }
-  ]
-}
+[
+  {
+    "id": "popdeuxrem",
+    "name": "popdeuxrem",
+    "domain": "Brand Infrastructure",
+    "status": "SHIP",
+    "stars": 0,
+    "description": "Profile repository powering dynamic README, animated SVG assets, automated terminal render scripts, and GitHub Actions-driven content regeneration.",
+    "repo": "https://github.com/popdeuxrem/popdeuxrem"
+  },
+  {
+    "id": "shadow-scripts",
+    "name": "shadow-scripts",
+    "domain": "SecOps",
+    "status": "SHIP",
+    "stars": 128,
+    "description": "Advanced proxy meshes, DNS overlays, MITM orchestration, stealth routing layers, and fingerprint evasion frameworks for controlled SecOps environments.",
+    "repo": "https://github.com/popdeuxrem/shadow-scripts"
+  },
+  {
+    "id": "lysergic-systems",
+    "name": "lysergic.systems",
+    "domain": "Systems Architecture",
+    "status": "BUILD",
+    "stars": 245,
+    "description": "High-precision digital systems architecture platform delivering modular web infrastructure, automation pipelines, AI integrations, and production-grade client deployments.",
+    "repo": "https://github.com/popdeuxrem/lysergic.systems"
+  }
+]
