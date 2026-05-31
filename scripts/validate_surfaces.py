@@ -87,6 +87,31 @@ def main() -> int:
     elif not validate_html(index_path):
         errors.append("HTML FAIL: index.html")
 
+    # Validate .nojekyll
+    nojekyll_path = ROOT / ".nojekyll"
+    if not nojekyll_path.exists():
+        errors.append("MISSING: .nojekyll")
+
+    # Validate deploy-pages.yml
+    pages_workflow = ROOT / ".github/workflows/deploy-pages.yml"
+    if not pages_workflow.exists():
+        errors.append("MISSING: .github/workflows/deploy-pages.yml")
+
+    # Validate pages-surface-badge.svg
+    badge_svg = ROOT / "assets/pages-surface-badge.svg"
+    if not badge_svg.exists():
+        errors.append("MISSING: assets/pages-surface-badge.svg")
+
+    # Validate README has Pages CTA and no duplicate Deployed Systems
+    readme_path = ROOT / "README.md"
+    if readme_path.exists():
+        readme_content = readme_path.read_text(encoding="utf-8")
+        if "pages-surface-badge.svg" not in readme_content:
+            errors.append("README: Missing Pages CTA badge")
+        # Check for duplicate Deployed Systems section (should NOT have repository catalog after portfolio CTA)
+        if "## ◆ Deployed Systems" in readme_content and "Operational repositories and active build pipelines" in readme_content:
+            errors.append("README: Duplicate Deployed Systems catalog detected")
+
     if errors:
         for err in errors:
             print(f"ERROR: {err}")

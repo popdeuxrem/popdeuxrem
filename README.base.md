@@ -429,67 +429,25 @@ export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
 
 </div>
 
-<!-- DEPLOYED SYSTEMS // ACTIVE REPOSITORIES -->
+
+<!-- INTERACTIVE SYSTEMS SURFACE -->
 
 <a name="portfolio"></a>
 
-## ◆ Deployed Systems
+## ◆ Interactive Systems Surface
 
-<p align="center"><i>Operational repositories and active build pipelines</i></p>
+<p align="center">
+  <a href="https://popdeuxrem.github.io/popdeuxrem/">
+    <img src="assets/pages-surface-badge.svg" width="420" alt="Pages Surface Badge"/>
+  </a>
+</p>
 
----
+<p align="center">
+  <i>GitHub Pages operational surface · deterministic · live system view</i>
+</p>
 
-### shadow-scripts
+<!-- END PAGES CTA -->
 
-**Domain:** `SecOps` &nbsp; **Status:** ![SHIP](https://img.shields.io/badge/SHIP-brightgreen?style=flat-square) &nbsp; **Stars:** 128 ⭐
-
-Advanced proxy meshes, DNS overlays, MITM orchestration, stealth routing layers, and fingerprint evasion frameworks for controlled SecOps environments.
-
-[Repository →](https://github.com/Popdeuxrem/shadow-scripts)
-
----
-
-### lysergic.systems
-
-**Domain:** `Systems Architecture` &nbsp; **Status:** ![BUILD](https://img.shields.io/badge/BUILD-FFA500?style=flat-square) &nbsp; **Stars:** 245 ⭐
-
-High-precision digital systems architecture platform delivering modular web infrastructure, automation pipelines, AI integrations, and production-grade client deployments.
-
-[Repository →](https://github.com/popdeuxrem/lysergic.systems)
-
----
-
-### Zero-Trust Agentic Orchestrator
-
-**Domain:** `Agentic Infrastructure` &nbsp; **Status:** ![DESIGN](https://img.shields.io/badge/DESIGN-8A2BE2?style=flat-square) &nbsp; **Stars:** 0
-
-Policy-gated autonomous workflow control plane for bounded agents, tool permissions, execution receipts, rollback contracts, and telemetry-first orchestration across GitHub Actions, APIs, and server-side automation surfaces.
-
-[Repository →](https://github.com/popdeuxrem/zero-trust-agentic-orchestrator)
-
----
-
-### Photext
-
-**Domain:** `Creative Automation` &nbsp; **Status:** ![BUILD](https://img.shields.io/badge/BUILD-FFA500?style=flat-square) &nbsp; **Stars:** 0
-
-Lightweight, free-resource text-to-image and typography engine inspired by PhoText; focused on composable pipelines, automation, and deterministic rendering workflows.
-
-[Repository →](https://github.com/popdeuxrem/Photext)
-
----
-
-### popdeuxrem
-
-**Domain:** `Brand Infrastructure` &nbsp; **Status:** ![SHIP](https://img.shields.io/badge/SHIP-brightgreen?style=flat-square) &nbsp; **Stars:** 0
-
-Profile repository powering dynamic README, animated SVG assets, automated terminal render scripts, and GitHub Actions-driven content regeneration.
-
-[Repository →](https://github.com/popdeuxrem/popdeuxrem)
-
----
-
-<!-- END DEPLOYED SYSTEMS -->
 
 <br/>
 

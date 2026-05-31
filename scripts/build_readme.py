@@ -659,7 +659,7 @@ def generated_readme_block(
     panel_lines.extend([
         "",
         "<p align=\"center\">",
-        "  <code>surface=v14.0 · deterministic · operational</code>",
+        "  <code>surface=v15.1 · deterministic · operational</code>",
         "</p>",
         "",
     ])
