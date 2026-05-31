@@ -1,0 +1,51 @@
+<svg width="480" height="270" viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" role="img">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="50%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#00ff9d"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" rx="16" fill="#0d1117"/>
+  <rect x="1" y="1" width="478" height="268" rx="16" fill="none" stroke="url(#g)" stroke-width="1.5" opacity="0.75"/>
+  
+  <text x="42" y="34" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="700">SYSTEM STATUS MATRIX</text>
+  <text x="328" y="34" fill="#8b949e" font-family="monospace" font-size="10">TRACE cbbd8c09a3ce</text>
+
+  <text x="42" y="70" fill="#8b949e" font-family="monospace" font-size="12">CPU</text>
+  <rect x="104" y="58" width="235" height="12" rx="6" fill="#161b22"/>
+  <rect x="104" y="58" width="122" height="12" rx="6" fill="#00f3ff" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="70" fill="#00f3ff" font-family="monospace" font-size="12">52%</text>
+
+  <text x="42" y="104" fill="#8b949e" font-family="monospace" font-size="12">RAM</text>
+  <rect x="104" y="92" width="235" height="12" rx="6" fill="#161b22"/>
+  <rect x="104" y="92" width="72" height="12" rx="6" fill="#bc8cff" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="104" fill="#bc8cff" font-family="monospace" font-size="12">31%</text>
+
+  <text x="42" y="138" fill="#8b949e" font-family="monospace" font-size="12">I/O</text>
+  <rect x="104" y="126" width="235" height="12" rx="6" fill="#161b22"/>
+  <rect x="104" y="126" width="159" height="12" rx="6" fill="#00ff9d" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="138" fill="#00ff9d" font-family="monospace" font-size="12">68%</text>
+
+  <line x1="42" y1="160" x2="440" y2="160" stroke="#30363d" stroke-width="1"/>
+
+  <text x="42" y="188" fill="#8b949e" font-family="monospace" font-size="12">NET</text>
+  <circle cx="106" cy="184" r="5" fill="#00ff9d" filter="url(#glow)"/>
+  <text x="122" y="188" fill="#00ff9d" font-family="monospace" font-size="12">SECURE</text>
+
+  <text x="230" y="188" fill="#8b949e" font-family="monospace" font-size="12">RTT</text>
+  <text x="278" y="188" fill="#00f3ff" font-family="monospace" font-size="12">32ms</text>
+
+  <text x="42" y="218" fill="#8b949e" font-family="monospace" font-size="12">POLICY</text>
+  <text x="122" y="218" fill="#bc8cff" font-family="monospace" font-size="12">STRICT</text>
+
+  <text x="230" y="218" fill="#8b949e" font-family="monospace" font-size="12">DRIFT</text>
+  <text x="292" y="218" fill="#00ff9d" font-family="monospace" font-size="12">LOCKED</text>
+
+  <text x="42" y="246" fill="#8b949e" font-family="monospace" font-size="10">packets:739/s · deterministic mock telemetry from source hash</text>
+
+</svg>

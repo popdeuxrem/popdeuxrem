@@ -555,7 +555,7 @@ def workflow_panel_markdown() -> str:
     if not (ROOT / path).exists():
         return ""
 
-    return '<td width="50%"><img src="{}" alt="Workflow control panel"/></td>'.format(path)
+    return '<td width="100%"><img src="{}" alt="Workflow control panel"/></td>'.format(path)
 
 
 def project_cards_markdown(cards: list[dict[str, Any]]) -> str:
@@ -563,7 +563,6 @@ def project_cards_markdown(cards: list[dict[str, Any]]) -> str:
         return "\n> No generated project cards found yet. Run `python3 scripts/generate_project_cards.py`.\n"
 
     rows: list[str] = []
-    current: list[str] = []
 
     for card in cards:
         path = str(card["path"])
@@ -576,19 +575,9 @@ def project_cards_markdown(cards: list[dict[str, Any]]) -> str:
         )
 
         if url:
-            cell = '<td width="50%"><a href="{}">{}</a></td>'.format(esc(url), image)
+            rows.append('<tr><td width="100%"><a href="{}">{}</a></td></tr>'.format(esc(url), image))
         else:
-            cell = '<td width="50%">{}</td>'.format(image)
-
-        current.append(cell)
-
-        if len(current) == 2:
-            rows.append("<tr>{}</tr>".format("".join(current)))
-            current = []
-
-    if current:
-        current.append('<td width="50%"></td>')
-        rows.append("<tr>{}</tr>".format("".join(current)))
+            rows.append('<tr><td width="100%">{}</td></tr>'.format(image))
 
     return "\n<table>\n{}\n</table>\n".format("\n".join(rows))
 
@@ -662,21 +651,16 @@ def generated_readme_block(
     )
 
     if workflow_cell:
+        info_cell = '<td width="100%"><code>surface=v14.0</code> · <code>matrix=deterministic</code> · <code>source_hash={}</code></td>'.format(esc(build_hash_value[:16]))
         console_table = "\n".join(
             [
                 '<table>',
                 top_row,
-                '<tr>',
-                workflow_cell,
-                '<td width="50%" colspan="2">',
-                '<code>surface=v14.0</code><br/>',
-                '<code>matrix=deterministic</code><br/>',
-                '<code>source_hash={}</code>',
-                '</td>',
-                '</tr>',
+                '<tr>' + workflow_cell + '</tr>',
+                '<tr>' + info_cell + '</tr>',
                 '</table>',
             ]
-        ).format(esc(build_hash_value[:16]))
+        )
     else:
         console_table = "\n".join(
             [

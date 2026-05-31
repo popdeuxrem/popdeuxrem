@@ -176,7 +176,8 @@ def svg(contract: dict[str, str], context: dict[str, str], telemetry: dict[str, 
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
-    </defs>
+    </filter>
+  </defs>
   <rect width="560" height="430" rx="18" fill="#0d1117"/>
   <rect x="1" y="1" width="558" height="428" rx="18" fill="none" stroke="url(#border)" stroke-width="1.5" opacity="0.78"/>
   <text x="44" y="36" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="700">WORKFLOW CONTROL</text>

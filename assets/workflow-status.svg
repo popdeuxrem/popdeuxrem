@@ -11,7 +11,8 @@
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
-    </defs>
+    </filter>
+  </defs>
   <rect width="560" height="430" rx="18" fill="#0d1117"/>
   <rect x="1" y="1" width="558" height="428" rx="18" fill="none" stroke="url(#border)" stroke-width="1.5" opacity="0.78"/>
   <text x="44" y="36" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="700">WORKFLOW CONTROL</text>
@@ -30,5 +31,5 @@
   <text x="44" y="323" fill="#8b949e" font-family="monospace" font-size="12">RESULT</text><circle cx="250" cy="319" r="5" fill="#00ff9d"/><text x="268" y="323" fill="#00ff9d" font-family="monospace" font-size="12">SUCCESS</text>
   <text x="44" y="346" fill="#8b949e" font-family="monospace" font-size="12">RUNS</text><circle cx="250" cy="342" r="5" fill="#8b949e"/><text x="268" y="346" fill="#8b949e" font-family="monospace" font-size="12">10</text>
   <text x="44" y="382" fill="#8b949e" font-family="monospace" font-size="10">workflow:README Surface Sync · branch:main · sha:4316eac71fe0</text>
-  <text x="44" y="404" fill="#484f58" font-family="monospace" font-size="10">trace:c5c2d5f7c136 · source:7e36dfe8d8c89cd9</text>
+  <text x="44" y="404" fill="#484f58" font-family="monospace" font-size="10">trace:6901b15447e5 · source:0eed40a10e36437f</text>
 </svg>
