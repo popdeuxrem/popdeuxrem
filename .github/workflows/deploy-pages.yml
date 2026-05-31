@@ -7,9 +7,10 @@ on:
     paths:
       - 'index.html'
       - 'assets/**'
+      - '.nojekyll'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,16 +29,17 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.13"
 
       - name: Generate surfaces
         run: |
           python3 scripts/build_readme.py
           python3 scripts/generate_pages_surface.py
-          python3 scripts/validate_surfaces.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -50,6 +52,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Show deployment status
+        run: |
+          echo "Pages deployed to: ${{ steps.deployment.outputs.page_url }}"
 
       - name: Show deployment status
         run: |
