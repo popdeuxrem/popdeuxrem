@@ -618,7 +618,7 @@ def generated_readme_block(
     panel_lines.extend([
         "",
         "<p align=\"center\">",
-        "  <code>surface=v14.0 · deterministic · telemetry=online</code>",
+        "  <code>surface=v14.0 · deterministic · operational</code>",
         "</p>",
         "",
     ])
