@@ -39,60 +39,50 @@
       gap: 1.25rem;
     }
     .sys-card {
+      position: relative;
       background: #0d0d0f;
       border: 1px solid #1f1f2e;
       border-radius: 6px;
       padding: 1.5rem;
+      overflow: hidden;
       opacity: 0;
       transform: translateY(24px);
-      animation: fadeUp 0.6s ease forwards;
-      transition: 0.3s ease;
+      animation: cardEntrance 0.6s ease forwards;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
       text-decoration: none;
       display: block;
+      color: inherit;
     }
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
+    .sys-card:nth-child(1) { animation-delay: 0.05s; }
+    .sys-card:nth-child(2) { animation-delay: 0.15s; }
+    .sys-card:nth-child(3) { animation-delay: 0.25s; }
+    @keyframes cardEntrance { to { opacity:1; transform:translateY(0); } }
+    .sys-card::before {
+      content:''; position:absolute; inset:0;
+      background: var(--card-glow); opacity:0;
+      transition: opacity 0.4s ease; pointer-events:none; border-radius:6px;
     }
+    .sys-card:hover::before { opacity:1; }
     .sys-card:hover {
       transform: translateY(-3px);
       border-color: var(--accent);
       box-shadow: 0 0 20px -6px var(--accent);
     }
-    .sys-card-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-    }
-    .sys-name {
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .sys-domain {
-      color: #444;
-      font-size: 0.65rem;
-      text-transform: uppercase;
-    }
-    .sys-desc {
-      color: #888;
-      font-size: 0.72rem;
-      line-height: 1.6;
-      margin: 0.75rem 0;
-    }
-    .sys-footer {
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #1a1a2a;
-      padding-top: 0.75rem;
-      font-size: 0.75rem;
-    }
-    .sys-stars { color: #555; }
-    .sys-link {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .status-SHIP { color: #00ff64; }
-    .status-BUILD { color: #ffa000; }
-    .status-DESIGN { color: #b44fff; }
+    .sys-card[data-id="popdeuxrem"]     { --accent:#b44fff; --card-glow: radial-gradient(ellipse at top left, rgba(180,79,255,0.08) 0%, transparent 70%); }
+    .sys-card[data-id="shadow-scripts"] { --accent:#00ffe0; --card-glow: radial-gradient(ellipse at top left, rgba(0,255,224,0.07) 0%, transparent 70%); }
+    .sys-card[data-id="lysergic-systems"]{ --accent:#ff3cac; --card-glow: radial-gradient(ellipse at top left, rgba(255,60,172,0.08) 0%, transparent 70%); }
+    .sys-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:0.75rem; }
+    .sys-name { font-size:0.9rem; font-weight:700; color:var(--accent); letter-spacing:0.05em; margin:0; }
+    .sys-status { font-size:0.6rem; font-weight:700; letter-spacing:0.15em; padding:2px 8px; border-radius:3px; text-transform:uppercase; }
+    .status-SHIP  { background:rgba(0,255,100,0.12); color:#00ff64; border:1px solid #00ff6440; }
+    .status-BUILD { background:rgba(255,160,0,0.12);  color:#ffa000; border:1px solid #ffa00040; }
+    .sys-domain { font-size:0.65rem; color:#444; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem; }
+    .sys-desc   { font-size:0.72rem; color:#888; line-height:1.65; margin:0 0 1.1rem; }
+    .sys-footer { display:flex; align-items:center; justify-content:space-between; border-top:1px solid #1a1a2a; padding-top:0.75rem; }
+    .sys-stars  { font-size:0.65rem; color:#555; letter-spacing:0.1em; }
+    .sys-stars span { color:#ffd700; margin-right:4px; }
+    .sys-link   { font-size:0.65rem; color:var(--accent); letter-spacing:0.1em; text-decoration:none; opacity:0.7; transition:opacity 0.2s; }
+    .sys-link:hover { opacity:1; }
   </style>
 </head>
 <body>
@@ -102,40 +92,44 @@
       <h2>◆ Deployed Systems</h2>
       <p>Operational repositories and active build pipelines</p>
     </div>
-    <div class="sys-grid" id="sys-grid"></div>
+    <div class="sys-grid">
+      <a class="sys-card" data-id="popdeuxrem" href="https://github.com/popdeuxrem/popdeuxrem" target="_blank" rel="noopener noreferrer">
+        <div class="sys-card-top">
+          <p class="sys-name">popdeuxrem</p>
+          <span class="sys-status status-SHIP">SHIP</span>
+        </div>
+        <div class="sys-domain">Brand Infrastructure</div>
+        <p class="sys-desc">Profile repository powering dynamic README, animated SVG assets, automated terminal render scripts, and GitHub Actions-driven content regeneration.</p>
+        <div class="sys-footer">
+          <span class="sys-stars"><span>★</span> 0</span>
+          <span class="sys-link">Repository →</span>
+        </div>
+      </a>
+      <a class="sys-card" data-id="shadow-scripts" href="https://github.com/popdeuxrem/shadow-scripts" target="_blank" rel="noopener noreferrer">
+        <div class="sys-card-top">
+          <p class="sys-name">shadow-scripts</p>
+          <span class="sys-status status-SHIP">SHIP</span>
+        </div>
+        <div class="sys-domain">SecOps</div>
+        <p class="sys-desc">Advanced proxy meshes, DNS overlays, MITM orchestration, stealth routing layers, and fingerprint evasion frameworks for controlled SecOps environments.</p>
+        <div class="sys-footer">
+          <span class="sys-stars"><span>★</span> 128</span>
+          <span class="sys-link">Repository →</span>
+        </div>
+      </a>
+      <a class="sys-card" data-id="lysergic-systems" href="https://github.com/popdeuxrem/lysergic.systems" target="_blank" rel="noopener noreferrer">
+        <div class="sys-card-top">
+          <p class="sys-name">lysergic.systems</p>
+          <span class="sys-status status-BUILD">BUILD</span>
+        </div>
+        <div class="sys-domain">Systems Architecture</div>
+        <p class="sys-desc">High-precision digital systems architecture platform delivering modular web infrastructure, automation pipelines, AI integrations, and production-grade client deployments.</p>
+        <div class="sys-footer">
+          <span class="sys-stars"><span>★</span> 245</span>
+          <span class="sys-link">Repository →</span>
+        </div>
+      </a>
+    </div>
   </section>
-
-  <script>
-    (async function () {
-      const projects = await fetch('./data/projects.json')
-        .then(r => r.json());
-      const grid = document.getElementById('sys-grid');
-      projects.forEach((p, i) => {
-        const card = document.createElement('a');
-        card.className = 'sys-card';
-        card.href = p.repo;
-        card.target = '_blank';
-        const accent =
-          p.id === 'popdeuxrem' ? '#b44fff' :
-          p.id === 'shadow-scripts' ? '#00ffe0' :
-          '#ff3cac';
-        card.style.setProperty('--accent', accent);
-        card.style.animationDelay = `${i * 0.12}s`;
-        card.innerHTML = `
-          <div class="sys-card-header">
-            <span class="sys-name">${p.name}</span>
-            <span class="status-${p.status}">${p.status}</span>
-          </div>
-          <div class="sys-domain">${p.domain}</div>
-          <p class="sys-desc">${p.description}</p>
-          <div class="sys-footer">
-            <span class="sys-stars">★ ${p.stars}</span>
-            <a href="${p.repo}" class="sys-link">Repository →</a>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    })();
-  </script>
 </body>
 </html>
