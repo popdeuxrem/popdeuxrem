@@ -143,6 +143,47 @@ def update_header_metadata(content: str, timestamp: str, short_hash: str) -> str
     )
 
 
+def load_projects() -> list[dict[str, Any]]:
+    """Load canonical projects from data/projects.json."""
+    projects_data = load_json(ROOT / "data/projects.json", {})
+    if isinstance(projects_data, dict):
+        return projects_data.get("projects", [])
+    return []
+
+
+def svg_panel_shell(width: int, height: int, body: str) -> str:
+    """Unified SVG panel shell with consistent styling."""
+    return f"""<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg" role="img">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="50%" stop-color="#bc8cff"/>
+      <stop offset="100%" stop-color="#00ff9d"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" rx="16" fill="#0d1117"/>
+  <rect x="1" y="1" width="{width-2}" height="{height-2}" rx="16" fill="none" stroke="url(#g)" stroke-width="1.5" opacity="0.75"/>
+  {body}
+</svg>
+"""
+
+
+def status_color(status: str) -> str:
+    """Return color for status."""
+    status = status.lower()
+    if status in {"ok", "online", "healthy", "active", "ship", "success"}:
+        return "#00ff9d"
+    if status in {"warn", "warning", "degraded", "build", "design"}:
+        return "#d29922"
+    if status in {"fail", "failed", "error", "critical"}:
+        return "#ff5c8a"
+    return "#8b949e"
+
+
 def normalize_status(value: Any) -> str:
     text = str(value or "unknown").lower()
 
