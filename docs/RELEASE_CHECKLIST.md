@@ -58,11 +58,11 @@ for path in \
   health \
   metrics \
   identity \
-  portfolio.json \
-  skills.json \
-  timeline.json \
   CHANGELOG.md \
-  RELEASE_CHECKLIST.md
+  docs/RELEASE_CHECKLIST.md \
+  docs/SURFACE_ENGINE.md \
+  docs/CHANGELOG_SURFACE.md \
+  docs/AGENTS.md
 do
   if [ -e "$path" ]; then
     cp -a "$path" "$BACKUP_DIR/"
@@ -99,9 +99,9 @@ dry-run does not mutate README.md, assets, health, metrics, or dist
 These may be edited intentionally:
 
 README.base.md
-portfolio.json
-skills.json
-timeline.json
+data/portfolio.json
+data/skills.json
+data/timeline.json
 data/quotes.json
 identity/repos.json
 scripts/build_readme.py
@@ -109,7 +109,10 @@ scripts/quantum_build.sh
 systems/**
 .github/workflows/readme-sync.yml
 CHANGELOG.md
-RELEASE_CHECKLIST.md
+docs/RELEASE_CHECKLIST.md
+docs/SURFACE_ENGINE.md
+docs/CHANGELOG_SURFACE.md
+docs/AGENTS.md
 docs/*.md
 
 These are generated or deprecated:
@@ -247,7 +250,13 @@ for file in \
   dist/build-manifest.json \
   health/system_health.json \
   CHANGELOG.md \
-  RELEASE_CHECKLIST.md
+  docs/RELEASE_CHECKLIST.md \
+  docs/SURFACE_ENGINE.md \
+  docs/CHANGELOG_SURFACE.md \
+  docs/AGENTS.md \
+  data/portfolio.json \
+  data/skills.json \
+  data/timeline.json
 do
   if [ ! -f "$file" ]; then
     echo "MISSING: $file"
