@@ -255,11 +255,11 @@ section "VALIDATING JSON"
 
 JSON_FILES=(
 
-  "portfolio.json"
+  "data/portfolio.json"
 
-  "skills.json"
+  "data/skills.json"
 
-  "timeline.json"
+  "data/timeline.json"
 
   "data/quotes.json"
 

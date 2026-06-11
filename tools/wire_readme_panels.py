@@ -116,9 +116,9 @@ def generated_readme_block(
     health: dict[str, str],
     repos: list[dict[str, Any]],
 ) -> str:
-    portfolio = load_json(ROOT / "portfolio.json", {})
-    skills = load_json(ROOT / "skills.json", {})
-    timeline = load_json(ROOT / "timeline.json", {})
+portfolio = load_json(ROOT / "data/portfolio.json", {})
+     skills = load_json(ROOT / "data/skills.json", {})
+     timeline = load_json(ROOT / "data/timeline.json", {})
     project_cards = load_project_cards(limit=4)
 
     repo_lines: list[str] = []

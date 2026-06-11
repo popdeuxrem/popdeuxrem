@@ -34,9 +34,9 @@ AUTO_END = "<!-- AUTO-GENERATED:END -->"
 
 SOURCE_FILES = [
     "README.base.md",
-    "portfolio.json",
-    "skills.json",
-    "timeline.json",
+    "data/portfolio.json",
+    "data/skills.json",
+    "data/timeline.json",
     "data/quotes.json",
     "identity/repos.json",
     "health/status.json",

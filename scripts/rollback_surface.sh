@@ -143,24 +143,24 @@ restore_from_backup() {
   require_clean_or_confirm
   confirm "Restore surface files from backup directory '$backup_dir'?"
 
-  local paths=(
-    "README.md"
-    "README.base.md"
-    "Makefile"
-    "scripts"
-    "systems"
-    ".github/workflows"
-    "assets"
-    "data"
-    "health"
-    "metrics"
-    "identity"
-    "portfolio.json"
-    "skills.json"
-    "timeline.json"
-    "CHANGELOG.md"
-    "RELEASE_CHECKLIST.md"
-  )
+local paths=(
+     "README.md"
+     "README.base.md"
+     "Makefile"
+     "scripts"
+     "systems"
+     ".github/workflows"
+     "assets"
+     "data"
+     "health"
+     "metrics"
+     "identity"
+     "CHANGELOG.md"
+     "docs/RELEASE_CHECKLIST.md"
+     "docs/SURFACE_ENGINE.md"
+     "docs/CHANGELOG_SURFACE.md"
+     "docs/AGENTS.md"
+   )
 
   for path in "${paths[@]}"; do
     restore_path_if_exists "$backup_dir" "$path"

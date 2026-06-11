@@ -43,9 +43,9 @@ validate:
 		done
 	@echo "[validate] json syntax"
 	@for file in \
-		portfolio.json \
-		skills.json \
-		timeline.json \
+		data/portfolio.json \
+		data/skills.json \
+		data/timeline.json \
 		data/quotes.json \
 		identity/repos.json \
 		health/status.json \

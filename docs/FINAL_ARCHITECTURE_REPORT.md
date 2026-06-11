@@ -195,9 +195,9 @@ removed legacy tmp README artifact         -> deprecated; not used as source of 
         "metrics/aggregate.json": "99a8bc3faca3a370b42a4db184cca4dcd41a4bdd4732c11f8c4f60811df9bbdb",
         "metrics/metrics.json": "7273fc89efb08bc548a9e2a0e9408d2d1fb156a8aa7552dc25e15448ea121350",
         "metrics/popdeuxrem_popdeuxrem.json": "c865357c135842c787ad354f23f9c6b39d0b9dc0701e6f42a35fd34f47384be3",
-        "portfolio.json": "68b798de279495b0ecd33cbbb81bbde559528e91666db54632eb69c3e28efdb6",
-        "skills.json": "7f5414f08d5c9dee84b601bb2d0891cd5315ee6242066de6403050696872776e",
-        "timeline.json": "c4e9b58034a5fca622674a433da6e8834f5b8ada45d85be46e3f99d693876bf8"
+"data/portfolio.json": "68b798de279495b0ecd33cbbb81bbde559528e91666db54632eb69c3e28efdb6",
+        "data/skills.json": "7f5414f08d5c9dee84b601bb2d0891cd5315ee6242066de6403050696872776e",
+        "data/timeline.json": "c4e9b58034a5fca622674a433da6e8834f5b8ada45d85be46e3f99d693876bf8"
     },
     "source_hash": "f97ad1abbe691e71974dc5268d25ff24ee61a0bd773ed1e6d5b5d2f48368144d",
     "status": "success",

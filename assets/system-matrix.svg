@@ -14,22 +14,22 @@
   <rect x="1" y="1" width="478" height="268" rx="16" fill="none" stroke="url(#g)" stroke-width="1.5" opacity="0.75"/>
   
   <text x="42" y="34" fill="#00f3ff" font-family="monospace" font-size="14" font-weight="700">SYSTEM STATUS MATRIX</text>
-  <text x="328" y="34" fill="#8b949e" font-family="monospace" font-size="10">TRACE fa3a29f2597a</text>
+  <text x="328" y="34" fill="#8b949e" font-family="monospace" font-size="10">TRACE 6c841a6bd81c</text>
 
   <text x="42" y="70" fill="#8b949e" font-family="monospace" font-size="12">CPU</text>
   <rect x="104" y="58" width="235" height="12" rx="6" fill="#161b22"/>
-  <rect x="104" y="58" width="44" height="12" rx="6" fill="#00f3ff" opacity="0.92" filter="url(#glow)"/>
-  <text x="366" y="70" fill="#00f3ff" font-family="monospace" font-size="12">19%</text>
+  <rect x="104" y="58" width="145" height="12" rx="6" fill="#00f3ff" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="70" fill="#00f3ff" font-family="monospace" font-size="12">62%</text>
 
   <text x="42" y="104" fill="#8b949e" font-family="monospace" font-size="12">RAM</text>
   <rect x="104" y="92" width="235" height="12" rx="6" fill="#161b22"/>
-  <rect x="104" y="92" width="148" height="12" rx="6" fill="#bc8cff" opacity="0.92" filter="url(#glow)"/>
-  <text x="366" y="104" fill="#bc8cff" font-family="monospace" font-size="12">63%</text>
+  <rect x="104" y="92" width="138" height="12" rx="6" fill="#bc8cff" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="104" fill="#bc8cff" font-family="monospace" font-size="12">59%</text>
 
   <text x="42" y="138" fill="#8b949e" font-family="monospace" font-size="12">I/O</text>
   <rect x="104" y="126" width="235" height="12" rx="6" fill="#161b22"/>
-  <rect x="104" y="126" width="148" height="12" rx="6" fill="#00ff9d" opacity="0.92" filter="url(#glow)"/>
-  <text x="366" y="138" fill="#00ff9d" font-family="monospace" font-size="12">63%</text>
+  <rect x="104" y="126" width="117" height="12" rx="6" fill="#00ff9d" opacity="0.92" filter="url(#glow)"/>
+  <text x="366" y="138" fill="#00ff9d" font-family="monospace" font-size="12">50%</text>
 
   <line x1="42" y1="160" x2="440" y2="160" stroke="#30363d" stroke-width="1"/>
 
@@ -38,7 +38,7 @@
   <text x="122" y="188" fill="#00ff9d" font-family="monospace" font-size="12">SECURE</text>
 
   <text x="230" y="188" fill="#8b949e" font-family="monospace" font-size="12">RTT</text>
-  <text x="278" y="188" fill="#00f3ff" font-family="monospace" font-size="12">13ms</text>
+  <text x="278" y="188" fill="#00f3ff" font-family="monospace" font-size="12">15ms</text>
 
   <text x="42" y="218" fill="#8b949e" font-family="monospace" font-size="12">POLICY</text>
   <text x="122" y="218" fill="#bc8cff" font-family="monospace" font-size="12">STRICT</text>
@@ -46,6 +46,6 @@
   <text x="230" y="218" fill="#8b949e" font-family="monospace" font-size="12">DRIFT</text>
   <text x="292" y="218" fill="#00ff9d" font-family="monospace" font-size="12">LOCKED</text>
 
-  <text x="42" y="246" fill="#8b949e" font-family="monospace" font-size="10">packets:753/s · deterministic mock telemetry from source hash</text>
+  <text x="42" y="246" fill="#8b949e" font-family="monospace" font-size="10">packets:144/s · deterministic mock telemetry from source hash</text>
 
 </svg>

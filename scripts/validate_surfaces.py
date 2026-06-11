@@ -23,7 +23,7 @@ SVG_ASSETS = [
 JSON_SCHEMAS = [
     "data/projects.json",
     "metrics/github_telemetry.json",
-    "portfolio.json",
+    "data/portfolio.json",
     "health/system_health.json",
 ]
 
