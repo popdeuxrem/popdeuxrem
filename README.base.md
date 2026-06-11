@@ -49,8 +49,8 @@ removed legacy tmp README artifact is deprecated and must not be used as a sourc
 <a href="#about">𖢧ꛅ𖤢 ꚽꚳꛈ𖢧ꛕꛅ</a> · 
 <a href="#terminal">𖢧𖤢𖦪𖢑ꛈꛘꛎꚳ</a> · 
 <a href="#stack">𖢧𖤢ꛕꛅ ꕷ𖢧ꛎꛕ𖢉</a> · 
-<a href="#portfolio">𖤢ꚶ𖢧ꛈꚲ ꕷꚲꕷ𖢧𖤢ꚳꕷ</a> · 
-<a href="#surface">ꕷꚲꕷ𖢧𖤢ꚳ ꕷ𖢧ꛈ𖢧ꛎꕷ</a> · 
+<a href="#portfolio">𖤀𖤢ꛤꚳ𖣠ꚲ𖤢𖤀</a> · 
+<a href="#surface">ꕷꚲꕷ𖢧𖤢𖢑 ꕷ𖢧ꛎ𖢧ꚶꕷ</a> · 
 <a href="#stats">𖢧𖤢ꚳ𖤢𖢑𖤢𖢧𖦪ꚲ</a> · 
 <a href="#connect">ꛕ𖣠ꛘꛘ𖤢ꛕ𖢧 ꛃꛈ𖢧ꛅ 𖢑𖤢</a>
 </code>
