@@ -98,10 +98,13 @@ identity: {
 
 ```javascript
 coreAxioms: [
-  "◆ Determinism first — traceable, reproducible, versioned",
-  "◆ Observability is currency — systems must speak before they fail",
+  "◆ Determinism first — traceable, reproducible, " +
+    "versioned",
+  "◆ Observability is currency — systems must speak " +
+    "before they fail",
   "◆ iOS automation eliminates operational toil at the edge",
-  "◆ Proxy meshes + shadow routing harden controlled infrastructure",
+  "◆ Proxy meshes + shadow routing harden controlled " +
+    "infrastructure",
   "◆ Every system reversible, auditable, composable",
   "◆ Rollback is a feature, not an afterthought",
   "◆ Complexity is debt; simplicity is sophistication"
@@ -115,10 +118,14 @@ coreAxioms: [
 
 ```javascript
 mission: {
-  primary: "Design deterministic, auditable, observable systems that survive production",
-  focus: "Infrastructure ∙ Automation ∙ Agentic workflows ∙ Interface-level control",
-  philosophy: "Production-grade systems: reversible, composable, observable, secure",
-  output: "Artifacts over sketches. Runbooks over guesses. Signals over noise."
+  primary: "Design deterministic, auditable, observable systems " +
+    "that survive production",
+  focus: "Infrastructure ∙ Automation ∙ Agentic workflows ∙ " +
+    "Interface-level control",
+  philosophy: "Production-grade systems: reversible, composable, " +
+    "observable, secure",
+  output: "Artifacts over sketches. Runbooks over guesses. " +
+    "Signals over noise."
 }
 ```
 
@@ -129,13 +136,20 @@ mission: {
 
 ```javascript
 specializations: [
-  { domain: "Systems Architecture", focus: "Composable, reversible designs" },
-  { domain: "Automation Pipelines", focus: "Remove human fragility" },
-  { domain: "Product Infrastructure", focus: "Operable and observable logic" },
-  { domain: "iOS Ecosystem", focus: "Shortcuts, Scriptable, Data Jar" },
-  { domain: "Infra Hardening", focus: "Proxy meshes, DNS overlays, stealth routing" },
-  { domain: "Agentic Control Planes", focus: "Bounded autonomy with audit trails" },
-  { domain: "Technical Brand Systems", focus: "Narrative surfaces backed by real infrastructure" }
+  { domain: "Systems Architecture",
+    focus: "Composable, reversible designs" },
+  { domain: "Automation Pipelines",
+    focus: "Remove human fragility" },
+  { domain: "Product Infrastructure",
+    focus: "Operable and observable logic" },
+  { domain: "iOS Ecosystem",
+    focus: "Shortcuts, Scriptable, Data Jar" },
+  { domain: "Infra Hardening",
+    focus: "Proxy meshes, DNS overlays" },
+  { domain: "Agentic Control Planes",
+    focus: "Bounded autonomy with audit trails" },
+  { domain: "Technical Brand Systems",
+    focus: "Narrative surfaces backed by infrastructure" }
 ]
 ```
 
@@ -167,32 +181,42 @@ recentArchitectureLogs: [
   {
     id: "LOG-2026-05-18-001",
     surface: "README Surface Engine",
-    update: "Promoted generated profile telemetry into a bounded AUTO-GENERATED status matrix",
-    impact: "Improves operational visibility without mutating canonical template structure"
+    update: "Promoted generated profile telemetry into a bounded " +
+      "AUTO-GENERATED status matrix",
+    impact: "Improves operational visibility without mutating " +
+      "canonical template structure"
   },
   {
     id: "LOG-2026-05-17-004",
     surface: "Workflow Telemetry",
-    update: "Added workflow/run ingestion model for release-state visibility and CI drift detection",
-    impact: "Turns GitHub Actions state into auditable profile-level signals"
+    update: "Added workflow/run ingestion model for release-state " +
+      "visibility and CI drift detection",
+    impact: "Turns GitHub Actions state into auditable " +
+      "profile-level signals"
   },
   {
     id: "LOG-2026-05-16-009",
     surface: "Shadow Routing Layer",
-    update: "Hardened proxy mesh taxonomy with DNS overlay, MITM boundary, and controlled SecOps labels",
-    impact: "Clarifies controlled-use infrastructure while preserving technical depth"
+    update: "Hardened proxy mesh taxonomy with DNS overlay, MITM " +
+      "boundary, and controlled SecOps labels",
+    impact: "Clarifies controlled-use infrastructure while " +
+      "preserving technical depth"
   },
   {
     id: "LOG-2026-05-15-002",
     surface: "Agentic Orchestration",
-    update: "Drafted zero-trust orchestration placeholder with policy gates, telemetry hooks, and rollback contract",
-    impact: "Prepares v14 system catalog for bounded autonomous workflow execution"
+    update: "Drafted zero-trust orchestration placeholder with " +
+      "policy gates, telemetry hooks, and rollback contract",
+    impact: "Prepares v14 system catalog for bounded autonomous " +
+      "workflow execution"
   },
   {
     id: "LOG-2026-05-14-007",
     surface: "Build Pipeline",
-    update: "Stabilized README generation contract around immutable template sentinels and explicit asset allowlists",
-    impact: "Reduces accidental mutation risk across generated visual surfaces"
+    update: "Stabilized README generation contract around " +
+      "immutable template sentinels and explicit asset allowlists",
+    impact: "Reduces accidental mutation risk across generated " +
+      "visual surfaces"
   }
 ]
 ```
@@ -281,10 +305,13 @@ interface OperatorManifest {
     "Observability is currency",
     "Rollback is a production primitive",
     "iOS automation (Shortcuts/Scriptable) eliminates toil",
-    "Proxy meshes + shadow routing for infrastructure hardening",
+    "Proxy meshes + shadow routing for infrastructure " +
+      "hardening",
     "Every system is reversible and auditable",
-    "Generated surfaces must preserve source-of-truth boundaries",
-    "Agentic workflows require policy gates, telemetry, and containment"
+    "Generated surfaces must preserve source-of-truth " +
+      "boundaries",
+    "Agentic workflows require policy gates, telemetry, " +
+      "and containment"
   ];
 
   stack: {
@@ -306,21 +333,24 @@ const manifest: OperatorManifest = {
     directive: "COMPOSABLE + REVERSIBLE + AUDITABLE"
   },
 
-  coreAxioms: [
+coreAxioms: [
     "Determinism first",
     "Observability is currency",
     "Rollback is a production primitive",
     "iOS automation (Shortcuts/Scriptable) eliminates toil",
-    "Proxy meshes + shadow routing for infrastructure hardening",
+    "Proxy meshes + shadow routing for infrastructure " +
+      "hardening",
     "Every system is reversible and auditable",
-    "Generated surfaces must preserve source-of-truth boundaries",
-    "Agentic workflows require policy gates, telemetry, and containment"
+    "Generated surfaces must preserve source-of-truth " +
+      "boundaries",
+    "Agentic workflows require policy gates, telemetry, " +
+      "and containment"
   ],
-
   stack: {
     primary: ["JavaScript", "TypeScript", "React", "Node.js", "Python"],
     infrastructure: ["Docker", "Kubernetes", "Terraform", "n8n", "Pulumi"],
-    automation: ["iOS Shortcuts", "Scriptable", "Data Jar", "GitHub Actions"],
+    automation: ["iOS Shortcuts", "Scriptable", "Data Jar",
+      "GitHub Actions"],
     observability: ["Cloudflare", "Redis", "PostgreSQL", "AWS"]
   },
 
@@ -342,7 +372,10 @@ const manifest: OperatorManifest = {
     }
   },
 
-  philosophy: "Building quantum-grade infrastructure that fails gracefully, scales infinitely, tells you when it's unhappy, and can always roll back to a known-good state. Complexity is debt. Observability is currency. Containment is architecture."
+  philosophy: "Building quantum-grade infrastructure that fails gracefully, " +
+    "scales infinitely, tells you when it's unhappy, and can always " +
+    "roll back to a known-good state. Complexity is debt. Observability " +
+    "is currency. Containment is architecture."
 };
 
 export default manifest; // ◈ Reversible. Auditable. Shadow-grade.
